@@ -4,7 +4,10 @@ node_modules
 yarn-error.log
 
 # Build directory
-/public
+
+/public/*
+!/public/CNAME
+
 .DS_Store
 
-!CNAME
+
