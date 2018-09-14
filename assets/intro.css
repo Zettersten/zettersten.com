@@ -1,0 +1,337 @@
+/* Back-light (color lighter than background color) */
+.bg-back-light {
+    background-color: color(config('colors.back') lightness(+18%));
+}
+
+.text-back-light {
+    color: color(config('colors.back') lightness(+18%));
+}
+
+/* Common elements */
+svg {
+    @apply .fill-current;
+}
+
+.fill-lead {
+    fill: config('colors.lead');
+}
+
+.section-header {
+    @apply .font-header .font-semibold .text-front .text-sm .uppercase;
+}
+
+.btn {
+    @apply .font-header .inline-block .no-underline .font-semibold .px-6 .py-2 .leading-tight .cursor-pointer .outline-none;
+    transition: opacity .2s ease-out;
+    will-change: opacity;
+}
+
+.btn:hover {
+    opacity: .75;
+}
+
+.hover\:opacity-75 {
+    transition: opacity .2s ease-out;
+    will-change: opacity;
+}
+
+.dot {
+    @apply .inline-block .w-2 .h-2 .rounded-full .mr-1;
+}
+
+.dot-double {
+    @apply .relative .inline-block .rounded-full;
+    width: 54px;
+    height: 54px;
+}
+
+.dot-double:after {
+    @apply .absolute .bg-back-light .rounded-full;
+    top: 18px;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    content: '';
+}
+
+.status-green {
+    background-color: #53c72b;
+}
+
+.status-default {
+    background-color: #e58b5f;
+}
+
+/* Contact button */
+.contact {
+    @apply .flex .w-14 .h-14 .px-2 .bg-lead .rounded-full .text-lead-text .justify-center .items-center;
+}
+
+@screen lg {
+    .contact {
+        @apply .w-auto .h-auto .btn .px-6 .rounded-lg .self-start .mt-4;
+    }
+}
+
+/* Avatar */
+.avatar-bg {
+    @apply .absolute .pin .rounded-full .bg-lead .z-0;
+    transform: translateX(35%);
+}
+
+/* Connect - Social Media */
+.connect-icon {
+    @apply .inline-flex .w-12 .h-12 .justify-center .items-center .rounded-full .bg-front .text-back-light .-ml-3;
+    transition: opacity .2s ease-out;
+    will-change: opacity;
+}
+
+.connect-icon:first-child {
+    @apply .ml-0;
+}
+
+.connect-icon:nth-child(even) {
+    @apply .bg-back-light .text-front;
+}
+
+.connect-icon svg {
+    @apply .fill-current .w-6 .h-6;
+}
+
+.connect-icon:hover {
+    @apply .opacity-75;
+}
+
+/* Skills */
+.skills {
+    @apply .flex .flex-wrap .list-reset .-mx-2;
+}
+
+.skill {
+    @apply .relative .rounded-full .border-2 .font-header .font-semibold .inline-flex .justify-center .items-center .text-center .text-base .text-front .px-2 .my-2 .mx-2;
+    width: calc(50vw - 2rem);
+    height: calc(50vw - 2rem);
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.skill svg {
+    @apply .absolute .pin;
+    transform: translate(8px, 8px);
+    opacity: .8;
+    width: calc(100% - 16px);
+}
+
+.skill:nth-child(3n+1) {
+    border-color: color(config('colors.skill-1') lightness(+10%));
+}
+
+.skill:nth-child(3n+1) svg {
+    @apply .text-skill-1;
+}
+
+.skill:nth-child(3n+2) {
+    border-color: color(config('colors.skill-2') lightness(+10%));
+}
+
+.skill:nth-child(3n+2) svg {
+    @apply .text-skill-2;
+}
+
+.skill:nth-child(3n+3) {
+    border-color: color(config('colors.skill-3') lightness(+10%));
+}
+
+.skill:nth-child(3n+3) svg {
+    @apply .text-skill-3;
+}
+
+@screen lg {
+    .skill {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+@screen xl {
+    .skill {
+        width: 144px;
+        height: 144px;
+    }
+}
+
+/* Tools */
+.tools {
+    @apply .flex-col .list-reset .mt-2;
+}
+
+.tool {
+    @apply .inline-block .subpixel-antialiased .bg-lead .px-3 .py-1 .font-header .font-light .text-2xl .text-lead-text .mb-1;
+}
+
+/* Projects */
+.project {
+    @apply .relative .flex .flex-wrap .bg-back-light .p-8 .bg-no-repeat .text-sm .mb-6;
+    background-image: linear-gradient(to right, color(config(colors.back) lightness(80%)) 1%, color(config(colors.back) lightness(80%)) 35%, color(config(colors.back) lightness(85%)) 35%, color(config(colors.back) lightness(85%)) 100%);
+    background-size: 100% 4px;
+    background-repeat: no-repeat;
+}
+
+.project-image {
+    @apply .w-full .pb-4;
+}
+
+@screen lg {
+    .project-image {
+        @apply .w-2/5 .pr-8 .pb-0;
+    }
+}
+
+.project h4 {
+    @apply .subpixel-antialiased .w-full;
+}
+
+.project p {
+    @apply .py-4;
+}
+
+.tags {
+    @apply .list-reset .pr-2;
+}
+
+.tag {
+    @apply .inline-block .px-3 .py-1 .mr-1 .mt-1 .font-medium .text-xs .rounded-lg .border .border-back;
+}
+
+.project-icon {
+    @apply .absolute .pin-r .pin-b .mb-5 .mr-5 .text-back .w-6 .h-6;
+}
+
+/* Work history */
+.history {
+    @apply .flex .flex-col .relative .pt-6 .pb-6;
+}
+
+.history:before {
+    @apply .absolute .block .pin-t .pin-b .bg-line;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-1px);
+    content: "";
+}
+
+.history-entry {
+    @apply .relative .w-1/2 py-4;
+}
+
+.history-entry h4 {
+    @apply .subpixel-antialiased;
+}
+
+.history-entry h5 {
+    @apply .text-sm .font-normal;
+}
+
+/* Copy on the right */
+.history-entry:nth-child(odd) {
+    @apply .self-end .pl-12;
+}
+
+/* Copy on the left */
+.history-entry:nth-child(even) {
+    @apply .self-start .pr-12 .text-right;
+}
+
+/* Dot positioning in work history section */
+.history-entry .dot-double {
+    @apply .absolute .pin-t .bg-line;
+    top: 50%;
+}
+
+/* Dot positioning when copy on the right */
+.history-entry:nth-child(odd) .dot-double {
+    @apply .pin-l;
+    transform: translate(-50%, -50%);
+}
+
+/* Dot positioning when copy on the left */
+.history-entry:nth-child(even) .dot-double {
+    @apply .pin-r;
+    transform: translate(50%, -50%);
+}
+
+.history-entry:first-child .dot-double {
+    @apply .bg-front;
+}
+
+.history-entry:first-child .dot-double:after {
+    @apply .bg-lead;
+}
+
+/* Contact form */
+.form-control {
+    @apply .w-full .text-front .px-4 .py-3 .font-header .font-semibold .text-sm .outline-none .leading-normal;
+}
+
+.form-input {
+    @apply .bg-back-light;
+    transition: opacity .2s ease-out;
+    will-change: opacity;
+}
+
+.form-input:focus {
+    opacity: 0.7;
+}
+
+.checkbox {
+    @apply .relative .inline-block .border-2 .align-middle .mr-2 .-mt-1 .cursor-pointer;
+    border-color: config(colors.back);
+    width: 22px;
+    height: 22px;
+}
+
+.checkbox:after {
+    @apply .absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    content: '';
+}
+
+.checkbox-on:after {
+    @apply .bg-lead;
+} 
+
+[data-checkbox-toggle] {
+    @apply .cursor-pointer .select-none;
+}
+
+.inquiry-details {
+    opacity: 0.3;
+    height: 0;
+    overflow: hidden;
+    transition: height .25s ease-in-out, opacity .25s ease-in-out;
+    will-change: opacity, height;
+}
+
+.input-range {
+    @apply .appearance-none .block .w-full .outline-none .mb-1 .h-4;
+    background: transparent;
+}
+
+.input-range:focus {
+    @apply .outline-none;
+}
+
+.input-range::range-track {
+    @apply .appearance-none .w-full .bg-back .cursor-pointer .outline-none;
+    height: 2px;
+}
+  
+.input-range::range-thumb {
+    @apply .appearance-none .rounded-full .w-4 .h-4 .bg-lead .cursor-pointer .outline-none;
+    /* autoprefixer: ignore next */
+    -webkit-transform: translateY(-6.5px);
+    -moz-transform: translateY(0);
+}
