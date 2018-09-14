@@ -5,11 +5,11 @@
 
 ## Installation
 
-##### Prerequisites
+### Prerequisites
 
 Please be sure you already have [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/get-npm) installed.
 
-##### Required packages
+### Required packages
 
 Navigate to the theme's main folder and run the command:
 
@@ -26,6 +26,7 @@ It should download all required packages to the `node_modules` folder.
 You can configure the website by editing a single `config.js` file. Please open it in your favorite code editor and then fill it with your own profile information.
 
 The file contains sections for customizing:
+
 * Selected theme (color variant),
 * Basic information (name, surname, location, position, etc.),
 * Social media links,
@@ -41,19 +42,19 @@ Your profile/projects images should be placed in `images/` directory.
 
 
 
-### Building website
+## Building website
 
 Once you're done editing `config.js` file, you need to build the website.
 
 There are 2 commands you can use for development purpose:
 
-##### Build the website in a development environment
+#### Build the website in a development environment
 
 ```sh
 npm run dev
 ```
 
-##### Watch for file changes and then build the website
+#### Watch for file changes and then build the website
 
 ```sh
 npm run watch
@@ -75,23 +76,23 @@ _Theme previews are available in `previews` directory._
 
 
 
-#### Customization
+## Customization
 
 For deeper customization of the theme you can:
 
-**Edit CSS**
+### Edit CSS
 
 The theme is built with [TailwindCSS](https://tailwindcss.com) - Utility-First CSS Framework.
 
 Custom CSS code is placed in the `assets/intro.css` file. 
 
-**Edit HTML code**
+### Edit HTML code
 
 The HTML template used by the builder is located in the `builder/template.ejs` file. It uses [Embedded JavaScript template](http://ejs.co) syntax.
 
 
 
-#### Contact form
+## Contact form
 
 Contact form processing is being done by [Formspree](https://formspree.io). When a user fills the form, entered data will be sent via e-mail to address provided in `config.profile.email` field (in `config.js`).
 
@@ -120,7 +121,7 @@ The license is available in ``License.pdf`` file included with the theme.
 ## Release History
 
 * 1.0.0
-    * The first public version of the theme
+* The first public version of the theme
 
 
 
