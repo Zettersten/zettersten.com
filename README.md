@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Intro.
 > Personal branding theme for developers
 
@@ -132,3 +133,12 @@ Intro. is a theme created by [Weeby Studio](https://weeby.studio).
 If you have any questions, feel free to contact us at [hello@weebystudio.com](mailto:hello@weebystudio.com)
 
 **We'll be happy to help!**
+=======
+# Erik Zettersten
+### Follow Me
+- [Twitter](https://twitter.com/zettersten)
+- [GitHub](https://github.com/zettersten)
+- [LinkedIn](https://www.linkedin.com/in/zettersten)
+- [Facebook](https://www.facebook.com/zettersten)
+- [Zettersten](https://zettersten.com)
+>>>>>>> 2e615a0cc0fe0ecd6fcc9ace7f5bef1420758b09
