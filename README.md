@@ -1,5 +1,7 @@
-# Intro.
+# Intro
+
 > Personal branding theme for developers
+
 
 
 
@@ -48,13 +50,13 @@ Once you're done editing `config.js` file, you need to build the website.
 
 There are 2 commands you can use for development purpose:
 
-#### Build the website in a development environment
+### Build the website in a development environment
 
 ```sh
 npm run dev
 ```
 
-#### Watch for file changes and then build the website
+### Watch for file changes and then build the website
 
 ```sh
 npm run watch
