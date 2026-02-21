@@ -13,11 +13,37 @@ const { post } = Astro.props;
 const { Content, headings } = await render(post);
 
 const estimateReadingMinutes = Math.max(4, Math.round(post.body.split(/\s+/).length / 220));
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  dateModified: post.data.date.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Erik Zettersten',
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Erik Zettersten',
+  },
+  image: post.data.coverImage,
+};
 ---
 
-<BaseLayout title={`${post.data.title} — Erik Zettersten`} description={post.data.description} image={post.data.coverImage || '/og-default.svg'}>
+<BaseLayout
+  title={`${post.data.title} — Erik Zettersten`}
+  description={post.data.description}
+  image={post.data.coverImage || '/og/blog.svg'}
+  type="article"
+  publishedTime={post.data.date}
+  modifiedTime={post.data.date}
+  jsonLd={articleJsonLd}
+>
   <Nav />
-  <main class="container article-wrap">
+  <main id="main-content" class="container article-wrap">
     <a href="/blog" class="back muted">← Back to blog</a>
 
     <header class="article-head">

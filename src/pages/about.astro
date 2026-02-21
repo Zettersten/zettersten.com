@@ -5,9 +5,13 @@ import Footer from '../components/Footer.astro';
 import { profileHighlights, linkedinHighlights } from '../data/projects';
 ---
 
-<BaseLayout title="About Erik Zettersten">
+<BaseLayout
+  title="About Erik Zettersten"
+  description="Background, operating style, and leadership approach from Erik Zettersten."
+  image="/og/about.svg"
+>
   <Nav />
-  <main class="container page">
+  <main id="main-content" class="container page">
     <p class="kicker">About</p>
     <h1>Erik Zettersten is a technology executive who turns complexity into execution.</h1>
     <p class="muted lead">

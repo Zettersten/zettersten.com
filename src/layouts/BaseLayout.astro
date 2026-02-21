@@ -3,13 +3,40 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: Date | string;
+  modifiedTime?: Date | string;
+  noindex?: boolean;
+  jsonLd?: Record<string, any> | Array<Record<string, any>>;
 }
 
 const {
   title,
   description = 'Erik Zettersten — AI Developer, Engineer, Strategist, Leader.',
   image = '/og-default.svg',
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  noindex = false,
+  jsonLd,
 } = Astro.props;
+
+const site = Astro.site?.toString() ?? 'https://zettersten.com';
+const canonical = new URL(Astro.url.pathname, site).toString();
+const imageUrl = image.startsWith('http') ? image : new URL(image, site).toString();
+const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+
+const publishedISO = publishedTime ? new Date(publishedTime).toISOString() : undefined;
+const modifiedISO = modifiedTime ? new Date(modifiedTime).toISOString() : undefined;
+
+const baseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'zettersten.com',
+  url: site,
+};
+const extraSchema = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const schemaGraph = [baseSchema, ...extraSchema];
 ---
 
 <!doctype html>
@@ -17,24 +44,49 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={robots} />
+
+    <meta name="author" content="Erik Zettersten" />
+    <meta name="application-name" content="zettersten.com" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#ebebeb" />
+
+    <meta property="og:site_name" content="zettersten.com" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={title} />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-    <meta name="theme-color" content="#efefef" />
+    <meta name="twitter:image" content={imageUrl} />
+
+    {publishedISO && <meta property="article:published_time" content={publishedISO} />}
+    {modifiedISO && <meta property="article:modified_time" content={modifiedISO} />}
+    {type === 'article' && <meta property="article:author" content="Erik Zettersten" />}
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico" sizes="any" />
+    <link rel="mask-icon" href="/favicon.svg" color="#c7632c" />
+
     <link rel="alternate" type="application/rss+xml" title="Erik Zettersten Blog RSS" href="/rss.xml" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schemaGraph)}></script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <slot />
   </body>
 </html>
@@ -48,6 +100,7 @@ const {
     --line: #d7d7d7;
     --border: #d0d0d0;
     --radius: 26px;
+    --brand: #c7632c;
   }
 
   * { box-sizing: border-box; }
@@ -59,10 +112,19 @@ const {
     line-height: 1.6;
     letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   a { color: inherit; text-decoration: none; }
   .container { width: min(1200px, calc(100% - 2.2rem)); margin-inline: auto; }
+  .kicker {
+    margin: 0;
+    font-size: .72rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--brand);
+    font-weight: 600;
+  }
   .glass {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -84,4 +146,28 @@ const {
   .btn:hover { background: #e8e8e8; }
   .btn.primary { background: #202020; color: #fff; border-color: #202020; }
   .muted { color: var(--muted); }
+
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: .6rem;
+    top: -100px;
+    background: #101010;
+    color: #fff;
+    padding: .5rem .7rem;
+    border-radius: 8px;
+    z-index: 999;
+    font-size: .85rem;
+  }
+  .skip-link:focus { top: .6rem; }
+
+  ::selection {
+    background: #f0d2c2;
+    color: #171717;
+  }
 </style>

@@ -5,9 +5,13 @@ import Footer from '../components/Footer.astro';
 import { featuredProjects } from '../data/projects';
 ---
 
-<BaseLayout title="Selected Work — Erik Zettersten">
+<BaseLayout
+  title="Selected Work — Erik Zettersten"
+  description="A curated set of shipped projects across AI, platforms, and product engineering."
+  image="/og/work.svg"
+>
   <Nav />
-  <main class="container page">
+  <main id="main-content" class="container page">
     <header class="hero">
       <p class="kicker">Work</p>
       <h1>Proof Erik can ship: AI, tooling, performance, platforms.</h1>
