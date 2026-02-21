@@ -11,27 +11,23 @@ import { allProjects, contributionLinks } from '../data/all-projects';
   image="/og/projects.svg"
 >
   <Nav />
-  <main id="main-content" class="container page">
-    <header class="hero">
+  <main id="main-content" class="container page page-shell">
+    <header class="page-hero">
       <p class="kicker">Projects + Contributions</p>
-      <h1>The full build log: {allProjects.length} repos and counting.</h1>
-      <p class="muted">
-        Every repo has a job. Some are tiny weapons, some are platforms. All signal execution.
+      <h1 class="page-title">
+        {allProjects.length} repositories, one operating pattern: ship useful systems.
+      </h1>
+      <p class="page-subtitle">
+        Some are tools, some are platforms, some are experiments. All represent practical execution.
       </p>
       <div class="contrib glass">
-        <a href={contributionLinks.profile} target="_blank" rel="noreferrer"
-          >Main Character Profile</a
-        >
-        <a href={contributionLinks.repositories} target="_blank" rel="noreferrer"
-          >All Repositories</a
-        >
-        <a href={contributionLinks.activity} target="_blank" rel="noreferrer"
-          >Contribution Heatmap</a
-        >
+        <a href={contributionLinks.profile} target="_blank" rel="noreferrer">Profile</a>
+        <a href={contributionLinks.repositories} target="_blank" rel="noreferrer">Repositories</a>
+        <a href={contributionLinks.activity} target="_blank" rel="noreferrer">Activity</a>
       </div>
     </header>
 
-    <section class="grid">
+    <section class="grid" aria-label="All project cards">
       {
         allProjects.map((p) => (
           <article class="glass card">
@@ -69,39 +65,35 @@ import { allProjects, contributionLinks } from '../data/all-projects';
 
 <style>
   .page {
-    padding-top: 4rem;
-  }
-  h1 {
-    margin: 0.4rem 0 0.6rem;
-    font-size: clamp(2rem, 7vw, 5rem);
-    line-height: 0.96;
-    letter-spacing: -0.03em;
-  }
-  .hero {
-    margin-bottom: 2rem;
+    max-width: 1120px;
   }
   .contrib {
     display: flex;
-    gap: 0.6rem;
+    gap: 0.55rem;
     flex-wrap: wrap;
-    padding: 0.8rem;
-    margin-top: 1rem;
+    padding: 0.75rem;
+    margin-top: 0.9rem;
+    border-radius: 16px;
   }
   .contrib a {
     color: var(--text);
     font-weight: 600;
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+    padding: 0.45rem 0.7rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 0.9rem;
+    margin-top: 1rem;
   }
   .card {
-    padding: 1rem;
+    padding: 0.95rem;
+    border-radius: 18px;
   }
   .top {
     display: flex;
@@ -115,24 +107,26 @@ import { allProjects, contributionLinks } from '../data/all-projects';
   }
   .lang {
     color: var(--brand);
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
   .story {
-    margin: 0.5rem 0 0.35rem;
+    margin: 0.45rem 0 0.35rem;
+    line-height: 1.62;
   }
   .desc {
     margin: 0 0 0.45rem;
+    line-height: 1.62;
   }
   .meta {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
   }
   .links {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.45rem;
     flex-wrap: wrap;
-    margin-top: 0.75rem;
+    margin-top: 0.7rem;
   }
 
   @media (max-width: 980px) {

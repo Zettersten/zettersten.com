@@ -11,11 +11,11 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
   image="/og/about.svg"
 >
   <Nav />
-  <main id="main-content" class="container page">
-    <header class="intro">
+  <main id="main-content" class="container page page-shell">
+    <header class="intro page-hero">
       <p class="kicker">About</p>
-      <h1>I build leverage at inflection points.</h1>
-      <p class="lead muted">
+      <h1 class="page-title">I build leverage at inflection points.</h1>
+      <p class="lead page-subtitle">
         I work where systems are changing fast and stakes are high: payments, platforms, AI, and
         mission-critical operations. My approach is direct—clarify the decision model, align the
         team, and ship work that holds up in production.
@@ -59,23 +59,13 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
 
 <style>
   .page {
-    max-width: 1000px;
-    padding-top: 1.8rem;
-    padding-bottom: 2rem;
+    max-width: 1120px;
   }
   .intro {
-    max-width: 78ch;
-  }
-  h1 {
-    margin: 0.35rem 0 0.7rem;
-    font-size: clamp(2.3rem, 6vw, 4.6rem);
-    line-height: 0.98;
-    letter-spacing: -0.02em;
+    max-width: 860px;
   }
   .lead {
     margin: 0;
-    font-size: 1.05rem;
-    line-height: 1.7;
   }
 
   .grid {
