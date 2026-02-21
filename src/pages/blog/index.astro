@@ -7,32 +7,65 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
+
+const featured = posts[0];
+const rest = posts.slice(1);
 ---
 
-<BaseLayout title="Blog — Erik Zettersten" description="Thoughts on AI engineering, strategy, leadership, and building products.">
+<BaseLayout title="Blog — Erik Zettersten" description="Quick takes on AI, product, leadership, and building things that actually matter.">
   <Nav />
   <main class="container page">
-    <h1>Blog</h1>
-    <p class="muted">Thoughts and musings on AI, engineering, strategy, leadership, and craft.</p>
+    <header class="hero">
+      <p class="kicker">Blog</p>
+      <h1>Ideas worth stealing.</h1>
+      <p class="muted">Short, sharp articles on AI strategy, product execution, and leadership without the corporate cosplay.</p>
+    </header>
 
-    <div class="posts">
-      {posts.map((post) => (
+    {featured && (
+      <a class="feature glass" href={`/blog/${featured.id.replace(/\.md$/, '')}/`}>
+        <p class="label">Featured article</p>
+        <h2>{featured.data.title}</h2>
+        <p class="muted">{featured.data.description}</p>
+        <div class="meta muted">
+          <span>{featured.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+          {featured.data.tags.length > 0 && <span>• {featured.data.tags.join(' · ')}</span>}
+        </div>
+      </a>
+    )}
+
+    <section class="posts">
+      {rest.map((post) => (
         <a class="glass post" href={`/blog/${post.id.replace(/\.md$/, '')}/`}>
-          <h2>{post.data.title}</h2>
+          <h3>{post.data.title}</h3>
           <p class="muted">{post.data.description}</p>
           <small class="muted">{post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</small>
         </a>
       ))}
-    </div>
+    </section>
   </main>
   <Footer />
 </BaseLayout>
 
 <style>
-  .page { padding-top: 3.5rem; }
-  h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 3rem); }
-  .posts { margin-top: 1rem; display: grid; gap: .9rem; }
-  .post { display: block; padding: 1rem; }
-  .post h2 { margin: 0; font-size: 1.1rem; }
-  .post p { margin: .4rem 0 .4rem; }
+  .page { padding-top: 3.8rem; max-width: 980px; }
+  .kicker { margin: 0; text-transform: uppercase; letter-spacing: .08em; color: #6a6a6a; font-size: .74rem; font-weight: 700; }
+  h1 { margin: .35rem 0 .5rem; font-size: clamp(2.1rem, 8vw, 5.5rem); line-height: .92; letter-spacing: -.03em; font-weight: 500; }
+  .hero p { max-width: 62ch; }
+
+  .feature {
+    display: block;
+    margin-top: 1.4rem;
+    padding: 1.4rem;
+    border-radius: 28px;
+    background: #f4f4f4;
+  }
+  .label { margin: 0; text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; color: #505050; }
+  .feature h2 { margin: .35rem 0 .45rem; font-size: clamp(1.5rem, 4vw, 2.4rem); line-height: 1.05; font-weight: 600; }
+  .feature p { margin: 0; }
+  .meta { margin-top: .65rem; font-size: .88rem; }
+
+  .posts { margin-top: 1rem; display: grid; gap: .85rem; }
+  .post { display: block; padding: 1rem 1.1rem; border-radius: 22px; }
+  .post h3 { margin: 0; font-size: 1.2rem; line-height: 1.2; font-weight: 600; }
+  .post p { margin: .4rem 0 .45rem; }
 </style>

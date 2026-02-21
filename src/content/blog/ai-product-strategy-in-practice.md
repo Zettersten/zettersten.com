@@ -1,18 +1,18 @@
 ---
 title: "AI Product Strategy in Practice"
-description: "How I approach AI initiatives so they create real business leverage, not just demos."
+description: "How I keep AI work out of demo-land and in real-world value land."
 date: 2026-02-20
 tags: ["AI", "strategy", "product"]
 draft: false
 ---
 
-AI strategy fails when it's treated like a model problem instead of a product problem.
+Most AI projects fail for one boring reason: they optimize for "wow" instead of "works."
 
-The framing I use is simple:
+My playbook is simple:
 
-1. **Start with business leverage** — what changes if we get this right?
-2. **Constrain scope aggressively** — one clear workflow, one measurable outcome.
-3. **Engineer for trust** — observability, fallback paths, and guardrails.
-4. **Improve with real usage** — behavior in production beats lab assumptions.
+1. **Pick the money move.** What KPI changes if we nail this?
+2. **Shrink scope like a savage.** One workflow. One outcome. Zero fluff.
+3. **Build trust in.** Logs, guardrails, fallbacks. No mystery boxes.
+4. **Ship, watch, iterate.** Production behavior beats conference-slide confidence.
 
-The goal isn't to ship AI features. It's to ship better outcomes.
+Goal: not more AI features. Better business results.
