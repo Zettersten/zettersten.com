@@ -1,0 +1,52 @@
+name: Weekly Editorial Publish
+
+on:
+  schedule:
+    # 13:00 UTC Monday ~= 9:00 AM America/New_York (EST)
+    # Script also enforces local Monday 9AM and can be FORCE_RUN manually.
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force run regardless of local time"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r requirements-editorial.txt
+
+      - name: Generate weekly article
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-4o
+          FORCE_RUN: ${{ github.event.inputs.force == 'true' && '1' || '0' }}
+        run: python scripts/weekly_editorial.py
+
+      - name: Commit and push to main
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/content/blog/*.md
+            git commit -m "chore(editorial): publish weekly AI systems brief"
+            git push origin "${{ github.event.repository.default_branch }}"
+          else
+            echo "No changes to commit."
+          fi
