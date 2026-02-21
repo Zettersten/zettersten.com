@@ -13,14 +13,20 @@ const { post } = Astro.props;
 const { Content, headings } = await render(post);
 
 const estimateReadingMinutes = Math.max(4, Math.round(post.body.split(/\s+/).length / 220));
+const site = Astro.site?.toString() ?? 'https://zettersten.com';
+const slug = post.id.replace(/\.mdx?$/, '');
+const canonicalUrl = new URL(`/blog/${slug}/`, site).toString();
+const publishedISO = post.data.date.toISOString();
+const publishedText = post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+const year = post.data.date.getFullYear();
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: post.data.title,
   description: post.data.description,
-  datePublished: post.data.date.toISOString(),
-  dateModified: post.data.date.toISOString(),
+  datePublished: publishedISO,
+  dateModified: publishedISO,
   author: {
     '@type': 'Person',
     name: 'Erik Zettersten',
@@ -30,7 +36,14 @@ const articleJsonLd = {
     name: 'Erik Zettersten',
   },
   image: post.data.coverImage,
+  mainEntityOfPage: canonicalUrl,
+  url: canonicalUrl,
 };
+
+const apaCitation = `Zettersten, E. (${year}, ${post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}). ${post.data.title}. zettersten.com. ${canonicalUrl}`;
+const mlaCitation = `Zettersten, Erik. "${post.data.title}." zettersten.com, ${publishedText}, ${canonicalUrl}.`;
+
+const bibtexCitation = `@online{zettersten_${slug.replace(/-/g, '_')},\n  author = {Erik Zettersten},\n  title = {${post.data.title}},\n  year = {${year}},\n  month = {${post.data.date.toLocaleDateString('en-US', { month: 'short' }).toLowerCase()}},\n  url = {${canonicalUrl}},\n  note = {Accessed: ${new Date().toISOString().slice(0, 10)}}\n}`;
 ---
 
 <BaseLayout
@@ -42,6 +55,19 @@ const articleJsonLd = {
   modifiedTime={post.data.date}
   jsonLd={articleJsonLd}
 >
+  <Fragment slot="head">
+    <meta property="article:section" content={post.data.category} />
+    {post.data.tags.map((tag) => <meta property="article:tag" content={tag} />)}
+
+    <meta name="citation_title" content={post.data.title} />
+    <meta name="citation_author" content="Erik Zettersten" />
+    <meta name="citation_publication_date" content={publishedISO.slice(0, 10)} />
+    <meta name="citation_online_date" content={publishedISO.slice(0, 10)} />
+    <meta name="citation_journal_title" content="zettersten.com" />
+    <meta name="citation_language" content="en" />
+    <meta name="citation_public_url" content={canonicalUrl} />
+  </Fragment>
+
   <Nav />
   <main id="main-content" class="container article-wrap">
     <a href="/blog" class="back muted">← Back to blog</a>
@@ -81,6 +107,21 @@ const articleJsonLd = {
         </aside>
       )}
     </section>
+
+    <section class="cite glass" aria-labelledby="cite-title">
+      <h2 id="cite-title">Cite this article</h2>
+      <p class="muted">Use this canonical link when referencing this piece:</p>
+      <p><a href={canonicalUrl}>{canonicalUrl}</a></p>
+
+      <h3>APA</h3>
+      <p>{apaCitation}</p>
+
+      <h3>MLA</h3>
+      <p>{mlaCitation}</p>
+
+      <h3>BibTeX</h3>
+      <pre><code>{bibtexCitation}</code></pre>
+    </section>
   </main>
   <Footer />
 </BaseLayout>
@@ -100,7 +141,7 @@ const articleJsonLd = {
 
   h1 {
     margin: .32rem 0 .5rem;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--font-serif);
     font-size: clamp(2rem, 5.7vw, 4rem);
     line-height: .98;
     letter-spacing: -.01em;
@@ -148,7 +189,7 @@ const articleJsonLd = {
   .prose :global(h2),
   .prose :global(h3),
   .prose :global(h4) {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--font-serif);
     line-height: 1.16;
     letter-spacing: -.01em;
     scroll-margin-top: 90px;
@@ -195,7 +236,7 @@ const articleJsonLd = {
   }
 
   .prose :global(code) {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-family: var(--font-mono);
     font-size: .87em;
     background: #ececec;
     padding: .15rem .35rem;
@@ -235,6 +276,35 @@ const articleJsonLd = {
     line-height: 1.35;
   }
   .toc a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .cite {
+    margin-top: 1rem;
+    padding: 1rem 1.1rem;
+    max-width: 780px;
+  }
+  .cite h2 {
+    margin: 0 0 .4rem;
+    font-size: 1.35rem;
+  }
+  .cite h3 {
+    margin: .8rem 0 .25rem;
+    font-size: 1rem;
+    letter-spacing: .02em;
+  }
+  .cite p {
+    margin: 0 0 .5rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+  .cite pre {
+    overflow: auto;
+    background: #141414;
+    color: #f5f5f5;
+    border-radius: 10px;
+    padding: .75rem;
+    border: 1px solid #2f2f2f;
+    margin: 0;
+  }
 
   @media (max-width: 980px) {
     .content-grid { grid-template-columns: 1fr; }
