@@ -1,7 +1,7 @@
 ---
 title: 'From Founders to Figureheads: Why Tech CEOs No Longer Run Their Companies'
 description: 'Many CEOs still hold the title, but boards, investors, and optics now run the playbook.'
-date: 2026-02-21
+date: 2026-01-20
 tags: ['leadership', 'corporate governance', 'strategy', 'executives']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Group_of_Fortune_500_CEOs_in_2015_%28cropped_to_remove_non-CEO%29.jpg'

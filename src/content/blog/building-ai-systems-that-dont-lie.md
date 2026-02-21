@@ -1,7 +1,7 @@
 ---
 title: 'Building AI Systems That Don’t Lie to You'
 description: 'If you don’t measure truth, you’re shipping fiction. Here’s how to engineer for reliability.'
-date: 2026-02-21
+date: 2026-02-10
 tags: ['AI reliability', 'evals', 'governance', 'engineering']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Computer_locked.jpg'

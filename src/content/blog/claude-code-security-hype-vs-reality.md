@@ -1,7 +1,7 @@
 ---
 title: 'Claude Code Security Won’t Replace CrowdStrike—But It Might Expose Your Security Theater'
 description: "Anthropic’s new security preview is interesting and useful, but the 'AI replaces security teams' takes are still unserious."
-date: 2026-02-21
+date: 2026-02-20
 tags: ['AI', 'cybersecurity', 'AppSec', 'leadership', 'opinion']
 category: 'AI Strategy'
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Computer_locked.jpg'

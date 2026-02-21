@@ -1,7 +1,7 @@
 ---
 title: 'Meta’s VR Collapse: The Most Expensive Tech Misread in History'
 description: 'VR didn’t fail because the tech was impossible. It failed because the strategy ignored behavior.'
-date: 2026-02-21
+date: 2026-01-04
 tags: ['Meta', 'VR', 'strategy', 'product']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/b/bb/Meta_HQ_2023.png'

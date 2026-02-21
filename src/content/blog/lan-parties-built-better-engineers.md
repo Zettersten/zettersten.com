@@ -1,7 +1,7 @@
 ---
 title: 'Why LAN Parties Built Better Engineers Than Coding Bootcamps'
 description: 'LAN culture taught debugging, systems thinking, and collaborative resilience in a way modern credential pipelines rarely do.'
-date: 2026-02-21
+date: 2025-12-18
 tags: ['engineering culture', 'learning', 'careers', 'tech history']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Overnight_LAN_Party_in_Kenya.jpg'

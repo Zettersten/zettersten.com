@@ -1,7 +1,7 @@
 ---
 title: 'ARC Raiders and the Death of ‘Fun-First’ Gaming'
 description: 'Polish is not the same as joy. Why modern game design too often optimizes systems over soul.'
-date: 2026-02-21
+date: 2025-12-30
 tags: ['gaming', 'ARC Raiders', 'game design', 'product strategy']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Finals_logo_stacked.svg/4195px-The_Finals_logo_stacked.svg.png'

@@ -1,7 +1,7 @@
 ---
 title: 'Leading Technical Teams in the Age of AI'
 description: 'Most leaders are managing 2025 engineers with 2012 playbooks. Here’s the upgrade.'
-date: 2026-02-21
+date: 2026-01-24
 tags: ['leadership', 'AI', 'engineering management', 'culture']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Kanban_Board_for_software_development_teams.png'

@@ -1,7 +1,7 @@
 ---
 title: 'RAG Is Not a Strategy: Why Most Enterprise Chatbots Are Dead on Arrival'
 description: 'RAG can be useful. It’s not a strategy, and it definitely isn’t magic.'
-date: 2026-02-21
+date: 2026-02-04
 tags: ['RAG', 'LLM', 'architecture', 'enterprise AI']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/CERN_Server_03.jpg'

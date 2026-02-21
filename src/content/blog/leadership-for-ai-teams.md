@@ -1,7 +1,7 @@
 ---
 title: 'Leadership for AI Teams'
 description: 'Speed without standards creates AI chaos. Here’s how to lead teams that move fast and still ship trustworthy systems.'
-date: 2026-02-19
+date: 2026-01-28
 tags: ['leadership', 'engineering', 'AI']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Kanban_Board_for_software_development_teams.png'

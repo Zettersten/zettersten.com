@@ -1,7 +1,7 @@
 ---
 title: 'Why ‘AI-First’ Companies Are Already Failing (And What Actually Works)'
 description: 'AI-first sounds bold. In practice, most teams are shipping theater. Here’s the operational playbook that actually works.'
-date: 2026-02-21
+date: 2026-02-01
 tags: ['AI strategy', 'enterprise', 'execution', 'leadership']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/2/27/BMW_Startup_Garage_Office_2.jpg'

@@ -1,7 +1,7 @@
 ---
 title: 'Why the Next Great Engineers Won’t Work for Big Tech'
 description: 'Top builders are drifting toward smaller teams with real ownership, faster feedback, and less organizational drag.'
-date: 2026-02-21
+date: 2026-01-16
 tags: ['careers', 'engineering', 'startups', 'future of work']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/d/df/10_Largest_Corporations_by_Market_Capitalization.png'

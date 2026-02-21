@@ -1,7 +1,7 @@
 ---
 title: 'The Myth of ‘Safe AI’: Why We’re Trusting the Wrong People'
 description: 'Safety is too often treated as a PR category instead of a measurable engineering discipline.'
-date: 2026-02-21
+date: 2026-02-13
 tags: ['AI safety', 'governance', 'policy', 'risk']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Elon_Musk_%22safety%22_in_2023%2C_from_United_Kingdom_Government_hosts_Artificial_Intelligence_%28AI%29_Summit_at_Bletchley_Park_%28cropped%29.jpg'

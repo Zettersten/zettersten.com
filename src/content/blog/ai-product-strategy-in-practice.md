@@ -1,7 +1,7 @@
 ---
 title: 'AI Product Strategy in Practice'
 description: 'Most AI roadmaps are expensive theater. Here’s the brutally practical way to build things that survive production.'
-date: 2026-02-20
+date: 2026-02-07
 tags: ['AI', 'strategy', 'product']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/CERN_Server_03.jpg'
