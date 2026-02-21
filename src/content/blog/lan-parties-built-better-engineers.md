@@ -4,9 +4,13 @@ description: "A cultural argument for hands-on, social, failure-heavy learning o
 date: 2026-02-21
 tags: ["engineering culture", "learning", "careers", "tech history"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80"
+category: "Careers"
 ---
 
 LAN parties looked like chaos.
+
+![Why LAN Parties Built Better Engineers Than Coding Bootcamps](https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80)
 
 Underneath, they were distributed systems labs with pizza.
 

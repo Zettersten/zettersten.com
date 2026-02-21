@@ -4,9 +4,13 @@ description: "Safety is too often treated as a PR category instead of a measurab
 date: 2026-02-21
 tags: ["AI safety", "governance", "policy", "risk"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80"
+category: "AI Governance"
 ---
 
 “Safe AI” is one of the most overused phrases in tech.
+
+![The Myth of ‘Safe AI’: Why We’re Trusting the Wrong People](https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80)
 
 It sounds responsible. It photographs well on conference stages. It reassures boards.
 

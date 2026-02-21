@@ -4,9 +4,13 @@ description: "Hardware inflation, premium positioning, and ecosystem lock-in are
 date: 2026-02-21
 tags: ["PC hardware", "gaming", "economics", "consumer tech"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1600&q=80"
+category: "Gaming"
 ---
 
 Building a high-end gaming PC used to feel like a power move.
+
+![The $4,000 PC Problem: Why Building a Gaming Rig Is Now Absurd](https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1600&q=80)
 
 Now it often feels like financial self-harm.
 

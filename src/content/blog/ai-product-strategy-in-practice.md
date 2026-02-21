@@ -4,9 +4,13 @@ description: "How I keep AI work out of demo-land and in real-world value land."
 date: 2026-02-20
 tags: ["AI", "strategy", "product"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
+category: "AI Strategy"
 ---
 
 Most AI projects fail for one boring reason: they optimize for "wow" instead of "works."
+
+![AI Product Strategy in Practice](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80)
 
 My playbook is simple:
 

@@ -4,9 +4,13 @@ description: "Most leaders are managing 2025 engineers with 2012 playbooks. Here
 date: 2026-02-21
 tags: ["leadership", "AI", "engineering management", "culture"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
+category: "Leadership"
 ---
 
 Most leadership advice for technical teams is already outdated.
+
+![Leading Technical Teams in the Age of AI](https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80)
 
 The old model assumed stable tooling, predictable delivery cycles, and clear role boundaries.
 
