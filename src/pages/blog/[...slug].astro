@@ -138,6 +138,32 @@ const bibtexCitation = `@online{zettersten_${slug.replace(/-/g, '_')},\n  author
     </section>
   </main>
   <Footer />
+
+  <script type="module" is:inline>
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+    const blocks = Array.from(document.querySelectorAll('pre > code.language-mermaid'));
+
+    if (blocks.length > 0) {
+      mermaid.initialize({ startOnLoad: false, securityLevel: 'loose', theme: 'neutral' });
+
+      for (const code of blocks) {
+        const pre = code.closest('pre');
+        if (!pre) continue;
+
+        const source = code.textContent?.trim();
+        if (!source) continue;
+
+        const container = document.createElement('div');
+        container.className = 'mermaid';
+        container.textContent = source;
+
+        pre.replaceWith(container);
+      }
+
+      await mermaid.run({ querySelector: '.mermaid' });
+    }
+  </script>
 </BaseLayout>
 
 <style>
@@ -291,6 +317,15 @@ const bibtexCitation = `@online{zettersten_${slug.replace(/-/g, '_')},\n  author
     background: transparent;
     padding: 0;
     color: inherit;
+  }
+
+  .prose :global(.mermaid) {
+    margin: 1rem 0 1.2rem;
+    padding: 0.75rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    background: #fbfbfb;
+    overflow-x: auto;
   }
 
   .toc {
