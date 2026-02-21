@@ -8,43 +8,47 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
 <BaseLayout
   title="About Erik Zettersten"
   description="Background, operating style, and leadership approach from Erik Zettersten."
-  image="/og/about.svg"
+  image="/images/erik-home.jpg"
 >
   <Nav />
   <main id="main-content" class="container page page-shell">
     <header class="intro page-hero">
       <p class="kicker">About</p>
-      <h1 class="page-title">I build leverage at inflection points.</h1>
+      <h1 class="page-title">I’m an operator who likes unfinished systems and hard problems.</h1>
       <p class="lead page-subtitle">
-        I work where systems are changing fast and stakes are high: payments, platforms, AI, and
-        mission-critical operations. My approach is direct—clarify the decision model, align the
-        team, and ship work that holds up in production.
+        I’ve spent my career building in moments where the map doesn’t exist yet: fintech,
+        blockchain, AI platforms, and mission-critical data systems. The work is messy, but that’s
+        where leverage lives.
       </p>
     </header>
 
     <section class="grid">
       <article class="glass card span-2">
-        <h2>Career highlights</h2>
+        <h2>What I optimize for</h2>
+        <ul>
+          <li>Clear decision-making over endless alignment theater.</li>
+          <li>Reliable systems over flashy demos.</li>
+          <li>Shipped outcomes over roadmap storytelling.</li>
+          <li>Teams that can execute under pressure without burning out.</li>
+        </ul>
+      </article>
+
+      <article class="glass card profile">
+        <img src="/images/erik-home.jpg" alt="Erik Zettersten" loading="lazy" />
+        <p class="muted">{profileHighlights.location}</p>
+      </article>
+
+      <article class="glass card span-2">
+        <h2>Selected milestones</h2>
         <ul>
           {linkedinHighlights.map((item) => <li>{item}</li>)}
         </ul>
       </article>
 
       <article class="glass card">
-        <h2>Core operating principles</h2>
-        <ul>
-          <li>Outcome clarity beats roadmap theater.</li>
-          <li>Reliability is a product feature.</li>
-          <li>Cross-functional alignment is an engineering problem too.</li>
-          <li>Speed without standards creates expensive rework.</li>
-        </ul>
-      </article>
-
-      <article class="glass card">
         <h2>Quick context</h2>
-        <p><strong>Location:</strong> {profileHighlights.location}</p>
         <p><strong>Experience:</strong> {profileHighlights.yearsExperience}</p>
-        <p><strong>Public work:</strong> {profileHighlights.repoCount}+ repositories</p>
+        <p><strong>Public repos:</strong> {profileHighlights.repoCount}+</p>
         <p>
           <strong>GitHub:</strong>
           <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer"
@@ -69,7 +73,6 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
   }
 
   .grid {
-    margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.85rem;
@@ -91,6 +94,10 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
     margin: 0.35rem 0;
     line-height: 1.6;
   }
+  .card a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
   .card ul {
     margin: 0;
     padding-left: 1rem;
@@ -98,6 +105,13 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
   .card li {
     margin: 0.38rem 0;
     line-height: 1.6;
+  }
+
+  .profile img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #d7d7d7;
+    margin-bottom: 0.4rem;
   }
 
   @media (max-width: 980px) {

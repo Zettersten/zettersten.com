@@ -8,12 +8,16 @@ import { profileHighlights } from '../data/projects';
 <BaseLayout
   title="Erik Zettersten — AI Developer, Engineer, Strategist & Leader"
   description="Erik Zettersten builds practical AI systems and leads teams that ship measurable outcomes."
-  image="/og/home.svg"
+  image="/images/erik-home.jpg"
 >
   <Nav />
 
   <main id="main-content" class="container page page-shell">
     <section class="hero glass">
+      <figure class="portrait">
+        <img src="/images/erik-home.jpg" alt="Erik Zettersten" loading="eager" />
+      </figure>
+
       <div class="hero-copy">
         <p class="kicker">Erik Zettersten</p>
         <h1 class="page-title">
@@ -27,7 +31,7 @@ import { profileHighlights } from '../data/projects';
         <div class="cta-row">
           <a class="btn primary" href="/projects">See Projects</a>
           <a class="btn" href="/about">About Erik</a>
-          <a class="btn" href="/blog">Read Essays</a>
+          <a class="btn" href="/blog">Read Articles</a>
         </div>
       </div>
 
@@ -46,30 +50,6 @@ import { profileHighlights } from '../data/projects';
         </article>
       </aside>
     </section>
-
-    <section class="value-grid">
-      <article class="panel glass">
-        <h2>Operator mindset</h2>
-        <p class="muted">
-          Less theater, more throughput. I focus on decisions that improve reliability, velocity,
-          and business leverage at the same time.
-        </p>
-      </article>
-      <article class="panel glass">
-        <h2>Systems depth</h2>
-        <p class="muted">
-          From fintech pipelines to AI orchestration and enterprise governance, I build systems that
-          survive production—not just demos.
-        </p>
-      </article>
-      <article class="panel glass">
-        <h2>Leadership under pressure</h2>
-        <p class="muted">
-          I align teams around clear constraints, measurable outcomes, and execution loops that keep
-          momentum without sacrificing trust.
-        </p>
-      </article>
-    </section>
   </main>
 
   <Footer />
@@ -82,78 +62,72 @@ import { profileHighlights } from '../data/projects';
 
   .hero {
     display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
+    grid-template-columns: 320px 1fr 280px;
     gap: 1rem;
-    padding: 1.1rem;
+    padding: 1rem;
     border-radius: 22px;
   }
+
+  .portrait {
+    margin: 0;
+  }
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid #d6d6d6;
+  }
+
   .hero-copy {
-    padding: 0.8rem;
+    padding: 0.5rem;
   }
   .page-title {
-    max-width: 16ch;
+    max-width: 15ch;
   }
   .lead {
     margin: 0;
-    max-width: 58ch;
+    max-width: 56ch;
     font-size: 1.03rem;
   }
 
   .cta-row {
-    margin-top: 1.15rem;
+    margin-top: 1.05rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.55rem;
   }
 
   .hero-stats {
     display: grid;
-    gap: 0.75rem;
+    gap: 0.7rem;
     align-content: start;
   }
   .stat {
     border-radius: 16px;
-    padding: 0.95rem;
+    padding: 0.88rem;
   }
   .stat strong {
     display: block;
-    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
     line-height: 1;
     font-family: var(--font-serif);
   }
   .stat span {
     display: block;
-    margin-top: 0.35rem;
+    margin-top: 0.3rem;
     color: #616161;
-    font-size: 0.86rem;
+    font-size: 0.85rem;
   }
 
-  .value-grid {
-    margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.8rem;
-  }
-  .panel {
-    border-radius: 18px;
-    padding: 0.95rem;
-  }
-  .panel h2 {
-    font-size: 1.22rem;
-    margin: 0 0 0.35rem;
-  }
-  .panel p {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 980px) {
+  @media (max-width: 1080px) {
     .hero {
       grid-template-columns: 1fr;
     }
-    .value-grid {
-      grid-template-columns: 1fr;
+    .portrait img {
+      min-height: 300px;
+      max-height: 420px;
     }
   }
 </style>
