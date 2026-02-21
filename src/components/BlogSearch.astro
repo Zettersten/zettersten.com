@@ -1,0 +1,40 @@
+<div class="search-wrap glass">
+  <div id="search"></div>
+</div>
+
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', async () => {
+    if (!window.PagefindUI) {
+      await import('/pagefind/pagefind-ui.js');
+    }
+    new window.PagefindUI({
+      element: '#search',
+      showSubResults: false,
+      excerptLength: 18,
+      resetStyles: false,
+      showImages: false,
+      translations: {
+        placeholder: 'Search essays, topics, and keywords…'
+      }
+    });
+  });
+</script>
+
+<style>
+  .search-wrap { padding: .55rem .75rem; border-radius: 999px; min-width: 310px; }
+  #search :global(.pagefind-ui__search-input) {
+    border: none;
+    background: transparent;
+    padding: .2rem;
+    font: inherit;
+  }
+  #search :global(.pagefind-ui__drawer) {
+    margin-top: .7rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fafafa;
+    padding: .55rem;
+  }
+  #search :global(.pagefind-ui__result-link) { font-weight: 600; }
+</style>

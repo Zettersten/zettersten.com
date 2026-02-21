@@ -1,3 +1,7 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
 <footer class="container footer muted">
   <p>© {new Date().getFullYear()} Erik Zettersten</p>
   <p class="sub">AI strategy. Systems engineering. Leadership execution.</p>
@@ -8,7 +12,9 @@
     <span>•</span>
     <a href="/blog">Blog</a>
     <span>•</span>
-    <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer">
+      <Icon name="tabler:brand-github" width="14" height="14" /> GitHub
+    </a>
   </p>
 </footer>
 
@@ -22,5 +28,5 @@
   .footer p { margin: .2rem 0; }
   .sub { font-size: .88rem; }
   .links { display: flex; gap: .45rem; flex-wrap: wrap; align-items: center; }
-  .links a { text-decoration: underline; text-underline-offset: 3px; }
+  .links a { text-decoration: underline; text-underline-offset: 3px; display: inline-flex; align-items: center; gap: .3rem; }
 </style>
