@@ -1,13 +1,19 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
 <header class="container nav-wrap">
   <nav class="nav">
-    <a href="/" class="logo">✦</a>
+    <a href="/" class="logo" aria-label="Home">
+      <Icon name="tabler:sparkles" width="16" height="16" />
+    </a>
     <div class="links">
       <a href="/about">About Me</a>
       <a href="/work">Portfolio</a>
       <a href="/projects">Projects</a>
       <a href="/blog">Blog</a>
     </div>
-    <a class="call" href="/mentions">Mentions ↗</a>
+    <a class="call" href="/mentions">Mentions <Icon name="tabler:arrow-up-right" width="12" height="12" /></a>
   </nav>
 </header>
 
@@ -20,8 +26,8 @@
     gap: 1.2rem;
     padding: .7rem 0;
   }
-  .logo { font-size: 1.15rem; }
+  .logo { font-size: 1.15rem; display: inline-flex; align-items: center; }
   .links { display: flex; gap: 1.2rem; color: #4d4d4d; font-size: .82rem; }
-  .call { font-size: .82rem; color: #2f2f2f; }
+  .call { font-size: .82rem; color: #2f2f2f; display: inline-flex; align-items: center; gap: .2rem; }
   @media (max-width: 840px){ .links { gap: .7rem; font-size: .75rem; overflow:auto; } }
 </style>

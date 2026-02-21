@@ -1,0 +1,26 @@
+---
+interface Props { title?: string; labels?: string[]; values?: number[]; }
+const { title = 'Trend Snapshot', labels = ['2024', '2025', '2026'], values = [28, 54, 76] } = Astro.props;
+const max = Math.max(...values, 1);
+---
+
+<figure class="chart">
+  <figcaption>{title}</figcaption>
+  <div class="bars">
+    {values.map((v, i) => (
+      <div class="item">
+        <div class="bar" style={`height:${Math.round((v / max) * 140)}px`} title={`${labels[i] || i}: ${v}`}></div>
+        <small>{labels[i] || i}</small>
+      </div>
+    ))}
+  </div>
+</figure>
+
+<style>
+  .chart { border: 1px solid #ddd; border-radius: 12px; padding: .85rem; background: #fcfcfc; margin: 1rem 0 1.25rem; }
+  figcaption { font-size: .85rem; color: #555; margin-bottom: .7rem; }
+  .bars { display: flex; align-items: end; gap: .8rem; min-height: 170px; }
+  .item { display: grid; gap: .3rem; justify-items: center; }
+  .bar { width: 34px; border-radius: 7px 7px 4px 4px; background: linear-gradient(180deg, #a0a0a0, #6e6e6e); }
+  small { font-size: .72rem; color: #666; }
+</style>
