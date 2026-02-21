@@ -4,7 +4,7 @@ description: 'Most AI roadmaps are expensive theater. Here’s the brutally prac
 date: 2026-02-20
 tags: ['AI', 'strategy', 'product']
 draft: false
-coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/CERN_Server_03.jpg'
 category: 'AI Strategy'
 ---
 
@@ -12,7 +12,7 @@ Most AI product strategy advice is fake.
 
 Not _malicious_ fake—just detached from reality. It’s written by people optimizing for demos, conference talks, and “look what we built” screenshots, not by people carrying pager duty for production systems that can quietly burn money at 2am.
 
-![AI Product Strategy in Practice](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80)
+![AI Product Strategy in Practice](https://upload.wikimedia.org/wikipedia/commons/d/d7/CERN_Server_03.jpg)
 
 If you want AI to matter in a business, here’s the uncomfortable version of the playbook.
 

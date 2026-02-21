@@ -4,7 +4,7 @@ description: 'LAN culture taught debugging, systems thinking, and collaborative 
 date: 2026-02-21
 tags: ['engineering culture', 'learning', 'careers', 'tech history']
 draft: false
-coverImage: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Overnight_LAN_Party_in_Kenya.jpg'
 category: 'Careers'
 ---
 
@@ -12,7 +12,7 @@ LAN parties looked like teenage chaos: tangled cables, overheating towers, and s
 
 But under that chaos was one of the best engineering classrooms we ever accidentally built.
 
-![Why LAN Parties Built Better Engineers Than Coding Bootcamps](https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80)
+![Why LAN Parties Built Better Engineers Than Coding Bootcamps](https://upload.wikimedia.org/wikipedia/commons/5/57/Overnight_LAN_Party_in_Kenya.jpg)
 
 No one gave you a certificate. No one gave you a “module completion” badge. Your reward was simple: your setup either worked, or you sat there watching everyone else play.
 

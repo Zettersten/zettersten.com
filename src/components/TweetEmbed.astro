@@ -1,0 +1,19 @@
+---
+interface Props {
+  url: string;
+  theme?: 'light' | 'dark';
+  conversation?: 'all' | 'none';
+  dnt?: boolean;
+}
+
+const { url, theme = 'light', conversation = 'all', dnt = true } = Astro.props;
+---
+
+<blockquote
+  class="twitter-tweet"
+  data-theme={theme}
+  data-conversation={conversation}
+  data-dnt={dnt ? 'true' : 'false'}
+>
+  <a href={url}>View this post on X</a>
+</blockquote>

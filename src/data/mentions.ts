@@ -1,5 +1,15 @@
 export const mentions = [
   {
+    title: 'Cause of a Kind — Partnerships',
+    outlet: 'Cause of a Kind',
+    url: 'https://www.causeofakind.com/partnerships',
+    thumbnail: 'https://www.causeofakind.com/favicon.ico',
+    summary:
+      'Partnership spotlight featuring Cause of a Kind’s on-shore development and digital execution model.',
+    story:
+      'This mention reinforces the same pattern across Erik’s work: practical engineering partnerships, high standards, and measurable outcomes over agency theater.',
+  },
+  {
     title: 'Single Elimination Tournament Bracket Generator — Gracket.js',
     outlet: 'jQueryScript.net',
     url: 'https://www.jqueryscript.net/chart-graph/Single-Elimation-Tournament-Bracket-Generator-Gracket.html',

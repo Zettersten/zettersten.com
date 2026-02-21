@@ -4,7 +4,7 @@ description: "When a 'normal' enthusiast build starts flirting with luxury prici
 date: 2026-02-21
 tags: ['PC hardware', 'gaming', 'economics', 'consumer tech']
 draft: false
-coverImage: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/0/04/MSI-Gaming-PC_2024-09-30.png'
 category: 'Gaming'
 ---
 
@@ -14,7 +14,7 @@ You’d hunt deals, pick smart parts, and end up with something powerful that be
 
 Now? A lot of “enthusiast” builds feel like you accidentally wandered into luxury retail.
 
-![The $4,000 PC Problem: Why Building a Gaming Rig Is Now Absurd](https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1600&q=80)
+![The $4,000 PC Problem: Why Building a Gaming Rig Is Now Absurd](https://upload.wikimedia.org/wikipedia/commons/0/04/MSI-Gaming-PC_2024-09-30.png)
 
 When a mainstream build approaches $4,000, we should stop pretending this is normal market evolution. It’s a broken value equation.
 

@@ -56,6 +56,26 @@ tags: ['AI', 'leadership']
 draft: false
 ```
 
+### Embedding tweets/X posts in articles
+
+You can embed real tweet cards in blog posts.
+
+For Markdown (`.md`) or MDX (`.mdx`), paste standard embed markup:
+
+```html
+<blockquote class="twitter-tweet">
+  <a href="https://x.com/username/status/1234567890123456789">View post</a>
+</blockquote>
+```
+
+For MDX, you can also use the helper component:
+
+```mdx
+import TweetEmbed from '../../components/TweetEmbed.astro';
+
+<TweetEmbed url="https://x.com/username/status/1234567890123456789" />
+```
+
 ## Pages
 
 - `/` Hero + positioning

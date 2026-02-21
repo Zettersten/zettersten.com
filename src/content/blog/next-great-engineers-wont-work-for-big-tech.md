@@ -4,7 +4,7 @@ description: 'Top builders are drifting toward smaller teams with real ownership
 date: 2026-02-21
 tags: ['careers', 'engineering', 'startups', 'future of work']
 draft: false
-coverImage: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/d/df/10_Largest_Corporations_by_Market_Capitalization.png'
 category: 'Careers'
 ---
 
@@ -12,7 +12,7 @@ For a long time, the career script for ambitious engineers was obvious: get into
 
 That script is breaking.
 
-![Why the Next Great Engineers Won’t Work for Big Tech](https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80)
+![Why the Next Great Engineers Won’t Work for Big Tech](https://upload.wikimedia.org/wikipedia/commons/d/df/10_Largest_Corporations_by_Market_Capitalization.png)
 
 Not because big companies suddenly became irrelevant. They didn’t. They still matter for infrastructure, deep research, and planet-scale systems.
 

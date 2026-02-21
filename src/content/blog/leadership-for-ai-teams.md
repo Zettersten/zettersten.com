@@ -4,7 +4,7 @@ description: 'Speed without standards creates AI chaos. Here’s how to lead tea
 date: 2026-02-19
 tags: ['leadership', 'engineering', 'AI']
 draft: false
-coverImage: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Kanban_Board_for_software_development_teams.png'
 category: 'Leadership'
 ---
 
@@ -14,7 +14,7 @@ Cool. Fast toward what?
 
 Because I’ve seen teams move fast straight into rework, trust failures, and political blame games. Velocity alone is not a strategy. It’s just acceleration.
 
-![Leadership for AI Teams](https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80)
+![Leadership for AI Teams](https://upload.wikimedia.org/wikipedia/commons/9/99/Kanban_Board_for_software_development_teams.png)
 
 Leading AI teams well means holding two truths at once: experimentation is necessary, and standards are non-negotiable.
 
