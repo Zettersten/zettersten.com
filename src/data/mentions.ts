@@ -10,6 +10,16 @@ export const mentions = [
       'This mention reinforces the same pattern across Erik’s work: practical engineering partnerships, high standards, and measurable outcomes over agency theater.',
   },
   {
+    title: 'Single Elimination Tournament Bracket Generator — Gracket.js',
+    outlet: 'jQueryScript.net',
+    url: 'https://www.jqueryscript.net/chart-graph/Single-Elimation-Tournament-Bracket-Generator-Gracket.html',
+    thumbnail: 'https://www.jqueryscript.net/images/favicon.ico',
+    summary:
+      'Featured on jQueryScript for the Gracket.js tournament bracket implementation and usage example.',
+    story:
+      'This mention highlights practical front-end engineering work: clean plugin architecture, real-world configurability, and developer-first implementation detail.',
+  },
+  {
     title: 'Get in Touch with Gary Vee: Tips and Tricks',
     outlet: 'YouTube · Sarov Plus',
     url: 'https://www.youtube.com/watch?v=EVm-JLpI7LU',
