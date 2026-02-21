@@ -1,6 +1,6 @@
 ---
 title: "Why the Next Great Engineers Won’t Work for Big Tech"
-description: "Talent is decentralizing toward smaller teams with leverage, ownership, and speed."
+description: "Top builders are drifting toward smaller teams with real ownership, faster feedback, and less organizational drag."
 date: 2026-02-21
 tags: ["careers", "engineering", "startups", "future of work"]
 draft: false
@@ -8,41 +8,102 @@ coverImage: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=f
 category: "Careers"
 ---
 
-For years, Big Tech was the default destination for top engineering talent.
+For a long time, the career script for ambitious engineers was obvious: get into Big Tech, stay long enough to level up, cash comp + equity, repeat.
+
+That script is breaking.
 
 ![Why the Next Great Engineers Won’t Work for Big Tech](https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80)
 
-That gravity is weakening.
+Not because big companies suddenly became irrelevant. They didn’t. They still matter for infrastructure, deep research, and planet-scale systems.
 
-The most ambitious builders increasingly prefer environments with:
+But as the *default place for top builders*? The grip is slipping.
 
-- higher ownership,
-- faster decision cycles,
-- tighter product feedback loops,
-- direct equity upside.
+## Why the center of gravity is moving
 
-## Why decentralization is accelerating
+### 1) AI erased some scale advantages
 
-AI tools reduce the scale advantage of massive organizations for many product categories.
+A tiny team with strong operators and modern tooling can now ship product quality that used to require a full org chart.
 
-Small teams can now ship with leverage previously available only to large companies.
+When leverage goes up, patience for bureaucracy goes down.
 
-As leverage rises, bureaucracy tolerance drops.
+### 2) Engineers want decision proximity
 
-Great engineers choose slope over prestige.
+The best people don’t just want to implement tickets. They want to influence roadmap, architecture, and business direction.
 
-## Big Tech still matters—but differently
+In many large orgs, that influence gets diluted by layers.
 
-Large companies remain important for infrastructure, research, and global platforms.
+### 3) Ownership beats prestige
 
-But as a universal “best place to build,” the story is changing.
+A logo on your resume matters less when the market can see your actual output.
 
-For many high-agency engineers, the better path is focused teams where execution velocity and decision proximity are dramatically higher.
+High-agency engineers increasingly choose:
+
+- clearer mission,
+- tighter feedback loops,
+- more meaningful equity,
+- less internal theater.
+
+### 4) Career risk has flipped
+
+It used to feel safer to stay inside a giant company.
+
+Now, in fast-moving domains, spending years in slow internal systems can become its own risk: your instincts dull, your scope narrows, and your tolerance for drag quietly rises.
+
+## What Big Tech gets wrong
+
+Many large companies still assume compensation alone will retain top builders.
+
+Comp matters. But for the best engineers, autonomy is usually the bigger lever. If someone can make more impact in a 12-person team than in a 12,000-person org, they’ll take impact.
 
 ## Final take
 
-The future of engineering talent is plural, not centralized.
+The future won’t be “everyone leaves Big Tech.”
 
-The winners will be organizations—large or small—that offer clear mission, real ownership, and the freedom to build at speed.
+It’ll be plural:
 
-The rest will become training grounds for people who eventually leave.
+- some engineers will build foundational infrastructure at large firms,
+- others will create disproportionate value in focused, high-ownership teams.
+
+But if you’re asking where the next generation of scary-good product engineers will spend their prime years, my bet is simple:
+
+closer to the problem,
+closer to users,
+closer to the decisions.
+
+
+## Story map (start → middle → end)
+
+```mermaid
+flowchart LR
+    A[Start: Thesis + inciting problem] --> B[Middle: Evidence, tradeoffs, failure modes]
+    B --> C[End: Opinionated conclusion + specific action]
+```
+
+## Concrete example
+
+A practical pattern I use in real projects is to define a failure budget **before** launch and wire the fallback path in code, not policy docs.
+
+```ts
+type Decision = {
+  confident: boolean;
+  reason: string;
+  sourceUrls: string[];
+};
+
+export function safeRespond(d: Decision) {
+  if (!d.confident || d.sourceUrls.length === 0) {
+    return {
+      action: "abstain",
+      message: "I don’t have enough reliable evidence. Escalating to human review."
+    };
+  }
+  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+}
+```
+
+## References
+
+- https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm
+- https://www.oecd.org/en/topics/ai-jobs-and-skills.html
+- https://www.weforum.org/reports/the-future-of-jobs-report-2025/
+

@@ -1,6 +1,6 @@
 ---
 title: "AI Product Strategy in Practice"
-description: "How I keep AI work out of demo-land and in real-world value land."
+description: "Most AI roadmaps are expensive theater. Here’s the brutally practical way to build things that survive production."
 date: 2026-02-20
 tags: ["AI", "strategy", "product"]
 draft: false
@@ -8,15 +8,103 @@ coverImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=f
 category: "AI Strategy"
 ---
 
-Most AI projects fail for one boring reason: they optimize for "wow" instead of "works."
+Most AI product strategy advice is fake.
+
+Not *malicious* fake—just detached from reality. It’s written by people optimizing for demos, conference talks, and “look what we built” screenshots, not by people carrying pager duty for production systems that can quietly burn money at 2am.
 
 ![AI Product Strategy in Practice](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80)
 
-My playbook is simple:
+If you want AI to matter in a business, here’s the uncomfortable version of the playbook.
 
-1. **Pick the money move.** What KPI changes if we nail this?
-2. **Shrink scope like a savage.** One workflow. One outcome. Zero fluff.
-3. **Build trust in.** Logs, guardrails, fallbacks. No mystery boxes.
-4. **Ship, watch, iterate.** Production behavior beats conference-slide confidence.
+## 1) Start with the money move, not the model
 
-Goal: not more AI features. Better business results.
+Before anyone says “agents,” answer this: **what number moves if this works?**
+
+- Revenue per rep
+- Time-to-resolution
+- Conversion rate
+- Support handle time
+- Churn
+
+If no one can answer that in one sentence, you’re not doing product strategy. You’re doing curiosity-driven R&D with a budget.
+
+## 2) Pick one workflow and make it undeniable
+
+Teams keep trying to “AI-enable the platform.” That usually means 14 mediocre features and no measurable impact.
+
+Pick one painful workflow where people already lose time and attention every day. Then make that one thing obviously better.
+
+Not “interesting.”
+Not “promising.”
+**Better.**
+
+## 3) Treat trust like a feature, because it is
+
+A wrong answer with confidence is worse than no answer. So reliability has to be designed in from day one:
+
+- traceable logs
+- fallback paths
+- clear uncertainty language
+- human review where risk is high
+- kill switches that actually work
+
+If users can’t predict behavior, they stop using the system—or worse, they trust it when they shouldn’t.
+
+## 4) Learn from production, not from meetings
+
+Your real roadmap appears after launch. That’s where you find:
+
+- where prompts fail
+- where latency kills adoption
+- where teams misuse the system
+- where edge cases become the norm
+
+Slides don’t teach this. Usage does.
+
+## 5) Don’t ship “AI features.” Ship outcomes.
+
+Nobody wakes up hoping to use an LLM. They want their work done faster, cleaner, with less cognitive drag.
+
+So the bar is simple: if your AI layer disappeared tomorrow, would anyone be angry?
+
+If the answer is no, you built theater.
+
+If the answer is yes, you built product.
+
+
+## Story map (start → middle → end)
+
+```mermaid
+flowchart LR
+    A[Start: Thesis + inciting problem] --> B[Middle: Evidence, tradeoffs, failure modes]
+    B --> C[End: Opinionated conclusion + specific action]
+```
+
+## Concrete example
+
+A practical pattern I use in real projects is to define a failure budget **before** launch and wire the fallback path in code, not policy docs.
+
+```ts
+type Decision = {
+  confident: boolean;
+  reason: string;
+  sourceUrls: string[];
+};
+
+export function safeRespond(d: Decision) {
+  if (!d.confident || d.sourceUrls.length === 0) {
+    return {
+      action: "abstain",
+      message: "I don’t have enough reliable evidence. Escalating to human review."
+    };
+  }
+  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+}
+```
+
+## References
+
+- https://www.anthropic.com/research
+- https://platform.openai.com/docs/guides/evals
+- https://aiindex.stanford.edu/report/
+

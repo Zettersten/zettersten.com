@@ -47,3 +47,41 @@ The goal is not to predict every future job.
 The goal is to raise humans who can create value across changing systems without losing character.
 
 That requires intentional parenting now, not panic later.
+
+
+## Story map (start → middle → end)
+
+```mermaid
+flowchart LR
+    A[Start: Thesis + inciting problem] --> B[Middle: Evidence, tradeoffs, failure modes]
+    B --> C[End: Opinionated conclusion + specific action]
+```
+
+## Concrete example
+
+A practical pattern I use in real projects is to define a failure budget **before** launch and wire the fallback path in code, not policy docs.
+
+```ts
+type Decision = {
+  confident: boolean;
+  reason: string;
+  sourceUrls: string[];
+};
+
+export function safeRespond(d: Decision) {
+  if (!d.confident || d.sourceUrls.length === 0) {
+    return {
+      action: "abstain",
+      message: "I don’t have enough reliable evidence. Escalating to human review."
+    };
+  }
+  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+}
+```
+
+## References
+
+- https://www.commonsensemedia.org/artificial-intelligence
+- https://www.unicef.org/globalinsight/reports/policy-guidance-ai-children
+- https://www.oecd.org/en/topics/ai-jobs-and-skills.html
+
