@@ -4,9 +4,13 @@ description: "RAG can be useful. It’s not a strategy, and it definitely isn’
 date: 2026-02-21
 tags: ["RAG", "LLM", "architecture", "enterprise AI"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
+category: "AI"
 ---
 
 RAG is having its spreadsheet moment.
+
+![RAG Is Not a Strategy: Why Most Enterprise Chatbots Are Dead on Arrival](https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80)
 
 Everybody has it. Everybody says it’s critical. Almost nobody is using it well.
 

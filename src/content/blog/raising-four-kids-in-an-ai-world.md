@@ -4,9 +4,13 @@ description: "Parenting strategy for an economy where automation changes faster 
 date: 2026-02-21
 tags: ["parenting", "AI", "future of work", "leadership"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1600&q=80"
+category: "Leadership"
 ---
 
 Most parents are still preparing kids for a labor market that is already disappearing.
+
+![Raising Four Kids in an AI World: Why Most Parents Are Unprepared](https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1600&q=80)
 
 That sounds harsh. It’s also increasingly true.
 

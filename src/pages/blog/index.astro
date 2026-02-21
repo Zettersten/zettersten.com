@@ -7,39 +7,43 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
-
-const featured = posts[0];
-const rest = posts.slice(1);
 ---
 
-<BaseLayout title="Blog — Erik Zettersten" description="Quick takes on AI, product, leadership, and building things that actually matter.">
+<BaseLayout title="Blog — Erik Zettersten" description="Clean, practical essays on AI, strategy, systems, and leadership.">
   <Nav />
   <main class="container page">
     <header class="hero">
-      <p class="kicker">Blog</p>
-      <h1>Ideas worth stealing.</h1>
-      <p class="muted">Short, sharp articles on AI strategy, product execution, and leadership without the corporate cosplay.</p>
+      <div>
+        <p class="kicker">Journal</p>
+        <h1>Sharp thinking,<br />clean execution.</h1>
+        <p class="muted">Long-form essays on AI, leadership, systems, and market reality. No fluff. No trend cosplay.</p>
+      </div>
+      <div class="search glass" role="search">
+        <span>⌕</span>
+        <input type="text" placeholder="Search posts…" aria-label="Search posts" />
+      </div>
     </header>
 
-    {featured && (
-      <a class="feature glass" href={`/blog/${featured.id.replace(/\.md$/, '')}/`}>
-        <p class="label">Featured article</p>
-        <h2>{featured.data.title}</h2>
-        <p class="muted">{featured.data.description}</p>
-        <div class="meta muted">
-          <span>{featured.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-          {featured.data.tags.length > 0 && <span>• {featured.data.tags.join(' · ')}</span>}
-        </div>
-      </a>
-    )}
-
-    <section class="posts">
-      {rest.map((post) => (
-        <a class="glass post" href={`/blog/${post.id.replace(/\.md$/, '')}/`}>
-          <h3>{post.data.title}</h3>
-          <p class="muted">{post.data.description}</p>
-          <small class="muted">{post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</small>
-        </a>
+    <section class="feed">
+      {posts.map((post) => (
+        <article class="entry">
+          {post.data.coverImage && (
+            <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} class="thumb-wrap">
+              <img class="thumb" src={post.data.coverImage} alt={post.data.title} loading="lazy" />
+            </a>
+          )}
+          <div class="copy">
+            <p class="cat">{post.data.category}</p>
+            <h2><a href={`/blog/${post.id.replace(/\.md$/, '')}/`}>{post.data.title}</a></h2>
+            <p class="meta muted">
+              <span>Erik Zettersten</span>
+              <span>•</span>
+              <span>{post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+            </p>
+            <p class="muted desc">{post.data.description}</p>
+            <a class="read" href={`/blog/${post.id.replace(/\.md$/, '')}/`}>Read article</a>
+          </div>
+        </article>
       ))}
     </section>
   </main>
@@ -47,25 +51,63 @@ const rest = posts.slice(1);
 </BaseLayout>
 
 <style>
-  .page { padding-top: 3.8rem; max-width: 980px; }
-  .kicker { margin: 0; text-transform: uppercase; letter-spacing: .08em; color: #6a6a6a; font-size: .74rem; font-weight: 700; }
-  h1 { margin: .35rem 0 .5rem; font-size: clamp(2.1rem, 8vw, 5.5rem); line-height: .92; letter-spacing: -.03em; font-weight: 500; }
-  .hero p { max-width: 62ch; }
-
-  .feature {
-    display: block;
-    margin-top: 1.4rem;
-    padding: 1.4rem;
-    border-radius: 28px;
-    background: #f4f4f4;
+  .page { max-width: 1040px; padding-top: 2.6rem; }
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: 1.5rem;
   }
-  .label { margin: 0; text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; color: #505050; }
-  .feature h2 { margin: .35rem 0 .45rem; font-size: clamp(1.5rem, 4vw, 2.4rem); line-height: 1.05; font-weight: 600; }
-  .feature p { margin: 0; }
-  .meta { margin-top: .65rem; font-size: .88rem; }
+  .kicker { margin: 0; font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: #666; }
+  h1 { margin: .3rem 0 .45rem; font-size: clamp(2.2rem, 7vw, 5rem); line-height: .92; font-weight: 550; letter-spacing: -.03em; }
+  .hero p { max-width: 56ch; }
 
-  .posts { margin-top: 1rem; display: grid; gap: .85rem; }
-  .post { display: block; padding: 1rem 1.1rem; border-radius: 22px; }
-  .post h3 { margin: 0; font-size: 1.2rem; line-height: 1.2; font-weight: 600; }
-  .post p { margin: .4rem 0 .45rem; }
+  .search {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .45rem .7rem;
+    border-radius: 999px;
+    min-width: 290px;
+  }
+  .search span { color: #777; }
+  .search input {
+    border: 0;
+    background: transparent;
+    width: 100%;
+    color: #222;
+    font: inherit;
+    outline: none;
+  }
+
+  .feed { display: grid; gap: 1.6rem; }
+  .entry {
+    border-top: 1px solid var(--line);
+    padding-top: 1.35rem;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+  .thumb-wrap { display: block; }
+  .thumb {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid #d2d2d2;
+  }
+  .cat { margin: .1rem 0 .35rem; color: #666; text-transform: uppercase; letter-spacing: .07em; font-size: .72rem; }
+  h2 { margin: 0; font-size: clamp(1.45rem, 3vw, 2.1rem); line-height: 1.08; font-weight: 600; }
+  .meta { margin: .45rem 0; font-size: .88rem; display: flex; gap: .4rem; flex-wrap: wrap; }
+  .desc { margin: .2rem 0 .65rem; max-width: 60ch; }
+  .read { font-size: .9rem; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .search { min-width: 0; width: 100%; }
+    .entry { grid-template-columns: 1fr; }
+    .thumb { height: 220px; }
+  }
 </style>

@@ -4,9 +4,13 @@ description: "Talent is decentralizing toward smaller teams with leverage, owner
 date: 2026-02-21
 tags: ["careers", "engineering", "startups", "future of work"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80"
+category: "Careers"
 ---
 
 For years, Big Tech was the default destination for top engineering talent.
+
+![Why the Next Great Engineers Won’t Work for Big Tech](https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80)
 
 That gravity is weakening.
 

@@ -4,9 +4,13 @@ description: "An enterprise-operator view on OS bloat, reliability drift, and th
 date: 2026-02-21
 tags: ["Windows", "enterprise IT", "infrastructure", "reliability"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80"
+category: "Infrastructure"
 ---
 
 For decades, the operating system was supposed to fade into the background.
+
+![How Microsoft Broke the Operating System (And Why No One Admits It)](https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80)
 
 Stable. Predictable. Quiet.
 

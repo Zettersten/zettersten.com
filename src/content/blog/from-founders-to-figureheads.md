@@ -4,9 +4,13 @@ description: "How governance, capital pressure, and media cycles turned many CEO
 date: 2026-02-21
 tags: ["leadership", "corporate governance", "strategy", "executives"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80"
+category: "Leadership"
 ---
 
 A growing number of tech CEOs are not operating the company.
+
+![From Founders to Figureheads: Why Tech CEOs No Longer Run Their Companies](https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80)
 
 They are operating the narrative.
 

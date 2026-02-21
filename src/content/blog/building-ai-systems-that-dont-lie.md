@@ -4,9 +4,13 @@ description: "If you don’t measure truth, you’re shipping fiction. Here’s 
 date: 2026-02-21
 tags: ["AI reliability", "evals", "governance", "engineering"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=80"
+category: "AI Governance"
 ---
 
 Everyone wants faster AI.
+
+![Building AI Systems That Don’t Lie to You](https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=80)
 
 Very few teams invest equally in truthful AI.
 

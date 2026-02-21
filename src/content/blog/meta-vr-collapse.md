@@ -4,9 +4,13 @@ description: "VR didn’t fail because the tech was impossible. It failed becaus
 date: 2026-02-21
 tags: ["Meta", "VR", "strategy", "product"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=1600&q=80"
+category: "AI Strategy"
 ---
 
 Meta did not lose because engineers couldn’t build VR.
+
+![Meta’s VR Collapse: The Most Expensive Tech Misread in History](https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=1600&q=80)
 
 They lost because strategy overestimated desire.
 

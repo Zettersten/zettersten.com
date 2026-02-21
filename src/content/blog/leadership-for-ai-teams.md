@@ -4,9 +4,13 @@ description: "How to move fast in AI without turning your roadmap into chaos."
 date: 2026-02-19
 tags: ["leadership", "engineering", "AI"]
 draft: false
+coverImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+category: "Leadership"
 ---
 
 AI teams need speed, sure. They also need standards. Both or bust.
+
+![Leadership for AI Teams](https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80)
 
 What actually works:
 
