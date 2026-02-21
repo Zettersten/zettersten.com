@@ -12,7 +12,7 @@ import { profileHighlights } from '../data/projects';
 >
   <Nav />
 
-  <main id="main-content" class="container page">
+  <main id="main-content" class="container page page-shell">
     <section class="hero glass">
       <figure class="portrait">
         <img src="/images/erik-home.jpg" alt="Erik Zettersten" loading="eager" />
@@ -20,8 +20,10 @@ import { profileHighlights } from '../data/projects';
 
       <div class="hero-copy">
         <p class="kicker">Erik Zettersten</p>
-        <h1>Building high-stakes systems where speed, trust, and execution all matter.</h1>
-        <p class="lead muted">
+        <h1 class="page-title">
+          Building high-stakes systems where speed, trust, and execution all matter.
+        </h1>
+        <p class="lead page-subtitle">
           I help teams turn AI ambition into operational outcomes. My work sits at the intersection
           of strategy, engineering, and leadership execution.
         </p>
@@ -55,8 +57,7 @@ import { profileHighlights } from '../data/projects';
 
 <style>
   .page {
-    padding-top: 1.4rem;
-    padding-bottom: 2.2rem;
+    max-width: 1120px;
   }
 
   .hero {
@@ -82,11 +83,7 @@ import { profileHighlights } from '../data/projects';
   .hero-copy {
     padding: 0.5rem;
   }
-  h1 {
-    margin: 0.45rem 0 0.7rem;
-    font-size: clamp(2.1rem, 5.2vw, 3.9rem);
-    line-height: 0.98;
-    letter-spacing: -0.02em;
+  .page-title {
     max-width: 15ch;
   }
   .lead {

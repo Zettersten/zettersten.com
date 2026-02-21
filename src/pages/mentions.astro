@@ -11,15 +11,18 @@ import { mentions } from '../data/mentions';
   image="/og/mentions.svg"
 >
   <Nav />
-  <main id="main-content" class="container page">
-    <p class="kicker">Mentions & Media</p>
-    <h1>Internet receipts: where Erik shows up and shows out.</h1>
-    <p class="muted intro">
-      Talks, posts, and shoutouts that back the story with public proof. Short version: the work
-      gets noticed.
-    </p>
+  <main id="main-content" class="container page page-shell">
+    <header class="page-hero">
+      <p class="kicker">Mentions & Media</p>
+      <h1 class="page-title">
+        Public receipts: where the work gets cited, featured, and discussed.
+      </h1>
+      <p class="page-subtitle">
+        Interviews, features, and references that document outcomes in the open.
+      </p>
+    </header>
 
-    <section class="list">
+    <section class="list" aria-label="Mentions list">
       {
         mentions.map((m) => (
           <article class="glass card">
@@ -30,7 +33,7 @@ import { mentions } from '../data/mentions';
               <p>{m.story}</p>
               <p class="muted">{m.summary}</p>
               <a class="btn primary" href={m.url} target="_blank" rel="noreferrer">
-                Watch / Read
+                Read mention
               </a>
             </div>
           </article>
@@ -43,28 +46,19 @@ import { mentions } from '../data/mentions';
 
 <style>
   .page {
-    padding-top: 4rem;
-  }
-  h1 {
-    margin: 0.4rem 0 0.6rem;
-    font-size: clamp(2rem, 7vw, 5rem);
-    line-height: 0.96;
-    letter-spacing: -0.03em;
-    max-width: 14ch;
-  }
-  .intro {
-    max-width: 60ch;
+    max-width: 1120px;
   }
   .list {
-    margin-top: 1.4rem;
+    margin-top: 1rem;
     display: grid;
-    gap: 1rem;
+    gap: 0.9rem;
   }
   .card {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 1rem;
+    grid-template-columns: 300px 1fr;
+    gap: 0.9rem;
     padding: 0.8rem;
+    border-radius: 18px;
   }
   .card img {
     width: 100%;
@@ -80,11 +74,12 @@ import { mentions } from '../data/mentions';
     font-weight: 700;
   }
   .card h2 {
-    margin: 0.35rem 0 0.5rem;
-    font-size: 1.5rem;
+    margin: 0.34rem 0 0.45rem;
+    font-size: 1.45rem;
   }
   .card p {
-    margin: 0.3rem 0;
+    margin: 0.28rem 0;
+    line-height: 1.62;
   }
   @media (max-width: 900px) {
     .card {

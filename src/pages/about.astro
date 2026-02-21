@@ -11,11 +11,11 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
   image="/images/erik-home.jpg"
 >
   <Nav />
-  <main id="main-content" class="container page">
-    <header class="intro">
+  <main id="main-content" class="container page page-shell">
+    <header class="intro page-hero">
       <p class="kicker">About</p>
-      <h1>I’m an operator who likes unfinished systems and hard problems.</h1>
-      <p class="lead muted">
+      <h1 class="page-title">I’m an operator who likes unfinished systems and hard problems.</h1>
+      <p class="lead page-subtitle">
         I’ve spent my career building in moments where the map doesn’t exist yet: fintech,
         blockchain, AI platforms, and mission-critical data systems. The work is messy, but that’s
         where leverage lives.
@@ -63,24 +63,13 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
 
 <style>
   .page {
-    max-width: 1100px;
-    padding-top: 1.8rem;
-    padding-bottom: 2rem;
+    max-width: 1120px;
   }
   .intro {
-    max-width: 80ch;
-    margin-bottom: 1rem;
-  }
-  h1 {
-    margin: 0.35rem 0 0.7rem;
-    font-size: clamp(2.1rem, 5.2vw, 4rem);
-    line-height: 0.98;
-    letter-spacing: -0.02em;
+    max-width: 860px;
   }
   .lead {
     margin: 0;
-    font-size: 1.05rem;
-    line-height: 1.72;
   }
 
   .grid {

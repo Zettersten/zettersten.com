@@ -113,6 +113,10 @@ const schemaGraph = [baseSchema, ...extraSchema];
     --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --container-max: 1120px;
+    --space-page-top: 1.8rem;
+    --space-page-bottom: 2.4rem;
+    --measure: 68ch;
   }
 
   * {
@@ -153,8 +157,29 @@ const schemaGraph = [baseSchema, ...extraSchema];
     text-decoration: none;
   }
   .container {
-    width: min(1200px, calc(100% - 2.2rem));
+    width: min(var(--container-max), calc(100% - 2.2rem));
     margin-inline: auto;
+  }
+  .page-shell {
+    padding-top: var(--space-page-top);
+    padding-bottom: var(--space-page-bottom);
+  }
+  .page-hero {
+    max-width: 860px;
+    margin-bottom: 1rem;
+  }
+  .page-title {
+    margin: 0.35rem 0 0.6rem;
+    font-size: clamp(2.2rem, 6vw, 4.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    margin: 0;
+    max-width: var(--measure);
+    color: var(--muted);
+    font-size: 1.02rem;
+    line-height: 1.7;
   }
   .kicker {
     margin: 0;
