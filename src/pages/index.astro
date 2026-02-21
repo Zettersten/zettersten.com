@@ -14,10 +14,6 @@ import { profileHighlights } from '../data/projects';
 
   <main id="main-content" class="container page page-shell">
     <section class="hero glass">
-      <figure class="portrait">
-        <img src="/images/erik-home.jpg" alt="Erik Zettersten" loading="eager" />
-      </figure>
-
       <div class="hero-copy">
         <p class="kicker">Erik Zettersten</p>
         <h1 class="page-title">
@@ -35,6 +31,10 @@ import { profileHighlights } from '../data/projects';
         </div>
       </div>
 
+      <figure class="hero-portrait">
+        <img src="/images/erik-home.jpg" alt="Erik Zettersten" loading="eager" />
+      </figure>
+
       <aside class="hero-stats" aria-label="Profile highlights">
         <article class="stat glass">
           <strong>{profileHighlights.repoCount}+</strong>
@@ -51,19 +51,19 @@ import { profileHighlights } from '../data/projects';
       </aside>
     </section>
 
-    <section class="moments" aria-label="Life moments">
-      <figure class="moment glass">
+    <section class="story-strip" aria-label="Personal highlights">
+      <article class="strip-item glass">
         <img src="/images/erik-usbank-team.jpg" alt="Erik with US Bank team" loading="lazy" />
-        <figcaption>US Bank team years</figcaption>
-      </figure>
-      <figure class="moment glass">
+        <p>US Bank leadership chapter</p>
+      </article>
+      <article class="strip-item glass">
         <img src="/images/erik-ets-office.jpg" alt="Erik in office at ETS" loading="lazy" />
-        <figcaption>Building at ETS</figcaption>
-      </figure>
-      <figure class="moment glass">
+        <p>Building in the ETS days</p>
+      </article>
+      <article class="strip-item glass">
         <img src="/images/erik-wendy.jpg" alt="Erik with Wendy" loading="lazy" />
-        <figcaption>Married to Wendy</figcaption>
-      </figure>
+        <p>Life with Wendy</p>
+      </article>
     </section>
   </main>
 
@@ -77,26 +77,17 @@ import { profileHighlights } from '../data/projects';
 
   .hero {
     display: grid;
-    grid-template-columns: 320px 1fr 280px;
-    gap: 1rem;
-    padding: 1rem;
+    grid-template-columns: 1.05fr 0.8fr 0.55fr;
+    gap: 0.85rem;
+    padding: 0.85rem;
     border-radius: 22px;
   }
 
-  .portrait {
-    margin: 0;
-  }
-  .portrait img {
-    width: 100%;
-    height: 100%;
-    min-height: 360px;
-    object-fit: cover;
-    border-radius: 16px;
-    border: 1px solid #d6d6d6;
-  }
-
   .hero-copy {
-    padding: 0.5rem;
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .page-title {
     max-width: 15ch;
@@ -108,68 +99,84 @@ import { profileHighlights } from '../data/projects';
   }
 
   .cta-row {
-    margin-top: 1.05rem;
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.55rem;
   }
 
+  .hero-portrait {
+    margin: 0;
+    min-height: 360px;
+  }
+  .hero-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid #d6d6d6;
+  }
+
   .hero-stats {
     display: grid;
-    gap: 0.7rem;
+    gap: 0.65rem;
     align-content: start;
   }
   .stat {
-    border-radius: 16px;
-    padding: 0.88rem;
+    border-radius: 14px;
+    padding: 0.8rem;
   }
   .stat strong {
     display: block;
-    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    font-size: clamp(1.65rem, 3vw, 2rem);
     line-height: 1;
     font-family: var(--font-serif);
   }
   .stat span {
     display: block;
-    margin-top: 0.3rem;
-    color: #616161;
-    font-size: 0.85rem;
+    margin-top: 0.28rem;
+    color: #626262;
+    font-size: 0.82rem;
   }
 
-  .moments {
-    margin-top: 0.9rem;
+  .story-strip {
+    margin-top: 0.85rem;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.7rem;
+    gap: 0.65rem;
   }
-  .moment {
+  .strip-item {
     margin: 0;
-    padding: 0.45rem;
-    border-radius: 16px;
+    padding: 0.42rem;
+    border-radius: 14px;
   }
-  .moment img {
+  .strip-item img {
     width: 100%;
-    height: 160px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 9px;
     border: 1px solid #d7d7d7;
+    display: block;
   }
-  .moment figcaption {
-    padding: 0.35rem 0.1rem 0.05rem;
+  .strip-item p {
+    margin: 0.32rem 0.15rem 0.1rem;
+    font-size: 0.83rem;
     color: #666;
-    font-size: 0.84rem;
   }
 
   @media (max-width: 1080px) {
     .hero {
       grid-template-columns: 1fr;
     }
-    .portrait img {
+    .hero-portrait {
       min-height: 300px;
       max-height: 420px;
     }
-    .moments {
+    .story-strip {
       grid-template-columns: 1fr;
+    }
+    .strip-item img {
+      height: 210px;
     }
   }
 </style>
