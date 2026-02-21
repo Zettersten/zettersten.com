@@ -1,7 +1,7 @@
 ---
 title: 'Raising Four Kids in an AI World: Why Most Parents Are Unprepared'
 description: 'Parenting strategy for an economy where automation changes faster than school systems.'
-date: 2026-02-21
+date: 2025-12-12
 tags: ['parenting', 'AI', 'future of work', 'leadership']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Interactive_whiteboard_at_CeBIT_2007.jpg'

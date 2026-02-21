@@ -1,7 +1,7 @@
 ---
 title: 'Why Sam Altman and Dario Amodei Are Quietly Reshaping the Software Job Market'
 description: 'Frontier model economics are compressing entry-level engineering work faster than most companies are willing to admit.'
-date: 2026-02-21
+date: 2026-01-12
 tags: ['AI automation', 'software jobs', 'labor market', 'economics']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/5/59/Programmer_writing_code_with_Unit_Tests.jpg'

@@ -1,7 +1,7 @@
 ---
 title: 'How Microsoft Broke the Operating System (And Why No One Admits It)'
 description: 'An enterprise-operator view on OS bloat, reliability drift, and the hidden tax on IT teams.'
-date: 2026-02-21
+date: 2026-01-08
 tags: ['Windows', 'enterprise IT', 'infrastructure', 'reliability']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Logo_%281992-2001%29.svg'

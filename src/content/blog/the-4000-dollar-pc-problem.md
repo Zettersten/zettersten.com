@@ -1,7 +1,7 @@
 ---
 title: 'The $4,000 PC Problem: Why Building a Gaming Rig Is Now Absurd'
 description: "When a 'normal' enthusiast build starts flirting with luxury pricing, the value equation is broken."
-date: 2026-02-21
+date: 2025-12-24
 tags: ['PC hardware', 'gaming', 'economics', 'consumer tech']
 draft: false
 coverImage: 'https://upload.wikimedia.org/wikipedia/commons/0/04/MSI-Gaming-PC_2024-09-30.png'
