@@ -31,6 +31,9 @@ const apaCitation = `Zettersten, E. (${year}, ${post.data.date.toLocaleDateStrin
 const mlaCitation = `Zettersten, Erik. "${post.data.title}." zettersten.com, ${publishedText}, ${canonicalUrl}.`;
 
 const bibtexCitation = `@online{zettersten_${slug.replace(/-/g, '_')},\n  author = {Erik Zettersten},\n  title = {${post.data.title}},\n  year = {${year}},\n  month = {${post.data.date.toLocaleDateString('en-US', { month: 'short' }).toLowerCase()}},\n  url = {${canonicalUrl}},\n  note = {Accessed: ${new Date().toISOString().slice(0, 10)}}\n}`;
+
+const hasTweetEmbeds =
+  /twitter-tweet/i.test(post.body) || /(?:x|twitter)\.com\/[^\s/]+\/status\/\d+/i.test(post.body);
 ---
 
 <BaseLayout
@@ -67,6 +70,11 @@ const bibtexCitation = `@online{zettersten_${slug.replace(/-/g, '_')},\n  author
         url: canonicalUrl,
       })}
     />
+    {
+      hasTweetEmbeds && (
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
+      )
+    }
   </Fragment>
   <Nav />
   <main class="container article-wrap">
@@ -291,6 +299,11 @@ const bibtexCitation = `@online{zettersten_${slug.replace(/-/g, '_')},\n  author
     background: transparent;
     padding: 0;
     color: inherit;
+  }
+
+  .prose :global(blockquote.twitter-tweet) {
+    margin: 1rem auto 1.2rem;
+    max-width: min(550px, 100%);
   }
 
   .toc {
