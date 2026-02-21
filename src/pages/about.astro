@@ -12,48 +12,46 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
 >
   <Nav />
   <main id="main-content" class="container page">
-    <p class="kicker">About</p>
-    <h1>Erik Zettersten is a technology executive who turns complexity into execution.</h1>
-    <p class="muted lead">
-      He operates at the intersection of AI strategy, engineering systems, and business outcomes.
-      The throughline across his work: reduce noise, align teams, and ship solutions people trust.
-    </p>
+    <header class="intro">
+      <p class="kicker">About</p>
+      <h1>I build leverage at inflection points.</h1>
+      <p class="lead muted">
+        I work where systems are changing fast and stakes are high: payments, platforms, AI, and
+        mission-critical operations. My approach is direct—clarify the decision model, align the
+        team, and ship work that holds up in production.
+      </p>
+    </header>
 
-    <section class="glass block">
-      <h2>The quick origin story</h2>
-      <ul>
-        {linkedinHighlights.map((item) => <li>{item}</li>)}
-      </ul>
-    </section>
+    <section class="grid">
+      <article class="glass card span-2">
+        <h2>Career highlights</h2>
+        <ul>
+          {linkedinHighlights.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
 
-    <section class="glass block">
-      <h2>How Erik creates leverage</h2>
-      <ul>
-        <li>Translate business goals into technical operating plans.</li>
-        <li>Design systems that balance speed, reliability, and governance.</li>
-        <li>Align product, engineering, and leadership around one decision model.</li>
-        <li>Build repeatable execution engines, not one-off heroics.</li>
-      </ul>
-    </section>
+      <article class="glass card">
+        <h2>Core operating principles</h2>
+        <ul>
+          <li>Outcome clarity beats roadmap theater.</li>
+          <li>Reliability is a product feature.</li>
+          <li>Cross-functional alignment is an engineering problem too.</li>
+          <li>Speed without standards creates expensive rework.</li>
+        </ul>
+      </article>
 
-    <section class="glass photo">
-      <img
-        src="https://msdynamicsworld.com/sites/default/files/pictures/thumbnail_erik.jpg"
-        alt="Erik Zettersten portrait"
-        loading="lazy"
-      />
-    </section>
-
-    <section class="meta muted">
-      <span>{profileHighlights.location}</span>
-      <span>•</span>
-      <span>{profileHighlights.yearsExperience} in engineering leadership</span>
-      <span>•</span>
-      <span>{profileHighlights.repoCount}+ repositories</span>
-      <span>•</span>
-      <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer"
-        >github.com/Zettersten</a
-      >
+      <article class="glass card">
+        <h2>Quick context</h2>
+        <p><strong>Location:</strong> {profileHighlights.location}</p>
+        <p><strong>Experience:</strong> {profileHighlights.yearsExperience}</p>
+        <p><strong>Public work:</strong> {profileHighlights.repoCount}+ repositories</p>
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer"
+            >github.com/Zettersten</a
+          >
+        </p>
+      </article>
     </section>
   </main>
   <Footer />
@@ -61,49 +59,63 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
 
 <style>
   .page {
-    padding-top: 4.2rem;
-    max-width: 880px;
+    max-width: 1000px;
+    padding-top: 1.8rem;
+    padding-bottom: 2rem;
+  }
+  .intro {
+    max-width: 78ch;
   }
   h1 {
-    font-size: clamp(2rem, 7vw, 4.6rem);
+    margin: 0.35rem 0 0.7rem;
+    font-size: clamp(2.3rem, 6vw, 4.6rem);
     line-height: 0.98;
-    letter-spacing: -0.03em;
-    margin: 0.4rem 0 1rem;
+    letter-spacing: -0.02em;
   }
   .lead {
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    max-width: 66ch;
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
   }
-  .block {
-    margin-top: 2rem;
-    padding: 1.2rem;
+
+  .grid {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+    align-items: start;
   }
-  .block h2 {
+  .card {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+  .span-2 {
+    grid-column: span 2;
+  }
+
+  .card h2 {
     margin: 0 0 0.5rem;
     font-size: 1.25rem;
   }
-  .block ul {
+  .card p {
+    margin: 0.35rem 0;
+    line-height: 1.6;
+  }
+  .card ul {
     margin: 0;
     padding-left: 1rem;
   }
-  .block li {
-    margin: 0.4rem 0;
+  .card li {
+    margin: 0.38rem 0;
+    line-height: 1.6;
   }
-  .photo {
-    margin-top: 1.5rem;
-    padding: 0.4rem;
-    max-width: 360px;
-  }
-  .photo img {
-    display: block;
-    width: 100%;
-    height: auto;
-    filter: grayscale(100%) contrast(115%);
-  }
-  .meta {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+
+  @media (max-width: 980px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .span-2 {
+      grid-column: span 1;
+    }
   }
 </style>

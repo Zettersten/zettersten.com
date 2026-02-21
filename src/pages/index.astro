@@ -12,53 +12,61 @@ import { profileHighlights } from '../data/projects';
 >
   <Nav />
 
-  <main id="main-content" class="container">
+  <main id="main-content" class="container page">
     <section class="hero glass">
-      <aside class="left-rail muted">
-        <span>Erik Mode</span>
-        <i></i>
-        <span>2026</span>
-      </aside>
-
-      <div class="content">
-        <div class="top muted">
-          <div><strong>+{profileHighlights.repoCount}</strong><span>Things shipped</span></div>
-          <div><strong>+{profileHighlights.followers}</strong><span>Internet homies</span></div>
-        </div>
-
-        <h1>Hello</h1>
-        <p class="tagline">— Erik Zettersten · technology leader, operator, and builder</p>
-        <p class="muted intro">
-          I help companies turn AI ambition into measurable business outcomes. My lane: strategy,
-          systems, and execution. I lead teams, design platforms, and ship products that survive
-          real-world pressure.
+      <div class="hero-copy">
+        <p class="kicker">Erik Zettersten</p>
+        <h1>Building high-stakes systems where speed, trust, and execution all matter.</h1>
+        <p class="lead muted">
+          I help teams turn AI ambition into operational outcomes. My work sits at the intersection
+          of strategy, engineering, and leadership execution.
         </p>
 
-        <div class="actions">
-          <a class="btn primary" href="/projects">See the Work</a>
-          <a class="btn" href="/about">Why Erik</a>
-          <a class="btn" href="/blog">Read the Essays</a>
+        <div class="cta-row">
+          <a class="btn primary" href="/projects">See Projects</a>
+          <a class="btn" href="/about">About Erik</a>
+          <a class="btn" href="/blog">Read Essays</a>
         </div>
-
-        <p class="scroll muted">Scroll down ↓</p>
       </div>
 
-      <figure class="portrait">
-        <img
-          src="https://msdynamicsworld.com/sites/default/files/pictures/thumbnail_erik.jpg"
-          alt="Erik Zettersten"
-          loading="eager"
-        />
-      </figure>
+      <aside class="hero-stats" aria-label="Profile highlights">
+        <article class="stat glass">
+          <strong>{profileHighlights.repoCount}+</strong>
+          <span>Repositories shipped</span>
+        </article>
+        <article class="stat glass">
+          <strong>{profileHighlights.followers}+</strong>
+          <span>Followers</span>
+        </article>
+        <article class="stat glass">
+          <strong>{profileHighlights.yearsExperience}</strong>
+          <span>Years engineering</span>
+        </article>
+      </aside>
     </section>
 
-    <section class="section-block">
-      <h2>Built for high stakes.<br />Built to last.</h2>
-      <p class="muted">
-        Erik has led across startup speed and enterprise complexity. He brings executive-level
-        clarity, engineering depth, and product instincts that translate into trusted systems,
-        faster decisions, and teams that actually ship.
-      </p>
+    <section class="value-grid">
+      <article class="panel glass">
+        <h2>Operator mindset</h2>
+        <p class="muted">
+          Less theater, more throughput. I focus on decisions that improve reliability, velocity,
+          and business leverage at the same time.
+        </p>
+      </article>
+      <article class="panel glass">
+        <h2>Systems depth</h2>
+        <p class="muted">
+          From fintech pipelines to AI orchestration and enterprise governance, I build systems that
+          survive production—not just demos.
+        </p>
+      </article>
+      <article class="panel glass">
+        <h2>Leadership under pressure</h2>
+        <p class="muted">
+          I align teams around clear constraints, measurable outcomes, and execution loops that keep
+          momentum without sacrificing trust.
+        </p>
+      </article>
     </section>
   </main>
 
@@ -66,126 +74,88 @@ import { profileHighlights } from '../data/projects';
 </BaseLayout>
 
 <style>
+  .page {
+    padding-top: 1.4rem;
+    padding-bottom: 2.2rem;
+  }
+
   .hero {
-    margin-top: 1rem;
-    min-height: 70vh;
     display: grid;
-    grid-template-columns: 72px 1fr 40%;
-    gap: 1.2rem;
-    padding: 1.2rem;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 1rem;
+    padding: 1.1rem;
+    border-radius: 22px;
   }
-
-  .left-rail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
+  .hero-copy {
+    padding: 0.8rem;
   }
-  .left-rail i {
-    width: 1px;
-    height: 180px;
-    background: var(--line);
-  }
-
-  .content {
-    padding: 1.2rem 0.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .top {
-    display: flex;
-    gap: 2rem;
-    font-size: 0.8rem;
-  }
-  .top div {
-    display: flex;
-    flex-direction: column;
-  }
-  .top strong {
-    color: #1a1a1a;
-    font-size: 2rem;
-    font-weight: 500;
-    line-height: 1.1;
-  }
-
   h1 {
-    margin: 1.2rem 0 0.2rem;
-    font-size: clamp(4rem, 12vw, 10rem);
-    line-height: 0.9;
-    font-weight: 500;
-    letter-spacing: -0.045em;
+    margin: 0.45rem 0 0.7rem;
+    font-size: clamp(2.2rem, 6vw, 4.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
   }
-  .tagline {
+  .lead {
     margin: 0;
-    color: #3e3e3e;
-    font-size: 1rem;
+    max-width: 58ch;
+    font-size: 1.03rem;
   }
-  .intro {
-    max-width: 50ch;
-    margin-top: 1rem;
-  }
-  .actions {
-    margin-top: 1.2rem;
+
+  .cta-row {
+    margin-top: 1.15rem;
     display: flex;
-    gap: 0.6rem;
     flex-wrap: wrap;
-  }
-  .scroll {
-    margin-top: auto;
-    font-size: 0.9rem;
+    gap: 0.6rem;
   }
 
-  .portrait {
-    margin: 0;
-    border-left: 1px solid var(--line);
-    padding-left: 1rem;
-    display: flex;
-    align-items: flex-end;
-  }
-  .portrait img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: grayscale(100%);
-    border-radius: 18px;
-  }
-
-  .section-block {
-    margin-top: 2.4rem;
+  .hero-stats {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 2rem;
-    padding: 1rem 0.2rem 2rem;
+    gap: 0.75rem;
+    align-content: start;
   }
-  .section-block h2 {
+  .stat {
+    border-radius: 16px;
+    padding: 0.95rem;
+  }
+  .stat strong {
+    display: block;
+    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    line-height: 1;
+    font-family: var(--font-serif);
+  }
+  .stat span {
+    display: block;
+    margin-top: 0.35rem;
+    color: #616161;
+    font-size: 0.86rem;
+  }
+
+  .value-grid {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+  .panel {
+    border-radius: 18px;
+    padding: 0.95rem;
+  }
+  .panel h2 {
+    font-size: 1.22rem;
+    margin: 0 0 0.35rem;
+  }
+  .panel p {
     margin: 0;
-    font-size: clamp(2rem, 7vw, 5.2rem);
-    line-height: 0.95;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-  }
-  .section-block p {
-    max-width: 52ch;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   @media (max-width: 980px) {
     .hero {
       grid-template-columns: 1fr;
     }
-    .left-rail {
-      display: none;
-    }
-    .portrait {
-      border-left: 0;
-      border-top: 1px solid var(--line);
-      padding: 1rem 0 0;
-    }
-    .section-block {
+    .value-grid {
       grid-template-columns: 1fr;
     }
   }
