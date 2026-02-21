@@ -73,7 +73,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comp
   }
   h1 {
     margin: .35rem 0 .4rem;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--font-serif);
     font-size: clamp(2rem, 5.5vw, 3.55rem);
     line-height: .98;
     letter-spacing: -.01em;
@@ -108,7 +108,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comp
   }
   h2 {
     margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--font-serif);
     font-size: clamp(1.35rem, 2.3vw, 1.9rem);
     line-height: 1.12;
   }
