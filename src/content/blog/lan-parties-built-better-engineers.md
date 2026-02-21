@@ -89,6 +89,14 @@ export function safeRespond(d: Decision) {
 }
 ```
 
+## Fact-check context: leaders are behind their teams
+
+Microsoft’s Work Trend data keeps showing the same pattern: employees are adopting AI tools faster than leadership operating models are catching up. In practice, that means shadow workflows, inconsistent quality bars, and policy drift hidden behind productivity gains.
+
+GitHub Octoverse reinforces the velocity story: AI-related project activity and contributions continue to rise quickly, which means the technical surface area inside teams keeps expanding. More output is not the same as better outcomes.
+
+So the management job has changed. The scarce skill is no longer “unlock output.” The scarce skill is building a system where output remains trustworthy under pressure.
+
 ## References
 
 - https://www.microsoft.com/en-us/worklab/work-trend-index

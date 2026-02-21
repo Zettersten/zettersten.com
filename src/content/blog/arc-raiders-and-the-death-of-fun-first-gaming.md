@@ -77,6 +77,14 @@ export function safeRespond(d: Decision) {
 }
 ```
 
+## Fact-check context: demand is real, trust is fragile
+
+Gaming demand remains healthy by almost any macro signal. Steam concurrency records keep rising, and the PC ecosystem continues to post strong participation metrics. This is not an audience problem.
+
+But hardware and platform economics are volatile. JPR’s market summaries show a market that can grow overall while still creating pain in specific segments, which is exactly why player sentiment can sour even during headline growth.
+
+In plain terms: people still want to play. They are just less tolerant of pricing games, thin content roadmaps, and strategy-first experiences that forget why players showed up in the first place.
+
 ## References
 
 - https://store.steampowered.com/charts/mostplayed

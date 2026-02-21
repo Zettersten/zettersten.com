@@ -236,6 +236,14 @@ export function safeRespond(d: Decision) {
 }
 ```
 
+## Fact-check context: what changed in the last 18 months
+
+The argument in this piece gets stronger when you look at current data instead of vibes. Stanford’s AI Index reports that organizational AI use jumped sharply year-over-year, with generative AI adoption in business functions accelerating from pilot novelty into default tooling. That scale jump matters because it explains why weak architecture now fails faster and louder: more users, more workflows, more exposure.
+
+At the same time, developer sentiment is not blind optimism. Stack Overflow’s 2024 survey found strong adoption but materially lower trust in output correctness. That split—high use, lower trust—is the exact zone where leadership discipline matters most. Teams are using these systems anyway; the only question is whether the systems are instrumented, auditable, and failure-aware.
+
+The takeaway is blunt: adoption is no longer the bottleneck. Reliability is.
+
 ## References
 
 - https://www.anthropic.com/research

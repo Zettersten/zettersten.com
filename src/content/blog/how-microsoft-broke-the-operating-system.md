@@ -101,6 +101,14 @@ export function safeRespond(d: Decision) {
 }
 ```
 
+## Fact-check context: endpoint risk remains operational, not theoretical
+
+Microsoft’s release health dashboard exists for a reason: modern endpoint fleets face continuous known-issue churn, not occasional one-off breakage. Enterprise teams that still treat endpoint governance as a quarterly afterthought are operating on old assumptions.
+
+Layer in the broader threat environment and this becomes a business continuity issue, not a UX complaint. The organizations that adapt are the ones that run structured update rings, blast-radius controls, and explicit rollback criteria.
+
+The lesson is boring but expensive to ignore: reliability is a systems discipline, not a patch Tuesday ritual.
+
 ## References
 
 - https://learn.microsoft.com/windows/release-health/
