@@ -10,6 +10,10 @@ const {
   description = 'Erik Zettersten — AI Developer, Engineer, Strategist, Leader.',
   image = '/og-default.svg',
 } = Astro.props;
+
+const site = Astro.site?.toString() ?? 'https://zettersten.com';
+const canonical = new URL(Astro.url.pathname, site).toString();
+const imageUrl = image.startsWith('http') ? image : new URL(image, site).toString();
 ---
 
 <!doctype html>
@@ -19,14 +23,18 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={imageUrl} />
     <meta name="theme-color" content="#efefef" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,6 +44,7 @@ const {
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title="Erik Zettersten Blog RSS" href="/rss.xml" />
+    <slot name="head" />
   </head>
   <body>
     <slot />
