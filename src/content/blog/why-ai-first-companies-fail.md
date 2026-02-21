@@ -1,11 +1,11 @@
 ---
-title: "Why ‘AI-First’ Companies Are Already Failing (And What Actually Works)"
-description: "AI-first sounds bold. In practice, most teams are shipping theater. Here’s the operational playbook that actually works."
+title: 'Why ‘AI-First’ Companies Are Already Failing (And What Actually Works)'
+description: 'AI-first sounds bold. In practice, most teams are shipping theater. Here’s the operational playbook that actually works.'
 date: 2026-02-21
-tags: ["AI strategy", "enterprise", "execution", "leadership"]
+tags: ['AI strategy', 'enterprise', 'execution', 'leadership']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80"
-category: "Leadership"
+coverImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80'
+category: 'Leadership'
 ---
 
 “AI-first” became the easiest sentence in business.
@@ -205,7 +205,6 @@ And yes, it’s harder than a rebrand.
 
 That’s why it works.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -228,11 +227,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -249,4 +248,3 @@ The takeaway is blunt: adoption is no longer the bottleneck. Reliability is.
 - https://www.anthropic.com/research
 - https://platform.openai.com/docs/guides/evals
 - https://aiindex.stanford.edu/report/
-

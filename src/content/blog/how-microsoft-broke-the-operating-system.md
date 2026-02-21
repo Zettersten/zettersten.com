@@ -1,11 +1,11 @@
 ---
-title: "How Microsoft Broke the Operating System (And Why No One Admits It)"
-description: "An enterprise-operator view on OS bloat, reliability drift, and the hidden tax on IT teams."
+title: 'How Microsoft Broke the Operating System (And Why No One Admits It)'
+description: 'An enterprise-operator view on OS bloat, reliability drift, and the hidden tax on IT teams.'
 date: 2026-02-21
-tags: ["Windows", "enterprise IT", "infrastructure", "reliability"]
+tags: ['Windows', 'enterprise IT', 'infrastructure', 'reliability']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80"
-category: "Infrastructure"
+coverImage: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80'
+category: 'Infrastructure'
 ---
 
 For decades, the operating system was supposed to fade into the background.
@@ -70,7 +70,6 @@ The fix is twofold:
 
 Anything less is paying a permanent tax for avoidable instability.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -93,11 +92,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -114,4 +113,3 @@ The lesson is boring but expensive to ignore: reliability is a systems disciplin
 - https://learn.microsoft.com/windows/release-health/
 - https://www.cisa.gov/known-exploited-vulnerabilities-catalog
 - https://sre.google/sre-book/table-of-contents/
-

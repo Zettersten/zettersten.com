@@ -43,7 +43,12 @@ const imageUrl = image.startsWith('http') ? image : new URL(image, site).toStrin
       rel="stylesheet"
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" type="application/rss+xml" title="Erik Zettersten Blog RSS" href="/rss.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Erik Zettersten Blog RSS"
+      href="/rss.xml"
+    />
     <slot name="head" />
   </head>
   <body>
@@ -66,8 +71,14 @@ const imageUrl = image.startsWith('http') ? image : new URL(image, site).toStrin
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
   body {
     font-family: var(--font-sans);
     background: var(--bg);
@@ -93,12 +104,18 @@ const imageUrl = image.startsWith('http') ? image : new URL(image, site).toStrin
     max-width: 70ch;
   }
 
-  a { color: inherit; text-decoration: none; }
-  .container { width: min(1200px, calc(100% - 2.2rem)); margin-inline: auto; }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .container {
+    width: min(1200px, calc(100% - 2.2rem));
+    margin-inline: auto;
+  }
   .kicker {
     margin: 0;
-    font-size: .72rem;
-    letter-spacing: .1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--brand);
     font-weight: 600;
@@ -111,19 +128,27 @@ const imageUrl = image.startsWith('http') ? image : new URL(image, site).toStrin
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: .35rem;
-    padding: .7rem 1rem;
+    gap: 0.35rem;
+    padding: 0.7rem 1rem;
     border-radius: 999px;
     border: 1px solid #c8c8c8;
     font-weight: 500;
-    font-size: .82rem;
+    font-size: 0.82rem;
     color: #222;
     background: #f3f3f3;
-    transition: background .16s ease;
+    transition: background 0.16s ease;
   }
-  .btn:hover { background: #e8e8e8; }
-  .btn.primary { background: #202020; color: #fff; border-color: #202020; }
-  .muted { color: var(--muted); }
+  .btn:hover {
+    background: #e8e8e8;
+  }
+  .btn.primary {
+    background: #202020;
+    color: #fff;
+    border-color: #202020;
+  }
+  .muted {
+    color: var(--muted);
+  }
 
   :focus-visible {
     outline: 2px solid var(--brand);

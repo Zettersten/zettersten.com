@@ -1,11 +1,11 @@
 ---
-title: "RAG Is Not a Strategy: Why Most Enterprise Chatbots Are Dead on Arrival"
-description: "RAG can be useful. It’s not a strategy, and it definitely isn’t magic."
+title: 'RAG Is Not a Strategy: Why Most Enterprise Chatbots Are Dead on Arrival'
+description: 'RAG can be useful. It’s not a strategy, and it definitely isn’t magic.'
 date: 2026-02-21
-tags: ["RAG", "LLM", "architecture", "enterprise AI"]
+tags: ['RAG', 'LLM', 'architecture', 'enterprise AI']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
-category: "AI"
+coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80'
+category: 'AI'
 ---
 
 RAG is having its spreadsheet moment.
@@ -159,7 +159,6 @@ If you nail both, your AI product scales.
 
 If you nail one, you’re just doing expensive improvisation.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -182,11 +181,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -203,4 +202,3 @@ The takeaway is blunt: adoption is no longer the bottleneck. Reliability is.
 - https://www.anthropic.com/research
 - https://platform.openai.com/docs/guides/evals
 - https://aiindex.stanford.edu/report/
-

@@ -1,11 +1,11 @@
 ---
-title: "Why the Next Great Engineers Won’t Work for Big Tech"
-description: "Top builders are drifting toward smaller teams with real ownership, faster feedback, and less organizational drag."
+title: 'Why the Next Great Engineers Won’t Work for Big Tech'
+description: 'Top builders are drifting toward smaller teams with real ownership, faster feedback, and less organizational drag.'
 date: 2026-02-21
-tags: ["careers", "engineering", "startups", "future of work"]
+tags: ['careers', 'engineering', 'startups', 'future of work']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80"
-category: "Careers"
+coverImage: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80'
+category: 'Careers'
 ---
 
 For a long time, the career script for ambitious engineers was obvious: get into Big Tech, stay long enough to level up, cash comp + equity, repeat.
@@ -16,7 +16,7 @@ That script is breaking.
 
 Not because big companies suddenly became irrelevant. They didn’t. They still matter for infrastructure, deep research, and planet-scale systems.
 
-But as the *default place for top builders*? The grip is slipping.
+But as the _default place for top builders_? The grip is slipping.
 
 ## Why the center of gravity is moving
 
@@ -70,7 +70,6 @@ closer to the problem,
 closer to users,
 closer to the decisions.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -93,11 +92,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -114,4 +113,3 @@ That shift is uncomfortable for institutions built around old pipelines, but it 
 - https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm
 - https://www.oecd.org/en/topics/ai-jobs-and-skills.html
 - https://www.weforum.org/reports/the-future-of-jobs-report-2025/
-

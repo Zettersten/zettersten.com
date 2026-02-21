@@ -1,11 +1,11 @@
 ---
-title: "The $4,000 PC Problem: Why Building a Gaming Rig Is Now Absurd"
+title: 'The $4,000 PC Problem: Why Building a Gaming Rig Is Now Absurd'
 description: "When a 'normal' enthusiast build starts flirting with luxury pricing, the value equation is broken."
 date: 2026-02-21
-tags: ["PC hardware", "gaming", "economics", "consumer tech"]
+tags: ['PC hardware', 'gaming', 'economics', 'consumer tech']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1600&q=80"
-category: "Gaming"
+coverImage: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1600&q=80'
+category: 'Gaming'
 ---
 
 Building a high-end gaming PC used to feel clever.
@@ -55,7 +55,6 @@ But buyers need to stop behaving like unpaid brand advocates.
 
 If pricing drifts this far from practical value, discipline beats fandom every time.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -78,11 +77,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -99,4 +98,3 @@ In plain terms: people still want to play. They are just less tolerant of pricin
 - https://store.steampowered.com/charts/mostplayed
 - https://www.gamesindustry.biz/
 - https://www.pcgamer.com/hardware/
-

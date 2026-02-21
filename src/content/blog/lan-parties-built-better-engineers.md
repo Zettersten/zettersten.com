@@ -1,11 +1,11 @@
 ---
-title: "Why LAN Parties Built Better Engineers Than Coding Bootcamps"
-description: "LAN culture taught debugging, systems thinking, and collaborative resilience in a way modern credential pipelines rarely do."
+title: 'Why LAN Parties Built Better Engineers Than Coding Bootcamps'
+description: 'LAN culture taught debugging, systems thinking, and collaborative resilience in a way modern credential pipelines rarely do.'
 date: 2026-02-21
-tags: ["engineering culture", "learning", "careers", "tech history"]
+tags: ['engineering culture', 'learning', 'careers', 'tech history']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80"
-category: "Careers"
+coverImage: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80'
+category: 'Careers'
 ---
 
 LAN parties looked like teenage chaos: tangled cables, overheating towers, and someone yelling because Counter-Strike dropped mid-round.
@@ -58,7 +58,6 @@ LAN parties had all of that.
 
 Modern engineering education should steal shamelessly from that playbook: less credential theater, more shared, messy, hands-on systems work.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -81,11 +80,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -102,4 +101,3 @@ So the management job has changed. The scarce skill is no longer “unlock outpu
 - https://www.microsoft.com/en-us/worklab/work-trend-index
 - https://hbr.org/topic/leadership
 - https://queue.acm.org/
-

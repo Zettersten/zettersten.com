@@ -1,11 +1,11 @@
 ---
-title: "Leadership for AI Teams"
-description: "Speed without standards creates AI chaos. Here’s how to lead teams that move fast and still ship trustworthy systems."
+title: 'Leadership for AI Teams'
+description: 'Speed without standards creates AI chaos. Here’s how to lead teams that move fast and still ship trustworthy systems.'
 date: 2026-02-19
-tags: ["leadership", "engineering", "AI"]
+tags: ['leadership', 'engineering', 'AI']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
-category: "Leadership"
+coverImage: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80'
+category: 'Leadership'
 ---
 
 Everyone says AI teams should “move fast.”
@@ -80,7 +80,6 @@ Fast and coherent is rare.
 
 That’s the bar.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -103,11 +102,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -124,4 +123,3 @@ So the management job has changed. The scarce skill is no longer “unlock outpu
 - https://www.microsoft.com/en-us/worklab/work-trend-index
 - https://hbr.org/topic/leadership
 - https://queue.acm.org/
-

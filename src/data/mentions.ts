@@ -13,7 +13,8 @@ export const mentions = [
     title: 'HawkEye 360 Careers: Executive Welcome Post',
     outlet: 'LinkedIn · HawkEye 360 Careers',
     url: 'https://www.linkedin.com/posts/hawkeye-360-careers_were-proud-to-welcome-erik-zettersten-to-activity-7396269196185214976-lr-9/',
-    thumbnail: 'https://images.ctfassets.net/7nksd31j8x6a/7E5rE18h2n7m2a7G7D1c7M/516db9459f16f34f430ec22de0f5ed3f/HE360-logo.png',
+    thumbnail:
+      'https://images.ctfassets.net/7nksd31j8x6a/7E5rE18h2n7m2a7G7D1c7M/516db9459f16f34f430ec22de0f5ed3f/HE360-logo.png',
     summary:
       'Big role, bigger mission: lead AI strategy and make it useful at organizational scale.',
     story:
@@ -34,8 +35,7 @@ export const mentions = [
     outlet: 'YouTube Hashtag Discovery',
     url: 'https://www.youtube.com/hashtag/erikzettersten',
     thumbnail: 'https://www.youtube.com/s/desktop/f6e2f9f1/img/favicon_144x144.png',
-    summary:
-      'A handy trail of indexed mentions and related videos tied to Erik’s name.',
+    summary: 'A handy trail of indexed mentions and related videos tied to Erik’s name.',
     story:
       'Reputation is compounding content. This page is the breadcrumb trail: talks, clips, and context that show Erik’s work is visible far beyond a single platform.',
   },

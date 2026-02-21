@@ -1,11 +1,11 @@
 ---
-title: "The Myth of ‘Safe AI’: Why We’re Trusting the Wrong People"
-description: "Safety is too often treated as a PR category instead of a measurable engineering discipline."
+title: 'The Myth of ‘Safe AI’: Why We’re Trusting the Wrong People'
+description: 'Safety is too often treated as a PR category instead of a measurable engineering discipline.'
 date: 2026-02-21
-tags: ["AI safety", "governance", "policy", "risk"]
+tags: ['AI safety', 'governance', 'policy', 'risk']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80"
-category: "AI Governance"
+coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80'
+category: 'AI Governance'
 ---
 
 “Safe AI” is one of the most overused phrases in tech.
@@ -93,7 +93,6 @@ Until then, skepticism is not cynicism.
 
 It is operational maturity.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -116,11 +115,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -137,4 +136,3 @@ If you still think governance can be postponed until after growth, you are betti
 - https://www.anthropic.com/research
 - https://platform.openai.com/docs/guides/evals
 - https://aiindex.stanford.edu/report/
-

@@ -6,56 +6,88 @@ import BlogSearch from '../../components/BlogSearch.astro';
 import { getCollection } from 'astro:content';
 import { compareBlogPostsByDateThenTitle } from '../../utils/blog';
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(compareBlogPostsByDateThenTitle);
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  compareBlogPostsByDateThenTitle,
+);
 ---
 
-<BaseLayout title="Blog — Erik Zettersten" description="Clean, practical essays on AI, strategy, systems, and leadership.">
+<BaseLayout
+  title="Blog — Erik Zettersten"
+  description="Clean, practical essays on AI, strategy, systems, and leadership."
+>
   <Nav />
   <main class="container page">
     <header class="hero">
       <div>
         <p class="kicker">Journal</p>
         <h1>Long-form essays that actually say something.</h1>
-        <p class="muted intro">Opinionated writing on AI, leadership, and systems work — with context, examples, and receipts.</p>
+        <p class="muted intro">
+          Opinionated writing on AI, leadership, and systems work — with context, examples, and
+          receipts.
+        </p>
       </div>
       <BlogSearch />
     </header>
 
     <section class="feed" aria-label="Blog post list">
-      {posts.map((post) => (
-        <article class="entry glass">
-          {post.data.coverImage && (
-            <a href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`} class="thumb-wrap" aria-label={`Read ${post.data.title}`}>
-              <img class="thumb" src={post.data.coverImage} alt={post.data.title} loading="lazy" />
-            </a>
-          )}
-          <div class="copy">
-            <p class="cat">{post.data.category}</p>
-            <h2><a href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`}>{post.data.title}</a></h2>
-            <p class="meta muted">
-              <span>Erik Zettersten</span>
-              <span>•</span>
-              <span>{post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-            </p>
-            <p class="desc">{post.data.description}</p>
+      {
+        posts.map((post) => (
+          <article class="entry glass">
+            {post.data.coverImage && (
+              <a
+                href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`}
+                class="thumb-wrap"
+                aria-label={`Read ${post.data.title}`}
+              >
+                <img
+                  class="thumb"
+                  src={post.data.coverImage}
+                  alt={post.data.title}
+                  loading="lazy"
+                />
+              </a>
+            )}
+            <div class="copy">
+              <p class="cat">{post.data.category}</p>
+              <h2>
+                <a href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`}>{post.data.title}</a>
+              </h2>
+              <p class="meta muted">
+                <span>Erik Zettersten</span>
+                <span>•</span>
+                <span>
+                  {post.data.date.toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+                </span>
+              </p>
+              <p class="desc">{post.data.description}</p>
 
-            <div class="tags">
-              {post.data.tags?.slice(0, 3).map((tag) => <span>{tag}</span>)}
+              <div class="tags">
+                {post.data.tags?.slice(0, 3).map((tag) => (
+                  <span>{tag}</span>
+                ))}
+              </div>
+
+              <a class="read" href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`}>
+                Read article →
+              </a>
             </div>
-
-            <a class="read" href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`}>
-              Read article →
-            </a>
-          </div>
-        </article>
-      ))}
+          </article>
+        ))
+      }
     </section>
   </main>
   <Footer />
 </BaseLayout>
 
 <style>
-  .page { max-width: 1060px; padding-top: 2.3rem; }
+  .page {
+    max-width: 1060px;
+    padding-top: 2.3rem;
+  }
 
   .hero {
     display: grid;
@@ -66,30 +98,38 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comp
   }
   .kicker {
     margin: 0;
-    font-size: .72rem;
-    letter-spacing: .1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #707070;
   }
   h1 {
-    margin: .35rem 0 .4rem;
+    margin: 0.35rem 0 0.4rem;
     font-family: var(--font-serif);
     font-size: clamp(2rem, 5.5vw, 3.55rem);
-    line-height: .98;
-    letter-spacing: -.01em;
+    line-height: 0.98;
+    letter-spacing: -0.01em;
   }
-  .intro { max-width: 62ch; margin: 0; }
+  .intro {
+    max-width: 62ch;
+    margin: 0;
+  }
 
-  .feed { display: grid; gap: 1rem; }
+  .feed {
+    display: grid;
+    gap: 1rem;
+  }
   .entry {
     border-radius: 18px;
-    padding: .85rem;
+    padding: 0.85rem;
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 1rem;
   }
 
-  .thumb-wrap { display: block; }
+  .thumb-wrap {
+    display: block;
+  }
   .thumb {
     width: 100%;
     height: 200px;
@@ -98,13 +138,15 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comp
     border: 1px solid #d7d7d7;
   }
 
-  .copy { padding: .2rem .15rem; }
+  .copy {
+    padding: 0.2rem 0.15rem;
+  }
   .cat {
-    margin: 0 0 .32rem;
+    margin: 0 0 0.32rem;
     color: #686868;
     text-transform: uppercase;
-    letter-spacing: .08em;
-    font-size: .7rem;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
   }
   h2 {
     margin: 0;
@@ -112,18 +154,23 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comp
     font-size: clamp(1.35rem, 2.3vw, 1.9rem);
     line-height: 1.12;
   }
-  h2 a { text-decoration: none; }
-  h2 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  h2 a {
+    text-decoration: none;
+  }
+  h2 a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 
   .meta {
-    margin: .5rem 0;
-    font-size: .84rem;
+    margin: 0.5rem 0;
+    font-size: 0.84rem;
     display: flex;
-    gap: .4rem;
+    gap: 0.4rem;
     flex-wrap: wrap;
   }
   .desc {
-    margin: .2rem 0 .6rem;
+    margin: 0.2rem 0 0.6rem;
     color: #262626;
     line-height: 1.6;
     max-width: 65ch;
@@ -132,20 +179,20 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comp
   .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: .45rem;
-    margin-bottom: .65rem;
+    gap: 0.45rem;
+    margin-bottom: 0.65rem;
   }
   .tags span {
-    font-size: .73rem;
+    font-size: 0.73rem;
     color: #575757;
     border: 1px solid #d4d4d4;
     border-radius: 999px;
-    padding: .18rem .55rem;
+    padding: 0.18rem 0.55rem;
     background: #f3f3f3;
   }
 
   .read {
-    font-size: .88rem;
+    font-size: 0.88rem;
     font-weight: 500;
     color: #222;
     text-decoration: underline;
@@ -153,8 +200,14 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comp
   }
 
   @media (max-width: 940px) {
-    .hero { grid-template-columns: 1fr; }
-    .entry { grid-template-columns: 1fr; }
-    .thumb { height: 220px; }
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    .entry {
+      grid-template-columns: 1fr;
+    }
+    .thumb {
+      height: 220px;
+    }
   }
 </style>

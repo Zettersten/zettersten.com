@@ -1,10 +1,10 @@
 ---
-title: "The Coming AI Compliance Crisis (And Why Legal Teams Aren’t Ready)"
-description: "A practical operator’s view on AI regulation risk before it becomes a board-level emergency."
+title: 'The Coming AI Compliance Crisis (And Why Legal Teams Aren’t Ready)'
+description: 'A practical operator’s view on AI regulation risk before it becomes a board-level emergency.'
 date: 2026-02-21
-tags: ["AI governance", "compliance", "enterprise", "risk"]
-category: "AI Governance"
-coverImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80"
+tags: ['AI governance', 'compliance', 'enterprise', 'risk']
+category: 'AI Governance'
+coverImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80'
 draft: false
 ---
 
@@ -16,7 +16,8 @@ Most companies are treating AI compliance like a future problem.
 That’s a mistake. The risk surface is already here: data handling, model provenance, export controls, retention, and explainability requirements are colliding with shipping velocity.
 
 <Callout title="Executive Reality" tone="warning">
-If your AI roadmap does not include explicit compliance architecture, you do not have a roadmap. You have a liability timeline.
+  If your AI roadmap does not include explicit compliance architecture, you do not have a roadmap.
+  You have a liability timeline.
 </Callout>
 
 ## Why this becomes painful fast
@@ -34,7 +35,7 @@ That means auditors, legal teams, security teams, and regulators will evaluate:
 
 <SimpleBarChart
   title="Projected enterprise pressure by 2026"
-  labels={["Ad-hoc AI", "Governed AI", "Regulated AI"]}
+  labels={['Ad-hoc AI', 'Governed AI', 'Regulated AI']}
   values={[30, 58, 82]}
 />
 
@@ -46,7 +47,8 @@ That means auditors, legal teams, security teams, and regulators will evaluate:
 4. **Governance cadence:** run monthly compliance reviews tied to release management.
 
 <Callout title="Operator Rule" tone="insight">
-Governance is a product feature. It must be engineered, versioned, measured, and maintained just like reliability.
+  Governance is a product feature. It must be engineered, versioned, measured, and maintained just
+  like reliability.
 </Callout>
 
 ## Final take
@@ -54,7 +56,6 @@ Governance is a product feature. It must be engineered, versioned, measured, and
 The winners in enterprise AI won’t be the teams with the flashiest demos.
 
 They’ll be the teams whose systems can stand up in front of legal, regulators, and the board—and keep shipping anyway.
-
 
 ## Story map (start → middle → end)
 
@@ -78,11 +79,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -99,4 +100,3 @@ If you still think governance can be postponed until after growth, you are betti
 - https://www.anthropic.com/research
 - https://platform.openai.com/docs/guides/evals
 - https://aiindex.stanford.edu/report/
-

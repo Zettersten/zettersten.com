@@ -1,10 +1,10 @@
 ---
-title: "Claude Code Security Won’t Replace CrowdStrike—But It Might Expose Your Security Theater"
+title: 'Claude Code Security Won’t Replace CrowdStrike—But It Might Expose Your Security Theater'
 description: "Anthropic’s new security preview is interesting and useful, but the 'AI replaces security teams' takes are still unserious."
 date: 2026-02-21
-tags: ["AI", "cybersecurity", "AppSec", "leadership", "opinion"]
-category: "AI Strategy"
-coverImage: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80"
+tags: ['AI', 'cybersecurity', 'AppSec', 'leadership', 'opinion']
+category: 'AI Strategy'
+coverImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80'
 draft: false
 ---
 
@@ -51,9 +51,9 @@ This is why the “it replaces CrowdStrike” take is unserious: endpoint teleme
 
 If someone says one coding-focused AI feature replaces modern security operations, they’re telling you they don’t run security operations.
 
-## The real problem it *does* expose
+## The real problem it _does_ expose
 
-Here’s the uncomfortable part: this launch *does* threaten one thing—security theater.
+Here’s the uncomfortable part: this launch _does_ threaten one thing—security theater.
 
 A lot of organizations still rely on a compliance-shaped process that looks mature on slides and collapses under adversarial pressure:
 
@@ -156,9 +156,7 @@ type PatchProposal = {
 };
 
 export function routeProposal(p: PatchProposal) {
-  const riskyPath = p.filesTouched.some((f) =>
-    /(auth|iam|acl|policy|database|migration)/i.test(f),
-  );
+  const riskyPath = p.filesTouched.some((f) => /(auth|iam|acl|policy|database|migration)/i.test(f));
 
   if (p.includesAuthOrACLChange || riskyPath) {
     return { action: 'manual-security-review', priority: 'high' };

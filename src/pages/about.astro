@@ -33,7 +33,11 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
     </section>
 
     <section class="glass photo">
-      <img src="https://msdynamicsworld.com/sites/default/files/pictures/thumbnail_erik.jpg" alt="Erik Zettersten portrait" loading="lazy" />
+      <img
+        src="https://msdynamicsworld.com/sites/default/files/pictures/thumbnail_erik.jpg"
+        alt="Erik Zettersten portrait"
+        loading="lazy"
+      />
     </section>
 
     <section class="meta muted">
@@ -43,21 +47,59 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
       <span>•</span>
       <span>{profileHighlights.repoCount}+ repositories</span>
       <span>•</span>
-      <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer">github.com/Zettersten</a>
+      <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer"
+        >github.com/Zettersten</a
+      >
     </section>
   </main>
   <Footer />
 </BaseLayout>
 
 <style>
-  .page { padding-top: 4.2rem; max-width: 880px; }
-  h1 { font-size: clamp(2rem, 7vw, 4.6rem); line-height: .98; letter-spacing: -.03em; margin: .4rem 0 1rem; }
-  .lead { font-size: clamp(1rem, 2vw, 1.3rem); max-width: 66ch; }
-  .block { margin-top: 2rem; padding: 1.2rem; }
-  .block h2 { margin: 0 0 .5rem; font-size: 1.25rem; }
-  .block ul { margin: 0; padding-left: 1rem; }
-  .block li { margin: .4rem 0; }
-  .photo { margin-top: 1.5rem; padding: .4rem; max-width: 360px; }
-  .photo img { display:block; width:100%; height:auto; filter: grayscale(100%) contrast(115%); }
-  .meta { margin-top: 1.5rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+  .page {
+    padding-top: 4.2rem;
+    max-width: 880px;
+  }
+  h1 {
+    font-size: clamp(2rem, 7vw, 4.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    margin: 0.4rem 0 1rem;
+  }
+  .lead {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    max-width: 66ch;
+  }
+  .block {
+    margin-top: 2rem;
+    padding: 1.2rem;
+  }
+  .block h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+  }
+  .block ul {
+    margin: 0;
+    padding-left: 1rem;
+  }
+  .block li {
+    margin: 0.4rem 0;
+  }
+  .photo {
+    margin-top: 1.5rem;
+    padding: 0.4rem;
+    max-width: 360px;
+  }
+  .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%) contrast(115%);
+  }
+  .meta {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
 </style>
