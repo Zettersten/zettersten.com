@@ -10,12 +10,12 @@ import { allProjects, contributionLinks } from '../data/all-projects';
   <main class="container page">
     <header class="hero">
       <p class="kicker">Projects + Contributions</p>
-      <h1>All GitHub projects, each with a story.</h1>
-      <p class="muted">A complete index of {allProjects.length} repositories, what each one is for, and where to find package distributions when available.</p>
+      <h1>The full build log: {allProjects.length} repos and counting.</h1>
+      <p class="muted">Every repo has a job. Some are tiny weapons, some are platforms. All signal execution.</p>
       <div class="contrib glass">
-        <a href={contributionLinks.profile} target="_blank" rel="noreferrer">GitHub Profile</a>
+        <a href={contributionLinks.profile} target="_blank" rel="noreferrer">Main Character Profile</a>
         <a href={contributionLinks.repositories} target="_blank" rel="noreferrer">All Repositories</a>
-        <a href={contributionLinks.activity} target="_blank" rel="noreferrer">Contribution Activity</a>
+        <a href={contributionLinks.activity} target="_blank" rel="noreferrer">Contribution Heatmap</a>
       </div>
     </header>
 

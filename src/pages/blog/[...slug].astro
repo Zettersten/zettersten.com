@@ -16,7 +16,7 @@ const { Content } = await render(post);
 <BaseLayout title={`${post.data.title} — Erik Zettersten`} description={post.data.description}>
   <Nav />
   <main class="container article">
-    <a href="/blog" class="muted back">← Back to blog</a>
+    <a href="/blog" class="muted back">← Back to hot takes</a>
     <h1>{post.data.title}</h1>
     <p class="muted">{post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
     <article class="glass prose">
