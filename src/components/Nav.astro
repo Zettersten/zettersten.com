@@ -1,6 +1,6 @@
 <header class="container nav-wrap">
   <nav class="glass nav">
-    <a href="/" class="logo">Erik Zettersten</a>
+    <a href="/" class="logo"><span>ERIK</span> ZETTERSTEN</a>
     <div class="links">
       <a href="/work">Work</a>
       <a href="/projects">Projects</a>
@@ -20,8 +20,9 @@
     align-items: center;
     padding: 0.9rem 1rem;
   }
-  .logo { font-weight: 800; letter-spacing: 0.2px; }
-  .links { display: flex; gap: 1rem; color: var(--muted); font-weight: 500; }
+  .logo { font-family: 'Archivo', sans-serif; font-weight: 900; letter-spacing: .03em; }
+  .logo span { color: var(--brand); }
+  .links { display: flex; gap: .9rem; color: var(--muted); font-weight: 700; font-size: .92rem; }
   .links a:hover { color: var(--text); }
-  @media (max-width: 720px){ .links { gap: .65rem; font-size: .92rem; } }
+  @media (max-width: 880px){ .links { gap: .55rem; font-size: .82rem; flex-wrap: wrap; justify-content: flex-end; } }
 </style>
