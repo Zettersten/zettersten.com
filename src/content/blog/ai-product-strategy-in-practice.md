@@ -1,16 +1,16 @@
 ---
-title: "AI Product Strategy in Practice"
-description: "Most AI roadmaps are expensive theater. Here’s the brutally practical way to build things that survive production."
+title: 'AI Product Strategy in Practice'
+description: 'Most AI roadmaps are expensive theater. Here’s the brutally practical way to build things that survive production.'
 date: 2026-02-20
-tags: ["AI", "strategy", "product"]
+tags: ['AI', 'strategy', 'product']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
-category: "AI Strategy"
+coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80'
+category: 'AI Strategy'
 ---
 
 Most AI product strategy advice is fake.
 
-Not *malicious* fake—just detached from reality. It’s written by people optimizing for demos, conference talks, and “look what we built” screenshots, not by people carrying pager duty for production systems that can quietly burn money at 2am.
+Not _malicious_ fake—just detached from reality. It’s written by people optimizing for demos, conference talks, and “look what we built” screenshots, not by people carrying pager duty for production systems that can quietly burn money at 2am.
 
 ![AI Product Strategy in Practice](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80)
 
@@ -71,7 +71,6 @@ If the answer is no, you built theater.
 
 If the answer is yes, you built product.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -94,11 +93,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -115,4 +114,3 @@ The takeaway is blunt: adoption is no longer the bottleneck. Reliability is.
 - https://www.anthropic.com/research
 - https://platform.openai.com/docs/guides/evals
 - https://aiindex.stanford.edu/report/
-

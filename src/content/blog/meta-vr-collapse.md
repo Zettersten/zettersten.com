@@ -1,11 +1,11 @@
 ---
-title: "Meta’s VR Collapse: The Most Expensive Tech Misread in History"
-description: "VR didn’t fail because the tech was impossible. It failed because the strategy ignored behavior."
+title: 'Meta’s VR Collapse: The Most Expensive Tech Misread in History'
+description: 'VR didn’t fail because the tech was impossible. It failed because the strategy ignored behavior.'
 date: 2026-02-21
-tags: ["Meta", "VR", "strategy", "product"]
+tags: ['Meta', 'VR', 'strategy', 'product']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=1600&q=80"
-category: "AI Strategy"
+coverImage: 'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=1600&q=80'
+category: 'AI Strategy'
 ---
 
 Meta did not lose because engineers couldn’t build VR.
@@ -58,7 +58,6 @@ The next winners in immersive tech won’t be the loudest futurists.
 
 They’ll be the teams that reduce friction, target real use cases, and earn habit one workflow at a time.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -81,11 +80,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -102,4 +101,3 @@ In plain terms: people still want to play. They are just less tolerant of pricin
 - https://store.steampowered.com/charts/mostplayed
 - https://www.gamesindustry.biz/
 - https://www.pcgamer.com/hardware/
-

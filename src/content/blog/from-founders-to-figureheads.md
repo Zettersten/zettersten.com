@@ -1,11 +1,11 @@
 ---
-title: "From Founders to Figureheads: Why Tech CEOs No Longer Run Their Companies"
-description: "Many CEOs still hold the title, but boards, investors, and optics now run the playbook."
+title: 'From Founders to Figureheads: Why Tech CEOs No Longer Run Their Companies'
+description: 'Many CEOs still hold the title, but boards, investors, and optics now run the playbook.'
 date: 2026-02-21
-tags: ["leadership", "corporate governance", "strategy", "executives"]
+tags: ['leadership', 'corporate governance', 'strategy', 'executives']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80"
-category: "Leadership"
+coverImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80'
+category: 'Leadership'
 ---
 
 A lot of tech CEOs aren’t really running their companies anymore.
@@ -60,7 +60,6 @@ Leaders protect reality.
 
 Those are not the same job.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -83,11 +82,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -104,4 +103,3 @@ So the management job has changed. The scarce skill is no longer “unlock outpu
 - https://www.microsoft.com/en-us/worklab/work-trend-index
 - https://hbr.org/topic/leadership
 - https://queue.acm.org/
-

@@ -6,7 +6,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "check": "npm run lint && npm run format:check",
+    "validate": "npm run check && npm run build"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
@@ -18,5 +25,24 @@
     "astro-icon": "^1.1.5",
     "astro-pagefind": "^1.8.5",
     "astro-robots-txt": "^1.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.3",
+    "eslint": "^9.39.3",
+    "eslint-plugin-astro": "^1.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript-eslint": "^8.56.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs,astro}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,mdx,json,yml,yaml,css,html,svg}": [
+      "prettier --write"
+    ]
   }
 }

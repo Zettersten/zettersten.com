@@ -5,62 +5,138 @@ import Footer from '../components/Footer.astro';
 import { allProjects, contributionLinks } from '../data/all-projects';
 ---
 
-<BaseLayout title="All Projects & Contributions — Erik Zettersten" description="A complete portfolio of Erik Zettersten's GitHub projects, contribution links, and project stories.">
+<BaseLayout
+  title="All Projects & Contributions — Erik Zettersten"
+  description="A complete portfolio of Erik Zettersten's GitHub projects, contribution links, and project stories."
+>
   <Nav />
   <main class="container page">
     <header class="hero">
       <p class="kicker">Projects + Contributions</p>
       <h1>The full build log: {allProjects.length} repos and counting.</h1>
-      <p class="muted">Every repo has a job. Some are tiny weapons, some are platforms. All signal execution.</p>
+      <p class="muted">
+        Every repo has a job. Some are tiny weapons, some are platforms. All signal execution.
+      </p>
       <div class="contrib glass">
-        <a href={contributionLinks.profile} target="_blank" rel="noreferrer">Main Character Profile</a>
-        <a href={contributionLinks.repositories} target="_blank" rel="noreferrer">All Repositories</a>
-        <a href={contributionLinks.activity} target="_blank" rel="noreferrer">Contribution Heatmap</a>
+        <a href={contributionLinks.profile} target="_blank" rel="noreferrer"
+          >Main Character Profile</a
+        >
+        <a href={contributionLinks.repositories} target="_blank" rel="noreferrer"
+          >All Repositories</a
+        >
+        <a href={contributionLinks.activity} target="_blank" rel="noreferrer"
+          >Contribution Heatmap</a
+        >
       </div>
     </header>
 
     <section class="grid">
-      {allProjects.map((p) => (
-        <article class="glass card">
-          <div class="top">
-            <h2>{p.name}</h2>
-            <span class="lang">{p.language}</span>
-          </div>
-          <p class="story">{p.story}</p>
-          {p.description && <p class="muted desc">{p.description}</p>}
-          <div class="meta muted">★ {p.stars} · Forks {p.forks}</div>
-          <div class="links">
-            <a class="btn" href={p.url} target="_blank" rel="noreferrer">GitHub Repo</a>
-            {p.homepage && <a class="btn" href={p.homepage} target="_blank" rel="noreferrer">Live Site</a>}
-            {p.packages.map((pkg) => (
-              <a class="btn" href={pkg.url} target="_blank" rel="noreferrer">{pkg.manager} Package</a>
-            ))}
-          </div>
-        </article>
-      ))}
+      {
+        allProjects.map((p) => (
+          <article class="glass card">
+            <div class="top">
+              <h2>{p.name}</h2>
+              <span class="lang">{p.language}</span>
+            </div>
+            <p class="story">{p.story}</p>
+            {p.description && <p class="muted desc">{p.description}</p>}
+            <div class="meta muted">
+              ★ {p.stars} · Forks {p.forks}
+            </div>
+            <div class="links">
+              <a class="btn" href={p.url} target="_blank" rel="noreferrer">
+                GitHub Repo
+              </a>
+              {p.homepage && (
+                <a class="btn" href={p.homepage} target="_blank" rel="noreferrer">
+                  Live Site
+                </a>
+              )}
+              {p.packages.map((pkg) => (
+                <a class="btn" href={pkg.url} target="_blank" rel="noreferrer">
+                  {pkg.manager} Package
+                </a>
+              ))}
+            </div>
+          </article>
+        ))
+      }
     </section>
   </main>
   <Footer />
 </BaseLayout>
 
 <style>
-  .page { padding-top: 4rem; }
-  h1 { margin: .4rem 0 .6rem; font-size: clamp(2rem, 7vw, 5rem); line-height: .96; letter-spacing: -.03em; }
-  .hero { margin-bottom: 2rem; }
-  .contrib { display: flex; gap: .6rem; flex-wrap: wrap; padding: .8rem; margin-top: 1rem; }
-  .contrib a { color: var(--text); font-weight: 600; border: 1px solid var(--border); border-radius: 12px; padding: .5rem .7rem; }
+  .page {
+    padding-top: 4rem;
+  }
+  h1 {
+    margin: 0.4rem 0 0.6rem;
+    font-size: clamp(2rem, 7vw, 5rem);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+  }
+  .hero {
+    margin-bottom: 2rem;
+  }
+  .contrib {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    padding: 0.8rem;
+    margin-top: 1rem;
+  }
+  .contrib a {
+    color: var(--text);
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.5rem 0.7rem;
+  }
 
-  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-  .card { padding: 1rem; }
-  .top { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
-  .top h2 { margin: 0; font-size: 1.25rem; }
-  .lang { color: var(--brand); font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; }
-  .story { margin: .5rem 0 .35rem; }
-  .desc { margin: 0 0 .45rem; }
-  .meta { font-size: .92rem; }
-  .links { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .75rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .card {
+    padding: 1rem;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .top h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  .lang {
+    color: var(--brand);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .story {
+    margin: 0.5rem 0 0.35rem;
+  }
+  .desc {
+    margin: 0 0 0.45rem;
+  }
+  .meta {
+    font-size: 0.92rem;
+  }
+  .links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+  }
 
   @media (max-width: 980px) {
-    .grid { grid-template-columns: 1fr; }
+    .grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

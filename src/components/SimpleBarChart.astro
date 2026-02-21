@@ -1,18 +1,32 @@
 ---
-interface Props { title?: string; labels?: string[]; values?: number[]; }
-const { title = 'Trend Snapshot', labels = ['2024', '2025', '2026'], values = [28, 54, 76] } = Astro.props;
+interface Props {
+  title?: string;
+  labels?: string[];
+  values?: number[];
+}
+const {
+  title = 'Trend Snapshot',
+  labels = ['2024', '2025', '2026'],
+  values = [28, 54, 76],
+} = Astro.props;
 const max = Math.max(...values, 1);
 ---
 
 <figure class="chart">
   <figcaption>{title}</figcaption>
   <div class="bars">
-    {values.map((v, i) => (
-      <div class="item">
-        <div class="bar" style={`height:${Math.round((v / max) * 140)}px`} title={`${labels[i] || i}: ${v}`}></div>
-        <small>{labels[i] || i}</small>
-      </div>
-    ))}
+    {
+      values.map((v, i) => (
+        <div class="item">
+          <div
+            class="bar"
+            style={`height:${Math.round((v / max) * 140)}px`}
+            title={`${labels[i] || i}: ${v}`}
+          />
+          <small>{labels[i] || i}</small>
+        </div>
+      ))
+    }
   </div>
 </figure>
 
@@ -20,23 +34,35 @@ const max = Math.max(...values, 1);
   .chart {
     border: 1px solid #d9d3cf;
     border-radius: 12px;
-    padding: .95rem;
+    padding: 0.95rem;
     background: #f4efec;
     margin: 1rem 0 1.25rem;
   }
   figcaption {
-    font-size: .82rem;
+    font-size: 0.82rem;
     color: #675d57;
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: .07em;
+    letter-spacing: 0.07em;
   }
-  .bars { display: flex; align-items: end; gap: .8rem; min-height: 170px; }
-  .item { display: grid; gap: .32rem; justify-items: center; }
+  .bars {
+    display: flex;
+    align-items: end;
+    gap: 0.8rem;
+    min-height: 170px;
+  }
+  .item {
+    display: grid;
+    gap: 0.32rem;
+    justify-items: center;
+  }
   .bar {
     width: 34px;
     border-radius: 8px 8px 4px 4px;
     background: linear-gradient(180deg, #d57e4f, #b55422);
   }
-  small { font-size: .72rem; color: #645a54; }
+  small {
+    font-size: 0.72rem;
+    color: #645a54;
+  }
 </style>
