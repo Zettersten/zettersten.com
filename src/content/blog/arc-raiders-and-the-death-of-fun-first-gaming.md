@@ -4,13 +4,13 @@ description: 'Polish is not the same as joy. Why modern game design too often op
 date: 2026-02-21
 tags: ['gaming', 'ARC Raiders', 'game design', 'product strategy']
 draft: false
-coverImage: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Finals_logo_stacked.svg/4195px-The_Finals_logo_stacked.svg.png'
 category: 'Gaming'
 ---
 
 Modern games are better produced than ever.
 
-![ARC Raiders and the Death of ‘Fun-First’ Gaming](https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80)
+![ARC Raiders and the Death of ‘Fun-First’ Gaming](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Finals_logo_stacked.svg/4195px-The_Finals_logo_stacked.svg.png)
 
 They are not always more fun.
 
