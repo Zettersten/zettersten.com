@@ -14,35 +14,81 @@ import { mentions } from '../data/mentions';
   <main id="main-content" class="container page">
     <p class="kicker">Mentions & Media</p>
     <h1>Internet receipts: where Erik shows up and shows out.</h1>
-    <p class="muted intro">Talks, posts, and shoutouts that back the story with public proof. Short version: the work gets noticed.</p>
+    <p class="muted intro">
+      Talks, posts, and shoutouts that back the story with public proof. Short version: the work
+      gets noticed.
+    </p>
 
     <section class="list">
-      {mentions.map((m) => (
-        <article class="glass card">
-          <img src={m.thumbnail} alt={m.title} loading="lazy" />
-          <div>
-            <small>{m.outlet}</small>
-            <h2>{m.title}</h2>
-            <p>{m.story}</p>
-            <p class="muted">{m.summary}</p>
-            <a class="btn primary" href={m.url} target="_blank" rel="noreferrer">Watch / Read</a>
-          </div>
-        </article>
-      ))}
+      {
+        mentions.map((m) => (
+          <article class="glass card">
+            <img src={m.thumbnail} alt={m.title} loading="lazy" />
+            <div>
+              <small>{m.outlet}</small>
+              <h2>{m.title}</h2>
+              <p>{m.story}</p>
+              <p class="muted">{m.summary}</p>
+              <a class="btn primary" href={m.url} target="_blank" rel="noreferrer">
+                Watch / Read
+              </a>
+            </div>
+          </article>
+        ))
+      }
     </section>
   </main>
   <Footer />
 </BaseLayout>
 
 <style>
-  .page { padding-top: 4rem; }
-  h1 { margin: .4rem 0 .6rem; font-size: clamp(2rem, 7vw, 5rem); line-height: .96; letter-spacing: -.03em; max-width: 14ch; }
-  .intro { max-width: 60ch; }
-  .list { margin-top: 1.4rem; display: grid; gap: 1rem; }
-  .card { display: grid; grid-template-columns: 320px 1fr; gap: 1rem; padding: .8rem; }
-  .card img { width: 100%; height: 100%; object-fit: cover; border: 1px solid #d6d6d6; border-radius: 12px; }
-  .card small { text-transform: uppercase; letter-spacing: .06em; color: var(--brand); font-weight: 700; }
-  .card h2 { margin: .35rem 0 .5rem; font-size: 1.5rem; }
-  .card p { margin: .3rem 0; }
-  @media (max-width: 900px){ .card { grid-template-columns: 1fr; } }
+  .page {
+    padding-top: 4rem;
+  }
+  h1 {
+    margin: 0.4rem 0 0.6rem;
+    font-size: clamp(2rem, 7vw, 5rem);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    max-width: 14ch;
+  }
+  .intro {
+    max-width: 60ch;
+  }
+  .list {
+    margin-top: 1.4rem;
+    display: grid;
+    gap: 1rem;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1rem;
+    padding: 0.8rem;
+  }
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+  }
+  .card small {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--brand);
+    font-weight: 700;
+  }
+  .card h2 {
+    margin: 0.35rem 0 0.5rem;
+    font-size: 1.5rem;
+  }
+  .card p {
+    margin: 0.3rem 0;
+  }
+  @media (max-width: 900px) {
+    .card {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

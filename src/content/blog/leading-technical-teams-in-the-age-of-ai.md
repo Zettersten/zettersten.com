@@ -1,11 +1,11 @@
 ---
-title: "Leading Technical Teams in the Age of AI"
-description: "Most leaders are managing 2025 engineers with 2012 playbooks. Here’s the upgrade."
+title: 'Leading Technical Teams in the Age of AI'
+description: 'Most leaders are managing 2025 engineers with 2012 playbooks. Here’s the upgrade.'
 date: 2026-02-21
-tags: ["leadership", "AI", "engineering management", "culture"]
+tags: ['leadership', 'AI', 'engineering management', 'culture']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
-category: "Leadership"
+coverImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80'
+category: 'Leadership'
 ---
 
 Most leadership advice for technical teams is already outdated.
@@ -180,7 +180,6 @@ The leaders who master that won’t just survive this shift.
 
 They’ll define it.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -203,11 +202,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -224,4 +223,3 @@ So the management job has changed. The scarce skill is no longer “unlock outpu
 - https://www.microsoft.com/en-us/worklab/work-trend-index
 - https://hbr.org/topic/leadership
 - https://queue.acm.org/
-

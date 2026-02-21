@@ -1,11 +1,11 @@
 ---
-title: "Raising Four Kids in an AI World: Why Most Parents Are Unprepared"
-description: "Parenting strategy for an economy where automation changes faster than school systems."
+title: 'Raising Four Kids in an AI World: Why Most Parents Are Unprepared'
+description: 'Parenting strategy for an economy where automation changes faster than school systems.'
 date: 2026-02-21
-tags: ["parenting", "AI", "future of work", "leadership"]
+tags: ['parenting', 'AI', 'future of work', 'leadership']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1600&q=80"
-category: "Leadership"
+coverImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1600&q=80'
+category: 'Leadership'
 ---
 
 Most parents are still preparing kids for a labor market that is already disappearing.
@@ -48,7 +48,6 @@ The goal is to raise humans who can create value across changing systems without
 
 That requires intentional parenting now, not panic later.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -71,11 +70,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -92,4 +91,3 @@ So the core parenting task is not raising kids who can “use AI.” It is raisi
 - https://www.commonsensemedia.org/artificial-intelligence
 - https://www.unicef.org/globalinsight/reports/policy-guidance-ai-children
 - https://www.oecd.org/en/topics/ai-jobs-and-skills.html
-

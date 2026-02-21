@@ -4,13 +4,13 @@ on:
   schedule:
     # 13:00 UTC Monday ~= 9:00 AM America/New_York (EST)
     # Script also enforces local Monday 9AM and can be FORCE_RUN manually.
-    - cron: "0 13 * * 1"
+    - cron: '0 13 * * 1'
   workflow_dispatch:
     inputs:
       force:
-        description: "Force run regardless of local time"
+        description: 'Force run regardless of local time'
         required: false
-        default: "false"
+        default: 'false'
 
 permissions:
   contents: write
@@ -27,7 +27,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install deps
         run: pip install -r requirements-editorial.txt

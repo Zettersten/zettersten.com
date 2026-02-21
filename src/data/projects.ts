@@ -24,8 +24,7 @@ export const featuredProjects = [
     name: 'MarkdigExtensions.Query',
     url: 'https://github.com/Zettersten/MarkdigExtensions.Query',
     category: 'Language + Parsing',
-    summary:
-      'A jQuery-style query engine for traversing and transforming markdown ASTs in .NET.',
+    summary: 'A jQuery-style query engine for traversing and transforming markdown ASTs in .NET.',
   },
   {
     name: 'LinkPreview',

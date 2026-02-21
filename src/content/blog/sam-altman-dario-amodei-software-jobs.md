@@ -1,11 +1,11 @@
 ---
-title: "Why Sam Altman and Dario Amodei Are Quietly Reshaping the Software Job Market"
-description: "Frontier model economics are compressing entry-level engineering work faster than most companies are willing to admit."
+title: 'Why Sam Altman and Dario Amodei Are Quietly Reshaping the Software Job Market'
+description: 'Frontier model economics are compressing entry-level engineering work faster than most companies are willing to admit.'
 date: 2026-02-21
-tags: ["AI automation", "software jobs", "labor market", "economics"]
+tags: ['AI automation', 'software jobs', 'labor market', 'economics']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1600&q=80"
-category: "Economics"
+coverImage: 'https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1600&q=80'
+category: 'Economics'
 ---
 
 Let’s say the quiet part out loud: software employment is being re-tiered in real time.
@@ -116,7 +116,6 @@ The safest strategy now is clarity:
 
 That is how you survive the compression era.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -139,11 +138,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -160,4 +159,3 @@ That shift is uncomfortable for institutions built around old pipelines, but it 
 - https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm
 - https://www.oecd.org/en/topics/ai-jobs-and-skills.html
 - https://www.weforum.org/reports/the-future-of-jobs-report-2025/
-

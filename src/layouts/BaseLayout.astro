@@ -7,7 +7,7 @@ interface Props {
   publishedTime?: Date | string;
   modifiedTime?: Date | string;
   noindex?: boolean;
-  jsonLd?: Record<string, any> | Array<Record<string, any>>;
+  jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 const {
@@ -84,9 +84,14 @@ const schemaGraph = [baseSchema, ...extraSchema];
     <link rel="alternate icon" href="/favicon.ico" sizes="any" />
     <link rel="mask-icon" href="/favicon.svg" color="#c7632c" />
 
-    <link rel="alternate" type="application/rss+xml" title="Erik Zettersten Blog RSS" href="/rss.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Erik Zettersten Blog RSS"
+      href="/rss.xml"
+    />
 
-    <script type="application/ld+json" set:html={JSON.stringify(schemaGraph)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
     <slot name="head" />
   </head>
   <body>
@@ -110,8 +115,14 @@ const schemaGraph = [baseSchema, ...extraSchema];
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
   body {
     font-family: var(--font-sans);
     background: var(--bg);
@@ -137,12 +148,18 @@ const schemaGraph = [baseSchema, ...extraSchema];
     max-width: 70ch;
   }
 
-  a { color: inherit; text-decoration: none; }
-  .container { width: min(1200px, calc(100% - 2.2rem)); margin-inline: auto; }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .container {
+    width: min(1200px, calc(100% - 2.2rem));
+    margin-inline: auto;
+  }
   .kicker {
     margin: 0;
-    font-size: .72rem;
-    letter-spacing: .1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--brand);
     font-weight: 600;
@@ -155,19 +172,27 @@ const schemaGraph = [baseSchema, ...extraSchema];
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: .35rem;
-    padding: .7rem 1rem;
+    gap: 0.35rem;
+    padding: 0.7rem 1rem;
     border-radius: 999px;
     border: 1px solid #c8c8c8;
     font-weight: 500;
-    font-size: .82rem;
+    font-size: 0.82rem;
     color: #222;
     background: #f3f3f3;
-    transition: background .16s ease;
+    transition: background 0.16s ease;
   }
-  .btn:hover { background: #e8e8e8; }
-  .btn.primary { background: #202020; color: #fff; border-color: #202020; }
-  .muted { color: var(--muted); }
+  .btn:hover {
+    background: #e8e8e8;
+  }
+  .btn.primary {
+    background: #202020;
+    color: #fff;
+    border-color: #202020;
+  }
+  .muted {
+    color: var(--muted);
+  }
 
   :focus-visible {
     outline: 2px solid var(--brand);
@@ -177,16 +202,18 @@ const schemaGraph = [baseSchema, ...extraSchema];
 
   .skip-link {
     position: absolute;
-    left: .6rem;
+    left: 0.6rem;
     top: -100px;
     background: #101010;
     color: #fff;
-    padding: .5rem .7rem;
+    padding: 0.5rem 0.7rem;
     border-radius: 8px;
     z-index: 999;
-    font-size: .85rem;
+    font-size: 0.85rem;
   }
-  .skip-link:focus { top: .6rem; }
+  .skip-link:focus {
+    top: 0.6rem;
+  }
 
   ::selection {
     background: #f0d2c2;

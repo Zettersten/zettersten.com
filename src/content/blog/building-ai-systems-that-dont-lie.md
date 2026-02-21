@@ -1,11 +1,11 @@
 ---
-title: "Building AI Systems That Don’t Lie to You"
-description: "If you don’t measure truth, you’re shipping fiction. Here’s how to engineer for reliability."
+title: 'Building AI Systems That Don’t Lie to You'
+description: 'If you don’t measure truth, you’re shipping fiction. Here’s how to engineer for reliability.'
 date: 2026-02-21
-tags: ["AI reliability", "evals", "governance", "engineering"]
+tags: ['AI reliability', 'evals', 'governance', 'engineering']
 draft: false
-coverImage: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=80"
-category: "AI Governance"
+coverImage: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=80'
+category: 'AI Governance'
 ---
 
 Everyone wants faster AI.
@@ -154,7 +154,6 @@ If your team can’t explain why an output is correct, you don’t have intellig
 
 You have autocomplete with branding.
 
-
 ## Story map (start → middle → end)
 
 ```mermaid
@@ -177,11 +176,11 @@ type Decision = {
 export function safeRespond(d: Decision) {
   if (!d.confident || d.sourceUrls.length === 0) {
     return {
-      action: "abstain",
-      message: "I don’t have enough reliable evidence. Escalating to human review."
+      action: 'abstain',
+      message: 'I don’t have enough reliable evidence. Escalating to human review.',
     };
   }
-  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+  return { action: 'answer', message: d.reason, citations: d.sourceUrls };
 }
 ```
 
@@ -198,4 +197,3 @@ If you still think governance can be postponed until after growth, you are betti
 - https://www.anthropic.com/research
 - https://platform.openai.com/docs/guides/evals
 - https://aiindex.stanford.edu/report/
-
