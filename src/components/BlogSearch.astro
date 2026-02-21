@@ -1,5 +1,5 @@
-<div class="search-wrap glass">
-  <div id="search"></div>
+<div class="search-shell glass">
+  <div id="search" class="search-host"></div>
 </div>
 
 <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
@@ -11,30 +11,87 @@
     new window.PagefindUI({
       element: '#search',
       showSubResults: false,
-      excerptLength: 18,
+      excerptLength: 24,
       resetStyles: false,
       showImages: false,
       translations: {
-        placeholder: 'Search essays, topics, and keywords…'
+        placeholder: 'Search posts…'
       }
     });
   });
 </script>
 
 <style>
-  .search-wrap { padding: .55rem .75rem; border-radius: 999px; min-width: 310px; }
+  .search-shell {
+    width: min(100%, 420px);
+    border-radius: 999px;
+    padding: .2rem .65rem;
+    position: relative;
+    z-index: 4;
+  }
+
+  .search-host { position: relative; }
+
+  #search :global(.pagefind-ui__form) {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+  }
+
   #search :global(.pagefind-ui__search-input) {
-    border: none;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
     background: transparent;
-    padding: .2rem;
+    min-height: 38px;
+    padding: .4rem .1rem;
     font: inherit;
+    font-size: .92rem;
+    width: 100%;
   }
+
+  #search :global(.pagefind-ui__search-clear) {
+    width: 26px;
+    height: 26px;
+  }
+
   #search :global(.pagefind-ui__drawer) {
-    margin-top: .7rem;
+    position: absolute;
+    top: calc(100% + .6rem);
+    left: 0;
+    right: 0;
+    max-height: min(62vh, 520px);
+    overflow: auto;
     border: 1px solid var(--line);
-    border-radius: 12px;
-    background: #fafafa;
-    padding: .55rem;
+    border-radius: 14px;
+    background: #f6f6f6;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+    padding: .45rem;
+    overscroll-behavior: contain;
   }
-  #search :global(.pagefind-ui__result-link) { font-weight: 600; }
+
+  #search :global(.pagefind-ui__result) {
+    margin: 0;
+    padding: .65rem .55rem;
+    border-bottom: 1px solid #dddddd;
+  }
+  #search :global(.pagefind-ui__result:last-child) { border-bottom: 0; }
+
+  #search :global(.pagefind-ui__result-link) {
+    font-weight: 600;
+    font-size: .95rem;
+    text-decoration: none;
+  }
+
+  #search :global(.pagefind-ui__result-excerpt) {
+    margin-top: .2rem;
+    font-size: .86rem;
+    color: #575757;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 900px) {
+    .search-shell { width: 100%; }
+    #search :global(.pagefind-ui__drawer) { max-height: 50vh; }
+  }
 </style>
