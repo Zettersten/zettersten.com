@@ -1,5 +1,15 @@
 <footer class="container footer muted">
-  <p>© {new Date().getFullYear()} Erik Zettersten — Engineered in Astro, deployed on GitHub Pages.</p>
+  <p>© {new Date().getFullYear()} Erik Zettersten</p>
+  <p class="sub">AI strategy. Systems engineering. Leadership execution.</p>
+  <p class="links">
+    <a href="/about">About</a>
+    <span>•</span>
+    <a href="/projects">Projects</a>
+    <span>•</span>
+    <a href="/blog">Blog</a>
+    <span>•</span>
+    <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer">GitHub</a>
+  </p>
 </footer>
 
 <style>
@@ -9,4 +19,8 @@
     border-top: 1px solid var(--border);
     font-size: .92rem;
   }
+  .footer p { margin: .2rem 0; }
+  .sub { font-size: .88rem; }
+  .links { display: flex; gap: .45rem; flex-wrap: wrap; align-items: center; }
+  .links a { text-decoration: underline; text-underline-offset: 3px; }
 </style>
