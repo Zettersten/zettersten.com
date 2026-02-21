@@ -1,6 +1,6 @@
 ---
 title: "The $4,000 PC Problem: Why Building a Gaming Rig Is Now Absurd"
-description: "When a "normal" enthusiast build starts flirting with luxury pricing, the value equation is broken."
+description: "When a 'normal' enthusiast build starts flirting with luxury pricing, the value equation is broken."
 date: 2026-02-21
 tags: ["PC hardware", "gaming", "economics", "consumer tech"]
 draft: false
