@@ -9,14 +9,23 @@ import { compareBlogPostsByDateThenTitle } from '../../utils/blog';
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   compareBlogPostsByDateThenTitle,
 );
+
+const blogCollectionJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Blog — Erik Zettersten',
+  about: 'AI, strategy, systems, and leadership essays',
+};
 ---
 
 <BaseLayout
   title="Blog — Erik Zettersten"
-  description="Clean, practical essays on AI, strategy, systems, and leadership."
+  description="Opinionated long-form essays on AI, strategy, systems, and leadership."
+  image="/og/blog.svg"
+  jsonLd={blogCollectionJsonLd}
 >
   <Nav />
-  <main class="container page">
+  <main id="main-content" class="container page">
     <header class="hero">
       <div>
         <p class="kicker">Journal</p>
