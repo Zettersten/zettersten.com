@@ -49,4 +49,12 @@ export const profileHighlights = {
   role: 'Head of Technology, VeeFriends',
   repoCount: 55,
   followers: 62,
+  yearsExperience: '15+ years',
 };
+
+export const linkedinHighlights = [
+  '15+ years in software engineering and technical leadership',
+  'Current: Head of Technology at VeeFriends',
+  'Experience across fintech/payments, media platforms, and AI-forward product systems',
+  'Hands-on builder with deep roots in web engineering, developer tooling, and performance',
+];

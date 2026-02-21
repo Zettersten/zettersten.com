@@ -31,6 +31,7 @@ const heroProjects = featuredProjects.slice(0, 3);
     <section class="separation stat-band glass">
       <div><strong>{profileHighlights.repoCount}+</strong><span>Public repositories</span></div>
       <div><strong>{profileHighlights.followers}+</strong><span>GitHub followers</span></div>
+      <div><strong>{profileHighlights.yearsExperience}</strong><span>Building software</span></div>
       <div><strong>{profileHighlights.location}</strong><span>Based in</span></div>
     </section>
 
@@ -84,7 +85,7 @@ const heroProjects = featuredProjects.slice(0, 3);
 
   .stat-band {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: .75rem;
     padding: 1rem;
   }

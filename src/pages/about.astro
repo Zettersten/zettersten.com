@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { profileHighlights } from '../data/projects';
+import { profileHighlights, linkedinHighlights } from '../data/projects';
 ---
 
 <BaseLayout title="About Erik Zettersten">
@@ -15,6 +15,13 @@ import { profileHighlights } from '../data/projects';
       As Head of Technology at VeeFriends, he combines strategic direction with hands-on execution
       across AI systems, web platforms, and developer experience.
     </p>
+
+    <section class="glass block">
+      <h2>Background</h2>
+      <ul>
+        {linkedinHighlights.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
 
     <section class="glass block">
       <h2>Operating model</h2>
