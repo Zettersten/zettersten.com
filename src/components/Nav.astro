@@ -1,19 +1,32 @@
 ---
 import { Icon } from 'astro-icon/components';
+
+const pathname = Astro.url.pathname;
+const links = [
+  { href: '/about', label: 'About Me' },
+  { href: '/work', label: 'Portfolio' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
+];
+
+const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 ---
 
 <header class="container nav-wrap">
-  <nav class="nav">
-    <a href="/" class="logo" aria-label="Home">
+  <nav class="nav" aria-label="Primary">
+    <a href="/" class="logo" aria-label="Go to homepage">
       <Icon name="tabler:sparkles" width="16" height="16" />
     </a>
     <div class="links">
-      <a href="/about">About Me</a>
-      <a href="/work">Portfolio</a>
-      <a href="/projects">Projects</a>
-      <a href="/blog">Blog</a>
+      {
+        links.map((link) => (
+          <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
     </div>
-    <a class="call" href="/mentions"
+    <a class="call" href="/mentions" aria-current={isActive('/mentions') ? 'page' : undefined}
       >Mentions <Icon name="tabler:arrow-up-right" width="12" height="12" /></a
     >
   </nav>
@@ -40,6 +53,12 @@ import { Icon } from 'astro-icon/components';
     gap: 1.2rem;
     color: #4d4d4d;
     font-size: 0.82rem;
+  }
+  .links a[aria-current='page'],
+  .call[aria-current='page'] {
+    color: #1f1f1f;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
   .call {
     font-size: 0.82rem;
