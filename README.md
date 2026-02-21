@@ -34,9 +34,11 @@ draft: false
 
 ## Pages
 - `/` Hero + positioning
-- `/work` Selected projects
+- `/work` Selected projects + case-study outcomes
 - `/about` Brand narrative
 - `/blog` Musings and thought pieces
+- `/rss.xml` RSS feed
+- `/sitemap.xml` XML sitemap
 
 ## Deployment
 Deploy the generated `dist/` folder to GitHub Pages via your existing workflow or Pages build pipeline.

@@ -8,16 +8,19 @@ const highlights = [
     name: 'BlazorCanvas2d',
     url: 'https://github.com/Zettersten/BlazorCanvas2d',
     note: 'High-performance HTML5 Canvas API wrapper for Blazor apps.',
+    outcomes: ['Performance-first rendering API', 'Developer-friendly C# interface', 'Production-ready component model'],
   },
   {
     name: 'elsa-extensions',
     url: 'https://github.com/Zettersten/elsa-extensions',
     note: 'Workflow automation integrations across third-party services.',
+    outcomes: ['Expanded automation reach', 'Modular integration architecture', 'Reduced integration effort for teams'],
   },
   {
     name: 'TailwindMerge (.NET)',
     url: 'https://github.com/Zettersten/TailwindMerge',
     note: 'Utility-class conflict resolution and deduplication for Tailwind in .NET.',
+    outcomes: ['Deterministic utility resolution', 'Cleaner UI class composition', 'Optimized runtime usage patterns'],
   },
 ];
 ---
@@ -33,6 +36,9 @@ const highlights = [
         <a class="glass row" href={item.url} target="_blank" rel="noreferrer">
           <strong>{item.name}</strong>
           <p class="muted">{item.note}</p>
+          <ul>
+            {item.outcomes.map((outcome) => <li>{outcome}</li>)}
+          </ul>
         </a>
       ))}
     </div>
@@ -46,5 +52,7 @@ const highlights = [
   .list { display: grid; gap: .9rem; margin-top: 1rem; }
   .row { display: block; padding: 1rem; }
   .row strong { font-size: 1.08rem; }
-  .row p { margin: .2rem 0 0; }
+  .row p { margin: .2rem 0 .45rem; }
+  .row ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
+  .row li { margin: .2rem 0; }
 </style>

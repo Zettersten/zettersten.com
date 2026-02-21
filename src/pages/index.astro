@@ -10,7 +10,7 @@ import Footer from '../components/Footer.astro';
   <main class="container">
     <section class="hero">
       <p class="eyebrow">AI Developer • Engineer • Strategist • Leader</p>
-      <h1>Building practical AI systems that move business forward.</h1>
+      <h1><span>Building practical AI systems</span> that move business forward.</h1>
       <p class="muted intro">
         I'm Erik Zettersten — I design and ship high-impact software where product strategy,
         engineering craft, and AI execution intersect.
@@ -42,6 +42,11 @@ import Footer from '../components/Footer.astro';
         This isn't a gallery of random projects. It's a focused narrative: how Erik helps teams
         build better products faster with AI-native engineering, strategic clarity, and leadership.
       </p>
+      <div class="stats">
+        <div><strong>50+</strong><span>Open-source repos</span></div>
+        <div><strong>Multi-domain</strong><span>AI + web + platform execution</span></div>
+        <div><strong>Outcome-led</strong><span>Strategy translated into shipped value</span></div>
+      </div>
     </section>
   </main>
 
@@ -57,6 +62,12 @@ import Footer from '../components/Footer.astro';
     line-height: 1.04;
     letter-spacing: -.02em;
     max-width: 18ch;
+  }
+  h1 span {
+    background: linear-gradient(90deg, var(--brand), #9cc3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   .intro { font-size: 1.1rem; max-width: 65ch; margin-top: 1rem; }
   .actions { display: flex; gap: .8rem; margin-top: 1.4rem; flex-wrap: wrap; }
@@ -74,6 +85,10 @@ import Footer from '../components/Footer.astro';
   .feature { margin-top: 1.2rem; padding: 1.2rem; }
   .feature h2 { margin: 0 0 .2rem; font-size: 1.25rem; }
   .feature p { margin: 0; }
+  .stats { margin-top: .9rem; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .7rem; }
+  .stats div { border: 1px solid var(--border); border-radius: 12px; padding: .75rem; }
+  .stats strong { display: block; font-size: 1.1rem; }
+  .stats span { color: var(--muted); font-size: .92rem; }
 
-  @media (max-width: 920px){ .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 920px){ .grid, .stats { grid-template-columns: 1fr; } }
 </style>
