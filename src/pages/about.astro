@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="About Erik Zettersten">
+  <Nav />
+  <main class="container page">
+    <h1>About Erik</h1>
+    <p class="muted">
+      I help teams turn AI ambition into real products — with clear strategy, sharp execution,
+      and engineering standards that scale.
+    </p>
+    <p>
+      My work spans developer tooling, web platforms, automation, and product systems. I care about
+      building things that are performant, elegant, and useful to people.
+    </p>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page { padding-top: 3.5rem; max-width: 760px; }
+  h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin: 0; }
+</style>

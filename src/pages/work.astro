@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const highlights = [
+  {
+    name: 'BlazorCanvas2d',
+    url: 'https://github.com/Zettersten/BlazorCanvas2d',
+    note: 'High-performance HTML5 Canvas API wrapper for Blazor apps.',
+    outcomes: ['Performance-first rendering API', 'Developer-friendly C# interface', 'Production-ready component model'],
+  },
+  {
+    name: 'elsa-extensions',
+    url: 'https://github.com/Zettersten/elsa-extensions',
+    note: 'Workflow automation integrations across third-party services.',
+    outcomes: ['Expanded automation reach', 'Modular integration architecture', 'Reduced integration effort for teams'],
+  },
+  {
+    name: 'TailwindMerge (.NET)',
+    url: 'https://github.com/Zettersten/TailwindMerge',
+    note: 'Utility-class conflict resolution and deduplication for Tailwind in .NET.',
+    outcomes: ['Deterministic utility resolution', 'Cleaner UI class composition', 'Optimized runtime usage patterns'],
+  },
+];
+---
+
+<BaseLayout title="Selected Work — Erik Zettersten">
+  <Nav />
+  <main class="container page">
+    <h1>Selected Work</h1>
+    <p class="muted">A focused set of projects that reflect engineering depth, product thinking, and execution quality.</p>
+
+    <div class="list">
+      {highlights.map((item) => (
+        <a class="glass row" href={item.url} target="_blank" rel="noreferrer">
+          <strong>{item.name}</strong>
+          <p class="muted">{item.note}</p>
+          <ul>
+            {item.outcomes.map((outcome) => <li>{outcome}</li>)}
+          </ul>
+        </a>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page { padding-top: 3.5rem; }
+  h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 3rem); }
+  .list { display: grid; gap: .9rem; margin-top: 1rem; }
+  .row { display: block; padding: 1rem; }
+  .row strong { font-size: 1.08rem; }
+  .row p { margin: .2rem 0 .45rem; }
+  .row ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
+  .row li { margin: .2rem 0; }
+</style>
