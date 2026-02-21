@@ -1,6 +1,6 @@
 ---
 title: "From Founders to Figureheads: Why Tech CEOs No Longer Run Their Companies"
-description: "How governance, capital pressure, and media cycles turned many CEOs into narrative managers."
+description: "Many CEOs still hold the title, but boards, investors, and optics now run the playbook."
 date: 2026-02-21
 tags: ["leadership", "corporate governance", "strategy", "executives"]
 draft: false
@@ -8,38 +8,54 @@ coverImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=form
 category: "Leadership"
 ---
 
-A growing number of tech CEOs are not operating the company.
+A lot of tech CEOs aren’t really running their companies anymore.
+
+They’re managing the story of the company.
 
 ![From Founders to Figureheads: Why Tech CEOs No Longer Run Their Companies](https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80)
 
-They are operating the narrative.
+That sounds cynical, but it’s mostly structural. Once a company gets big enough, power fragments:
 
-Boards, investors, and market expectations increasingly shape strategic direction while executives perform alignment for public consumption.
+- boards govern downside risk,
+- investors govern expected narrative,
+- legal governs language,
+- comms governs timing,
+- and the CEO governs… tone.
 
-## The shift
+## How we got here
 
-Classic founder-led models emphasized product intuition and direct operational control.
+Founder-era companies were messy but direct. Product intuition could overrule consensus. Big bets happened because one person was willing to look wrong for a while.
 
-Modern public-market pressure rewards:
+Public-market companies are different. The reward system is quarterly confidence, not long-term conviction. So leadership energy shifts from building to signaling:
 
-- predictable signaling,
-- quarterly confidence,
-- risk-managed optics.
+- predictable guidance,
+- measured phrasing,
+- controlled surprises,
+- “strategic focus” decks that say very little.
 
-That can produce stable messaging and weak execution.
+The machine doesn’t want wild insight. It wants volatility management.
 
-## Why it matters
+## What breaks when leadership becomes narrative-first
 
-When leadership becomes performative, organizations drift:
+You can feel it inside the org:
 
-- product decisions become politically optimized,
-- long-term bets get underfunded,
-- teams lose trust in strategic coherence.
+- product choices optimize for optics,
+- mid-term investments get cut because they look expensive in the next two calls,
+- teams stop believing the stated strategy,
+- smart operators leave because real tradeoffs are made elsewhere.
 
-## Final take
+This is how companies become internally performative: everyone sounds aligned, nobody feels aligned.
 
-The best CEOs still build.
+## What real CEO leadership still looks like
 
-Not necessarily by writing code, but by owning hard tradeoffs, protecting product truth, and aligning incentives with real outcomes.
+The best CEOs I’ve seen still “build,” even if they never touch code:
 
-Everything else is spokesperson theater.
+- they own hard tradeoffs instead of delegating blame,
+- they protect uncomfortable truths from being polished away,
+- they keep incentives tied to outcomes, not messaging.
+
+Spokespeople protect reputation.
+
+Leaders protect reality.
+
+Those are not the same job.
