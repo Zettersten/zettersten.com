@@ -1,28 +1,27 @@
 <header class="container nav-wrap">
-  <nav class="glass nav">
-    <a href="/" class="logo"><span>ERIK</span> ZETTERSTEN</a>
+  <nav class="nav">
+    <a href="/" class="logo">✦</a>
     <div class="links">
-      <a href="/work">Work</a>
+      <a href="/about">About Me</a>
+      <a href="/work">Portfolio</a>
       <a href="/projects">Projects</a>
       <a href="/blog">Blog</a>
-      <a href="/mentions">Mentions</a>
-      <a href="/about">About</a>
-      <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer">GitHub</a>
     </div>
+    <a class="call" href="/mentions">Mentions ↗</a>
   </nav>
 </header>
 
 <style>
-  .nav-wrap { padding-top: 1rem; }
+  .nav-wrap { padding-top: 1.15rem; }
   .nav {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: 0.9rem 1rem;
+    gap: 1.2rem;
+    padding: .7rem 0;
   }
-  .logo { font-family: 'Archivo', sans-serif; font-weight: 900; letter-spacing: .03em; }
-  .logo span { color: var(--brand); }
-  .links { display: flex; gap: .9rem; color: var(--muted); font-weight: 700; font-size: .92rem; }
-  .links a:hover { color: var(--text); }
-  @media (max-width: 880px){ .links { gap: .55rem; font-size: .82rem; flex-wrap: wrap; justify-content: flex-end; } }
+  .logo { font-size: 1.15rem; }
+  .links { display: flex; gap: 1.2rem; color: #4d4d4d; font-size: .82rem; }
+  .call { font-size: .82rem; color: #2f2f2f; }
+  @media (max-width: 840px){ .links { gap: .7rem; font-size: .75rem; overflow:auto; } }
 </style>
