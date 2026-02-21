@@ -33,20 +33,9 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
         </ul>
       </article>
 
-      <article class="glass card profile">
-        <img src="/images/erik-home.jpg" alt="Erik Zettersten" loading="lazy" />
-        <p class="muted">{profileHighlights.location}</p>
-      </article>
-
-      <article class="glass card span-2">
-        <h2>Selected milestones</h2>
-        <ul>
-          {linkedinHighlights.map((item) => <li>{item}</li>)}
-        </ul>
-      </article>
-
       <article class="glass card">
         <h2>Quick context</h2>
+        <p><strong>Location:</strong> {profileHighlights.location}</p>
         <p><strong>Experience:</strong> {profileHighlights.yearsExperience}</p>
         <p><strong>Public repos:</strong> {profileHighlights.repoCount}+</p>
         <p>
@@ -55,6 +44,61 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
             >github.com/Zettersten</a
           >
         </p>
+      </article>
+
+      <article class="glass card span-3">
+        <h2>Selected milestones</h2>
+        <ul>
+          {linkedinHighlights.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+
+      <article class="glass card span-3">
+        <h2>Personal snapshots</h2>
+        <div class="gallery">
+          <figure>
+            <img
+              src="/images/erik-usbank-team.jpg"
+              alt="Erik with US Bank team"
+              loading="lazy"
+            /><figcaption>US Bank team</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/erik-wendy.jpg"
+              alt="Erik married to Wendy"
+              loading="lazy"
+            /><figcaption>Married to Wendy</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/erik-ets-office.jpg"
+              alt="Erik in office at ETS"
+              loading="lazy"
+            /><figcaption>Office days at ETS</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/erik-mustache.jpg"
+              alt="Erik with mustache"
+              loading="lazy"
+            /><figcaption>Mustache era</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/erik-brother.jpg"
+              alt="Erik with his older brother"
+              loading="lazy"
+            /><figcaption>With my older brother</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/erik-first-baby.jpg"
+              alt="Erik with first baby"
+              loading="lazy"
+            /><figcaption>First baby</figcaption>
+          </figure>
+        </div>
       </article>
     </section>
   </main>
@@ -85,6 +129,9 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
   .span-2 {
     grid-column: span 2;
   }
+  .span-3 {
+    grid-column: span 3;
+  }
 
   .card h2 {
     margin: 0 0 0.5rem;
@@ -107,19 +154,39 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
     line-height: 1.6;
   }
 
-  .profile img {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+  .gallery figure {
+    margin: 0;
+  }
+  .gallery img {
     width: 100%;
-    border-radius: 12px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
     border: 1px solid #d7d7d7;
-    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .gallery figcaption {
+    font-size: 0.82rem;
+    color: #666;
+    margin-top: 0.22rem;
   }
 
   @media (max-width: 980px) {
-    .grid {
+    .grid,
+    .gallery {
       grid-template-columns: 1fr;
     }
-    .span-2 {
+    .span-2,
+    .span-3 {
       grid-column: span 1;
+    }
+    .gallery img {
+      height: 220px;
     }
   }
 </style>
