@@ -33,6 +33,10 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
       </ul>
     </section>
 
+    <section class="glass photo">
+      <img src="https://msdynamicsworld.com/sites/default/files/pictures/thumbnail_erik.jpg" alt="Erik Zettersten portrait" loading="lazy" />
+    </section>
+
     <section class="meta muted">
       <span>{profileHighlights.location}</span>
       <span>•</span>
@@ -53,5 +57,7 @@ import { profileHighlights, linkedinHighlights } from '../data/projects';
   .block h2 { margin: 0 0 .5rem; font-size: 1.25rem; }
   .block ul { margin: 0; padding-left: 1rem; }
   .block li { margin: .4rem 0; }
+  .photo { margin-top: 1.5rem; padding: .4rem; max-width: 360px; }
+  .photo img { display:block; width:100%; height:auto; filter: grayscale(100%) contrast(115%); }
   .meta { margin-top: 1.5rem; display: flex; gap: .5rem; flex-wrap: wrap; }
 </style>

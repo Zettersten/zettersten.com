@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { mentions } from '../data/mentions';
+---
+
+<BaseLayout title="Mentions & Media — Erik Zettersten" description="External talks, features, and internet mentions of Erik Zettersten.">
+  <Nav />
+  <main class="container page">
+    <p class="kicker">Mentions & Media</p>
+    <h1>Articles, videos, and internet context around Erik.</h1>
+    <p class="muted intro">Curated external coverage and appearances with context on why they matter. Sources are compiled from publicly accessible metadata and index pages.</p>
+
+    <section class="list">
+      {mentions.map((m) => (
+        <article class="glass card">
+          <img src={m.thumbnail} alt={m.title} loading="lazy" />
+          <div>
+            <small>{m.outlet}</small>
+            <h2>{m.title}</h2>
+            <p>{m.story}</p>
+            <p class="muted">{m.summary}</p>
+            <a class="btn primary" href={m.url} target="_blank" rel="noreferrer">Watch / Read</a>
+          </div>
+        </article>
+      ))}
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page { padding-top: 4rem; }
+  .kicker { margin: 0; text-transform: uppercase; letter-spacing: .07em; color: var(--brand); font-size: .75rem; font-weight: 700; }
+  h1 { margin: .4rem 0 .6rem; font-size: clamp(2rem, 7vw, 5rem); line-height: .96; letter-spacing: -.03em; max-width: 14ch; }
+  .intro { max-width: 60ch; }
+  .list { margin-top: 1.4rem; display: grid; gap: 1rem; }
+  .card { display: grid; grid-template-columns: 320px 1fr; gap: 1rem; padding: .8rem; }
+  .card img { width: 100%; height: 100%; object-fit: cover; border: 2px solid #111; }
+  .card small { text-transform: uppercase; letter-spacing: .06em; color: var(--brand); font-weight: 700; }
+  .card h2 { margin: .35rem 0 .5rem; font-size: 1.5rem; }
+  .card p { margin: .3rem 0; }
+  @media (max-width: 900px){ .card { grid-template-columns: 1fr; } }
+</style>

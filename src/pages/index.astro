@@ -12,20 +12,25 @@ const heroProjects = featuredProjects.slice(0, 3);
 
   <main class="container">
     <section class="hero">
-      <p class="eyebrow">{profileHighlights.role}</p>
-      <h1>
-        Erik Zettersten.
-        <br />
-        <span>Builds software systems where AI strategy meets engineering execution.</span>
-      </h1>
-      <p class="muted intro">
-        I lead with product clarity, technical depth, and shipping velocity. My work spans AI-native
-        architecture, developer tooling, and high-performance web systems.
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="/work">Explore Work</a>
-        <a class="btn" href="/blog">Read Musings</a>
+      <div>
+        <p class="eyebrow">{profileHighlights.role}</p>
+        <h1>
+          Erik Zettersten.
+          <br />
+          <span>Builds software systems where AI strategy meets engineering execution.</span>
+        </h1>
+        <p class="muted intro">
+          I lead with product clarity, technical depth, and shipping velocity. My work spans AI-native
+          architecture, developer tooling, and high-performance web systems.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="/projects">Explore All Projects</a>
+          <a class="btn" href="/blog">Read Musings</a>
+        </div>
       </div>
+      <figure class="portrait glass">
+        <img src="https://msdynamicsworld.com/sites/default/files/pictures/thumbnail_erik.jpg" alt="Erik Zettersten" loading="eager" />
+      </figure>
     </section>
 
     <section class="separation stat-band glass">
@@ -50,13 +55,20 @@ const heroProjects = featuredProjects.slice(0, 3);
         ))}
       </div>
     </section>
+
+    <section class="separation mention glass">
+      <p class="kicker">Around the internet</p>
+      <h2>Featured in creator and strategy conversations.</h2>
+      <p class="muted">Watch the feature on getting in touch with Gary Vee and how Erik approaches practical outreach with engineering-minded execution.</p>
+      <p><a class="btn primary" href="/mentions">See mentions & media</a></p>
+    </section>
   </main>
 
   <Footer />
 </BaseLayout>
 
 <style>
-  .hero { padding: 6.4rem 0 1.8rem; max-width: 1000px; }
+  .hero { padding: 6.4rem 0 1.8rem; display:grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; align-items:start; }
   .eyebrow {
     color: var(--brand);
     font-weight: 700;
@@ -67,12 +79,14 @@ const heroProjects = featuredProjects.slice(0, 3);
   }
   h1 {
     margin: 0;
-    font-size: clamp(2.3rem, 9vw, 6rem);
-    line-height: .97;
-    letter-spacing: -0.035em;
-    max-width: 16ch;
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(2.5rem, 10vw, 7rem);
+    line-height: .92;
+    letter-spacing: -0.04em;
+    max-width: 12ch;
+    text-transform: uppercase;
   }
-  h1 span { color: #c9daff; font-weight: 700; }
+  h1 span { color: #222; font-weight: 700; }
   .intro {
     margin-top: 1.3rem;
     font-size: clamp(1rem, 2.2vw, 1.45rem);
@@ -124,7 +138,13 @@ const heroProjects = featuredProjects.slice(0, 3);
   .card h3 { margin: .45rem 0 .4rem; font-size: 1.26rem; line-height: 1.2; }
   .card p { margin: 0; }
 
+  .mention { padding: 1.1rem; }
+  .mention h2 { margin: .25rem 0 .5rem; font-family: 'Archivo', sans-serif; font-size: clamp(1.5rem, 4vw, 2.6rem); line-height: .95; }
+
+  .portrait { margin:0; padding: .4rem; }
+  .portrait img { display:block; width:100%; height:auto; filter: grayscale(100%) contrast(115%); }
+
   @media (max-width: 980px) {
-    .cards, .stat-band { grid-template-columns: 1fr; }
+    .hero, .cards, .stat-band { grid-template-columns: 1fr; }
   }
 </style>
