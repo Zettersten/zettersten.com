@@ -4,13 +4,13 @@ description: 'AI-first sounds bold. In practice, most teams are shipping theater
 date: 2026-02-21
 tags: ['AI strategy', 'enterprise', 'execution', 'leadership']
 draft: false
-coverImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/2/27/BMW_Startup_Garage_Office_2.jpg'
 category: 'Leadership'
 ---
 
 “AI-first” became the easiest sentence in business.
 
-![Why ‘AI-First’ Companies Are Already Failing (And What Actually Works)](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80)
+![Why ‘AI-First’ Companies Are Already Failing (And What Actually Works)](https://upload.wikimedia.org/wikipedia/commons/2/27/BMW_Startup_Garage_Office_2.jpg)
 
 It’s also becoming the easiest way to burn budget, confuse teams, and ship impressive demos that never survive contact with reality.
 

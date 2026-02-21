@@ -4,13 +4,13 @@ description: 'Frontier model economics are compressing entry-level engineering w
 date: 2026-02-21
 tags: ['AI automation', 'software jobs', 'labor market', 'economics']
 draft: false
-coverImage: 'https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/5/59/Programmer_writing_code_with_Unit_Tests.jpg'
 category: 'Economics'
 ---
 
 Let’s say the quiet part out loud: software employment is being re-tiered in real time.
 
-![Why Sam Altman and Dario Amodei Are Quietly Reshaping the Software Job Market](https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1600&q=80)
+![Why Sam Altman and Dario Amodei Are Quietly Reshaping the Software Job Market](https://upload.wikimedia.org/wikipedia/commons/5/59/Programmer_writing_code_with_Unit_Tests.jpg)
 
 Not because software demand vanished. It didn’t.
 

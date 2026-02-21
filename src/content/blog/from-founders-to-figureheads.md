@@ -4,7 +4,7 @@ description: 'Many CEOs still hold the title, but boards, investors, and optics 
 date: 2026-02-21
 tags: ['leadership', 'corporate governance', 'strategy', 'executives']
 draft: false
-coverImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Group_of_Fortune_500_CEOs_in_2015_%28cropped_to_remove_non-CEO%29.jpg'
 category: 'Leadership'
 ---
 
@@ -12,7 +12,7 @@ A lot of tech CEOs aren’t really running their companies anymore.
 
 They’re managing the story of the company.
 
-![From Founders to Figureheads: Why Tech CEOs No Longer Run Their Companies](https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80)
+![From Founders to Figureheads: Why Tech CEOs No Longer Run Their Companies](https://upload.wikimedia.org/wikipedia/commons/4/4e/Group_of_Fortune_500_CEOs_in_2015_%28cropped_to_remove_non-CEO%29.jpg)
 
 That sounds cynical, but it’s mostly structural. Once a company gets big enough, power fragments:
 

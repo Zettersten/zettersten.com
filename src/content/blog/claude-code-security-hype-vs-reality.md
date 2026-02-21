@@ -4,7 +4,7 @@ description: "Anthropic’s new security preview is interesting and useful, but 
 date: 2026-02-21
 tags: ['AI', 'cybersecurity', 'AppSec', 'leadership', 'opinion']
 category: 'AI Strategy'
-coverImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80'
+coverImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Computer_locked.jpg'
 draft: false
 ---
 
@@ -18,7 +18,7 @@ Let’s calm down.
 
 The same ecosystem yelling “AI replaces all security vendors” is also full of people watching models make hilariously unsafe changes in production environments to “fix” bugs quickly. If your assistant casually makes a database world-readable in the name of velocity, that’s not autonomous security. That’s an expensive incident report waiting to happen.
 
-![Claude Code Security Won’t Replace CrowdStrike—But It Might Expose Your Security Theater](https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80)
+![Claude Code Security Won’t Replace CrowdStrike—But It Might Expose Your Security Theater](https://upload.wikimedia.org/wikipedia/commons/d/d3/Computer_locked.jpg)
 
 ## Start: what Anthropic actually launched
 
