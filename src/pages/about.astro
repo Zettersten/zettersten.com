@@ -2,25 +2,49 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { profileHighlights } from '../data/projects';
 ---
 
 <BaseLayout title="About Erik Zettersten">
   <Nav />
   <main class="container page">
-    <h1>About Erik</h1>
-    <p class="muted">
-      I help teams turn AI ambition into real products — with clear strategy, sharp execution,
-      and engineering standards that scale.
+    <p class="kicker">About</p>
+    <h1>Engineering leader. Product strategist. Builder at heart.</h1>
+    <p class="muted lead">
+      Erik Zettersten is a technology leader focused on turning complex ideas into shipped products.
+      As Head of Technology at VeeFriends, he combines strategic direction with hands-on execution
+      across AI systems, web platforms, and developer experience.
     </p>
-    <p>
-      My work spans developer tooling, web platforms, automation, and product systems. I care about
-      building things that are performant, elegant, and useful to people.
-    </p>
+
+    <section class="glass block">
+      <h2>Operating model</h2>
+      <ul>
+        <li>Start from outcomes, not features.</li>
+        <li>Architect for reliability and speed of iteration.</li>
+        <li>Keep design, product, and engineering tightly aligned.</li>
+        <li>Ship continuously and learn from real usage.</li>
+      </ul>
+    </section>
+
+    <section class="meta muted">
+      <span>{profileHighlights.location}</span>
+      <span>•</span>
+      <span>{profileHighlights.repoCount}+ repositories</span>
+      <span>•</span>
+      <a href="https://github.com/Zettersten" target="_blank" rel="noreferrer">github.com/Zettersten</a>
+    </section>
   </main>
   <Footer />
 </BaseLayout>
 
 <style>
-  .page { padding-top: 3.5rem; max-width: 760px; }
-  h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin: 0; }
+  .page { padding-top: 4.2rem; max-width: 880px; }
+  .kicker { margin: 0; text-transform: uppercase; letter-spacing: .07em; color: var(--brand); font-size: .75rem; font-weight: 700; }
+  h1 { font-size: clamp(2rem, 7vw, 4.6rem); line-height: .98; letter-spacing: -.03em; margin: .4rem 0 1rem; }
+  .lead { font-size: clamp(1rem, 2vw, 1.3rem); max-width: 66ch; }
+  .block { margin-top: 2rem; padding: 1.2rem; }
+  .block h2 { margin: 0 0 .5rem; font-size: 1.25rem; }
+  .block ul { margin: 0; padding-left: 1rem; }
+  .block li { margin: .4rem 0; }
+  .meta { margin-top: 1.5rem; display: flex; gap: .5rem; flex-wrap: wrap; }
 </style>
