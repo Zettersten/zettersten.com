@@ -69,3 +69,41 @@ But if you’re asking where the next generation of scary-good product engineers
 closer to the problem,
 closer to users,
 closer to the decisions.
+
+
+## Story map (start → middle → end)
+
+```mermaid
+flowchart LR
+    A[Start: Thesis + inciting problem] --> B[Middle: Evidence, tradeoffs, failure modes]
+    B --> C[End: Opinionated conclusion + specific action]
+```
+
+## Concrete example
+
+A practical pattern I use in real projects is to define a failure budget **before** launch and wire the fallback path in code, not policy docs.
+
+```ts
+type Decision = {
+  confident: boolean;
+  reason: string;
+  sourceUrls: string[];
+};
+
+export function safeRespond(d: Decision) {
+  if (!d.confident || d.sourceUrls.length === 0) {
+    return {
+      action: "abstain",
+      message: "I don’t have enough reliable evidence. Escalating to human review."
+    };
+  }
+  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+}
+```
+
+## References
+
+- https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm
+- https://www.oecd.org/en/topics/ai-jobs-and-skills.html
+- https://www.weforum.org/reports/the-future-of-jobs-report-2025/
+

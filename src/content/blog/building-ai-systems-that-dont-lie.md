@@ -153,3 +153,41 @@ It happens when reliability is designed into the system from day one.
 If your team can’t explain why an output is correct, you don’t have intelligence at scale.
 
 You have autocomplete with branding.
+
+
+## Story map (start → middle → end)
+
+```mermaid
+flowchart LR
+    A[Start: Thesis + inciting problem] --> B[Middle: Evidence, tradeoffs, failure modes]
+    B --> C[End: Opinionated conclusion + specific action]
+```
+
+## Concrete example
+
+A practical pattern I use in real projects is to define a failure budget **before** launch and wire the fallback path in code, not policy docs.
+
+```ts
+type Decision = {
+  confident: boolean;
+  reason: string;
+  sourceUrls: string[];
+};
+
+export function safeRespond(d: Decision) {
+  if (!d.confident || d.sourceUrls.length === 0) {
+    return {
+      action: "abstain",
+      message: "I don’t have enough reliable evidence. Escalating to human review."
+    };
+  }
+  return { action: "answer", message: d.reason, citations: d.sourceUrls };
+}
+```
+
+## References
+
+- https://www.anthropic.com/research
+- https://platform.openai.com/docs/guides/evals
+- https://aiindex.stanford.edu/report/
+
