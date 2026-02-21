@@ -101,6 +101,14 @@ export function safeRespond(d: Decision) {
 }
 ```
 
+## Fact-check context: labor signals are diverging
+
+Public discourse keeps collapsing this topic into “AI replaces jobs” versus “AI creates jobs.” Real market behavior is messier. Developer survey and hiring data suggest rising tool adoption, changing skill expectations, and growing emphasis on judgment over rote implementation speed.
+
+The key signal is not mass disappearance of software work. It is role redesign: fewer purely repetitive pathways, more demand for people who can own ambiguous systems outcomes.
+
+That shift is uncomfortable for institutions built around old pipelines, but it is already underway whether career guidance has caught up or not.
+
 ## References
 
 - https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm

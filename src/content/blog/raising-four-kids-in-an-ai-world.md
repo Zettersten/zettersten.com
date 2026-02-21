@@ -79,6 +79,14 @@ export function safeRespond(d: Decision) {
 }
 ```
 
+## Fact-check context: kids are entering an AI-native information environment
+
+AI exposure for children is no longer edge-case behavior. Guidance from child-safety and education organizations increasingly focuses on practical guardrails: literacy, transparency, safety controls, and development-aware design.
+
+That matters because parenting decisions now sit upstream of labor-market adaptation. If children learn only tool usage without discernment, they will be high-output and low-judgment in exactly the moment judgment becomes the premium skill.
+
+So the core parenting task is not raising kids who can “use AI.” It is raising kids who can think clearly while AI is everywhere.
+
 ## References
 
 - https://www.commonsensemedia.org/artificial-intelligence

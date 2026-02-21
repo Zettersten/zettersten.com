@@ -185,6 +185,14 @@ export function safeRespond(d: Decision) {
 }
 ```
 
+## Fact-check context: regulation is no longer “later”
+
+This is not a speculative compliance scenario anymore. The EU AI Act’s phased timeline has active obligations already in motion, with major high-risk requirements applying in the 2026 window. Whether a team is in the EU or not, those controls are becoming de facto market expectations for enterprise procurement and legal review.
+
+NIST’s AI RMF remains the most practical framing because it translates policy talk into operating behaviors: Govern, Map, Measure, Manage. That sequence maps directly to real release gates and post-market monitoring, which is where most organizations are still weak.
+
+If you still think governance can be postponed until after growth, you are betting your roadmap on legal latency. That’s a bad bet.
+
 ## References
 
 - https://www.anthropic.com/research
