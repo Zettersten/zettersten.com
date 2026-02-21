@@ -1,10 +1,9 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { compareBlogPostsByDateThenTitle } from '../utils/blog';
 
 export async function GET(context: any) {
-  const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
-    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-  );
+  const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(compareBlogPostsByDateThenTitle);
 
   return rss({
     title: 'Erik Zettersten — Blog',
