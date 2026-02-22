@@ -27,13 +27,12 @@ const blogCollectionJsonLd = {
 >
   <Nav />
   <main id="main-content" class="container page page-shell">
-    <header class="hero">
+    <header class="hero-head">
       <div>
         <p class="kicker">Journal</p>
-        <h1>Articles with strong opinions and practical depth.</h1>
+        <h1>Recent Articles</h1>
         <p class="muted intro">
-          Long-form writing on AI, leadership, systems, and execution. Less trend-chasing. More real
-          tradeoffs.
+          Strong opinions, practical details, and real implementation context.
         </p>
       </div>
       <BlogSearch />
@@ -46,60 +45,50 @@ const blogCollectionJsonLd = {
             <img src={featured.data.coverImage} alt={featured.data.title} loading="eager" />
           )}
           <div class="featured-copy">
-            <p class="cat">Featured · {featured.data.category}</p>
+            <p class="meta-row">
+              <span class="pill">Featured</span>
+              <span class="muted">
+                {Math.max(4, Math.round(featured.body.split(/\s+/).length / 220))} min read
+              </span>
+            </p>
             <h2>
               <a href={`/blog/${featured.id.replace(/\.mdx?$/, '')}/`}>{featured.data.title}</a>
             </h2>
-            <p class="muted">
-              {featured.data.date.toLocaleDateString('en-US', {
-                month: 'long',
-                day: 'numeric',
-                year: 'numeric',
-              })}
-              {' · '}Erik Zettersten
-            </p>
             <p class="desc">{featured.data.description}</p>
             <a class="read" href={`/blog/${featured.id.replace(/\.mdx?$/, '')}/`}>
-              Read featured article →
+              Read More →
             </a>
           </div>
         </section>
       )
     }
 
-    <section class="feed" aria-label="Blog post list">
+    <section class="recent-head">
+      <h3>Our Recent Articles</h3>
+    </section>
+
+    <section class="cards" aria-label="Recent articles">
       {
         restPosts.map((post) => (
-          <article class="entry glass">
+          <article class="card glass">
             {post.data.coverImage && (
-              <a
-                href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`}
-                class="thumb-wrap"
-                aria-label={`Read ${post.data.title}`}
-              >
-                <img
-                  class="thumb"
-                  src={post.data.coverImage}
-                  alt={post.data.title}
-                  loading="lazy"
-                />
-              </a>
+              <img src={post.data.coverImage} alt={post.data.title} loading="lazy" />
             )}
-            <div class="copy">
-              <p class="cat">{post.data.category}</p>
-              <h3>
-                <a href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`}>{post.data.title}</a>
-              </h3>
-              <p class="meta muted">
+            <div class="card-copy">
+              <p class="muted small">
+                Erik Zettersten ·{' '}
                 {post.data.date.toLocaleDateString('en-US', {
-                  month: 'long',
+                  month: 'short',
                   day: 'numeric',
                   year: 'numeric',
                 })}
               </p>
-              <p class="desc">{post.data.description}</p>
+              <h4>
+                <a href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`}>{post.data.title}</a>
+              </h4>
+              <p class="muted excerpt">{post.data.description}</p>
               <a class="read" href={`/blog/${post.id.replace(/\.mdx?$/, '')}/`}>
-                Read article →
+                Read More →
               </a>
             </div>
           </article>
@@ -115,112 +104,121 @@ const blogCollectionJsonLd = {
     max-width: 1120px;
   }
 
-  .hero {
+  .hero-head {
     display: grid;
     grid-template-columns: 1fr minmax(280px, 390px);
     gap: 1rem;
     align-items: end;
-    margin-bottom: 1rem;
+    margin-bottom: 0.95rem;
   }
   h1 {
     margin: 0.35rem 0 0.45rem;
-    font-size: clamp(2.1rem, 5.4vw, 3.7rem);
-    line-height: 0.97;
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    line-height: 0.98;
     letter-spacing: -0.02em;
-    max-width: 18ch;
   }
   .intro {
     margin: 0;
-    max-width: 62ch;
   }
 
   .featured {
     display: grid;
-    grid-template-columns: 42% 1fr;
-    gap: 1rem;
-    padding: 0.9rem;
+    grid-template-columns: 44% 1fr;
+    gap: 0.95rem;
+    padding: 0.85rem;
     border-radius: 20px;
-    margin-bottom: 0.9rem;
   }
   .featured img {
     width: 100%;
-    height: 100%;
-    min-height: 220px;
-    object-fit: cover;
-    border-radius: 14px;
-    border: 1px solid #d7d7d7;
-  }
-  .featured-copy {
-    padding: 0.35rem 0.2rem;
-  }
-
-  .cat {
-    margin: 0 0 0.35rem;
-    color: #696969;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.69rem;
-  }
-  h2,
-  h3 {
-    margin: 0;
-    font-family: var(--font-serif);
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-  }
-  h2 {
-    font-size: clamp(1.6rem, 3.2vw, 2.3rem);
-  }
-  h3 {
-    font-size: clamp(1.25rem, 2.4vw, 1.65rem);
-  }
-
-  .feed {
-    display: grid;
-    gap: 0.8rem;
-  }
-  .entry {
-    border-radius: 16px;
-    padding: 0.72rem;
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 0.85rem;
-  }
-  .thumb {
-    width: 100%;
-    height: 170px;
+    min-height: 250px;
     object-fit: cover;
     border-radius: 12px;
     border: 1px solid #d7d7d7;
   }
-  .copy {
-    padding: 0.15rem;
+  .featured-copy {
+    padding: 0.3rem 0.15rem;
   }
-  .meta {
-    margin: 0.42rem 0;
-    font-size: 0.84rem;
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0 0 0.45rem;
+  }
+  .pill {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    background: #e9eefb;
+    color: #3759d5;
+    border: 1px solid #ccd8ff;
+    font-weight: 600;
+  }
+  h2 {
+    margin: 0;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    line-height: 1.06;
   }
   .desc {
-    margin: 0.2rem 0 0.55rem;
-    color: #262626;
-    line-height: 1.58;
+    margin: 0.55rem 0 0.65rem;
+    line-height: 1.65;
+    color: #2a2a2a;
+  }
+
+  .recent-head {
+    margin: 1rem 0 0.6rem;
+  }
+  .recent-head h3 {
+    margin: 0;
+    font-size: 1.85rem;
+    font-family: var(--font-serif);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .card {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .card img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  .card-copy {
+    padding: 0.75rem;
+  }
+  .small {
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+  h4 {
+    margin: 0.42rem 0 0.42rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  .excerpt {
+    margin: 0;
+    line-height: 1.55;
+    font-size: 0.92rem;
   }
   .read {
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: #222;
+    display: inline-block;
+    margin-top: 0.55rem;
+    font-size: 0.86rem;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  @media (max-width: 940px) {
-    .hero,
+  @media (max-width: 980px) {
+    .hero-head,
     .featured,
-    .entry {
+    .cards {
       grid-template-columns: 1fr;
-    }
-    .thumb {
-      height: 210px;
     }
   }
 </style>
