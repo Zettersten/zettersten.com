@@ -39,6 +39,7 @@ BRAND_ORANGE = (199, 99, 44)
 BRAND_BG = (235, 235, 235)
 TEXT_DARK = (20, 20, 20)
 TEXT_MUTED = (70, 70, 70)
+RENDER_VERSION = "v2"
 
 
 def sha256_file(path: Path) -> str:
@@ -153,36 +154,29 @@ def create_og(source: Path, title: str, category: str, out_path: Path) -> None:
 
     # Right-side text area
     text_x = 600
-    title_width = CANVAS_W - text_x - SAFE_PAD
+    title_width = CANVAS_W - text_x - SAFE_PAD - 28
 
-    wrapped, title_font = fit_text(draw, title, title_width, max_lines=4)
-    title_bbox = draw.multiline_textbbox((text_x, 170), wrapped, font=title_font, spacing=8)
-
-    # Soft text backing plate
-    plate_pad = 24
-    plate = [
-        text_x - 14,
-        title_bbox[1] - 30,
-        CANVAS_W - SAFE_PAD,
-        title_bbox[3] + 120,
-    ]
-    draw.rounded_rectangle(plate, radius=22, fill=(245, 245, 245, 0), outline=(230, 230, 230), width=1)
+    # Soft text backing plate (fixed, keeps category + title fully inside)
+    plate = [text_x - 14, 150, CANVAS_W - SAFE_PAD, 526]
+    draw.rounded_rectangle(plate, radius=22, fill=(245, 245, 245), outline=(230, 230, 230), width=1)
 
     # Brand label
     badge_font = find_font("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 20)
-    badge_text = "zettersten.com"
+    badge_text = "Erik Zettersten"
     bt = draw.textbbox((0, 0), badge_text, font=badge_font)
     bw, bh = bt[2] - bt[0], bt[3] - bt[1]
-    badge_rect = (text_x, 92, text_x + bw + 26, 92 + bh + 14)
-    draw.rounded_rectangle(badge_rect, radius=999, fill=BRAND_ORANGE)
-    draw.text((text_x + 13, 99), badge_text, font=badge_font, fill=(255, 255, 255))
+    badge_rect = (text_x, 92, text_x + bw + 30, 92 + bh + 16)
+    draw.rounded_rectangle(badge_rect, radius=14, fill=BRAND_ORANGE)
+    draw.text((text_x + 15, 100), badge_text, font=badge_font, fill=(255, 255, 255))
 
-    # Category
-    cat_font = find_font("/System/Library/Fonts/Supplemental/Arial.ttf", 22)
-    draw.text((text_x, 138), (category or "AI Strategy").upper(), font=cat_font, fill=TEXT_MUTED)
+    # Category (inside the plate)
+    cat_font = find_font("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 20)
+    cat_text = (category or "AI Strategy").upper()
+    draw.text((text_x, 174), cat_text, font=cat_font, fill=TEXT_MUTED)
 
-    # Title
-    draw.multiline_text((text_x, 170), wrapped, font=title_font, fill=TEXT_DARK, spacing=8)
+    # Title (inside the plate, below category)
+    wrapped, title_font = fit_text(draw, title, title_width, max_lines=4)
+    draw.multiline_text((text_x, 212), wrapped, font=title_font, fill=TEXT_DARK, spacing=8)
 
     # Footer accent rule
     draw.rounded_rectangle((text_x, 560, CANVAS_W - SAFE_PAD, 568), radius=4, fill=BRAND_ORANGE)
@@ -223,7 +217,7 @@ def main() -> int:
         og_rel = f"/images/blog/og/{post_path.stem}-og.jpg"
         og_abs = PUBLIC_DIR / og_rel.lstrip("/")
 
-        key = f"{post_path.name}:{source_rel}:{title}:{category}"
+        key = f"{RENDER_VERSION}:{post_path.name}:{source_rel}:{title}:{category}"
         sig = hashlib.sha256((key + sha256_file(source_abs)).encode("utf-8")).hexdigest()
 
         if manifest.get(post_path.name) != sig or not og_abs.exists():
