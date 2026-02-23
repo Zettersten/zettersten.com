@@ -1,0 +1,97 @@
+---
+interface Props {
+  title?: string;
+  labels?: string[];
+  values?: number[];
+}
+
+const {
+  title = 'Trend Snapshot',
+  labels = ['2024', '2025', '2026'],
+  values = [28, 54, 76],
+} = Astro.props;
+
+const chartId = `chart-${Math.random().toString(36).slice(2, 10)}`;
+---
+
+<figure class="chart-card" aria-label={title}>
+  <figcaption>{title}</figcaption>
+  <canvas
+    id={chartId}
+    role="img"
+    aria-label={title}
+    data-labels={JSON.stringify(labels)}
+    data-values={JSON.stringify(values)}></canvas>
+</figure>
+
+<script>
+  import Chart from 'chart.js/auto';
+
+  const scriptEl = document.currentScript;
+  const host = scriptEl?.previousElementSibling;
+  const canvas = host?.querySelector('canvas');
+
+  if (canvas) {
+    const labels = JSON.parse(canvas.dataset.labels || '[]');
+    const values = JSON.parse(canvas.dataset.values || '[]');
+
+    new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          {
+            data: values,
+            borderRadius: 8,
+            borderSkipped: false,
+            backgroundColor: ['#c7632c', '#dc7a45', '#e69361', '#f2b08a', '#f8cfb6'],
+            maxBarThickness: 58,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: true },
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { color: '#5e5752', font: { size: 12 } },
+          },
+          y: {
+            beginAtZero: true,
+            grid: { color: '#e4dcd7' },
+            ticks: { color: '#6a625d', font: { size: 11 } },
+          },
+        },
+      },
+    });
+  }
+</script>
+
+<style>
+  .chart-card {
+    border: 1px solid #d9d3cf;
+    border-radius: 12px;
+    padding: 0.95rem;
+    background: #f4efec;
+    margin: 1rem 0 1.25rem;
+  }
+
+  figcaption {
+    font-size: 0.82rem;
+    color: #675d57;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  canvas {
+    width: 100%;
+    height: 260px;
+    display: block;
+  }
+</style>

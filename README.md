@@ -42,6 +42,8 @@ npm run validate
 
 ## Blog authoring
 
+See `EDITORIAL.md` for AI-friendly authoring rules, supported components, and OG image pipeline behavior.
+
 Create posts in:
 
 - `src/content/blog/*.mdx`
