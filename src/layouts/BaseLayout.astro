@@ -138,6 +138,7 @@ const schemaGraph = [baseSchema, ...extraSchema];
     letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
   }
 
   h1,
@@ -240,6 +241,36 @@ const schemaGraph = [baseSchema, ...extraSchema];
   }
   .skip-link:focus {
     top: 0.6rem;
+  }
+
+  img,
+  svg,
+  video,
+  canvas,
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre,
+  code,
+  table {
+    max-width: 100%;
+  }
+
+  pre {
+    overflow-x: auto;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  blockquote.twitter-tweet {
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   ::selection {
