@@ -1,0 +1,143 @@
+---
+title: 'Why I Moved Back to CLI Development'
+description: 'After years of IDE-heavy workflows, I moved most of my coding back to the terminal. Here’s what changed, what got better, and where full IDEs still win.'
+date: 2026-02-23
+tags: ['AI', 'Developer Experience', 'CLI', 'Copilot']
+category: 'Engineering'
+sourceImage: '/images/blog/claude-code-security-hype-vs-reality.jpg'
+coverImage: '/images/blog/og/why-i-moved-back-to-cli-development-og.jpg'
+draft: false
+---
+
+Since December, my center of gravity for coding has shifted back to the CLI.
+
+That wasn’t nostalgic. It was practical.
+
+I still use VS Code every day—but mostly to inspect diffs and keep visual context. I still keep a Claude Max plan and I still use Claude Code when the task fits. But the default mode now is terminal-first, with Copilot CLI doing most of the day-to-day heavy lifting.
+
+And yes: part of why this works is simple—I have effectively unlimited tokens right now.
+
+## The workflow that replaced my old one
+
+My old pattern was IDE-first:
+
+- open project
+- browse files
+- hand-edit
+- run
+- patch
+- repeat
+
+My current pattern is command-first:
+
+- define change scope in plain language
+- generate/edit via CLI assistant
+- run tests and linters in-terminal
+- inspect diffs in VS Code
+- iterate quickly until clean
+
+This sounds like a small tooling preference. It isn’t. It changes where your thinking happens.
+
+In IDE-first mode, your attention gets fragmented by UI affordances. In CLI-first mode, your attention stays on intent, output, and verification.
+
+## Why CLI feels faster now (even when it technically isn’t)
+
+The terminal has always been scriptable and composable. What changed is that language models turned plain-English intent into executable editing power.
+
+The old terminal was high leverage for people fluent in shell mechanics.
+The new terminal is high leverage for people fluent in both shell mechanics and specification writing.
+
+That second part matters: writing good prompts/specs has become as important as writing good functions.
+
+## The hidden advantage: momentum
+
+The biggest gain hasn’t been raw speed. It’s momentum.
+
+When I stay in one environment, I ship more because there’s less friction between:
+
+1. deciding what to do,
+2. asking for the change,
+3. validating whether it worked.
+
+You can run an absurd amount of product and engineering throughput through that loop when the assistant is always one command away.
+
+## Where VS Code still absolutely wins for me
+
+I didn’t quit the IDE. I demoted it from “primary execution surface” to “high-bandwidth inspection surface.”
+
+VS Code is still better for:
+
+- reading large diffs at once
+- quickly spotting structural mistakes visually
+- navigating broad code areas when architecture context matters
+
+And when I needed advanced multi-threaded debugging recently, I opened a full IDE (the “big VS” move) because that tooling is still excellent for deep runtime diagnostics.
+
+So this isn’t a purity argument. It’s division of labor.
+
+## Tool stack reality: Copilot CLI + Claude Code, not either/or
+
+I don’t think there’s one winner.
+
+I use Copilot CLI as the default because it’s frictionless in my day-to-day loop. I use Claude Code when I want a different reasoning style or I’m exploring a harder chunk of work that benefits from another model’s behavior.
+
+The right mental model is portfolio, not religion.
+
+## “Unlimited tokens” changes your operating model
+
+Token economics quietly shape behavior.
+
+If tokens feel scarce, you optimize for short prompts and fewer iterations.
+If tokens feel abundant, you optimize for quality of thought and convergence speed.
+
+That changes everything from how much context you provide to how aggressively you explore alternative implementations.
+
+In practice, unlimited usage encourages:
+
+- richer task specs
+- more iterative refinement
+- faster recovery from bad first drafts
+- less hesitation around exploratory branches
+
+The result is not just “more AI usage.” It’s a different engineering cadence.
+
+## What this means for senior engineers
+
+The most valuable skill is shifting.
+
+It’s still important to read code deeply. It’s still important to debug hard systems. It’s still important to reason from first principles.
+
+But now, senior leverage increasingly comes from the ability to:
+
+- decompose ambiguous problems into machine-executable intent
+- evaluate generated changes rapidly and ruthlessly
+- enforce correctness with tests, constraints, and review discipline
+- orchestrate tools instead of manually typing every line
+
+Typing speed matters less. Judgment matters more.
+
+## A practical playbook if you want to try this
+
+If you’re IDE-heavy and curious about CLI-first development, start with this:
+
+1. Pick one repo and one week.
+2. Make the terminal your default entry point.
+3. Use your CLI assistant for edits and scaffolding.
+4. Keep VS Code open only for review and diff comprehension.
+5. Require tests/linters before merge.
+6. Track cycle time and subjective focus.
+
+You’ll know quickly whether it works for you.
+
+## Bottom line
+
+I haven’t stopped using IDEs. I’ve stopped assuming they should be the center of the workflow.
+
+For my current pace and project mix, the CLI is now the control plane, and visual editors are support systems.
+
+That’s the shift.
+
+Not “terminal nostalgia.”
+Not “AI hype.”
+
+Just a better loop.
