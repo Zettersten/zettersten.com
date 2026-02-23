@@ -1,0 +1,91 @@
+---
+title: 'Anthropic’s Distillation Outrage Has a Credibility Problem'
+description: 'If foundation-model labs trained on the open internet, they should expect competitors to optimize extraction from public model interfaces. You can dislike it and still admit the symmetry.'
+date: 2026-02-23
+tags: ['AI', 'LLMs', 'Policy', 'Competition']
+category: 'AI Industry'
+sourceImage: '/images/blog/anthropic-distillation-hypocrisy.jpg'
+coverImage: '/images/blog/og/anthropic-distillation-hypocrisy-og.jpg'
+draft: false
+---
+
+Anthropic says it found industrial-scale distillation attacks from DeepSeek, Moonshot AI, and MiniMax: **24,000+ fraudulent accounts** and **16+ million exchanges** allegedly used to extract Claude capabilities.
+
+If that claim is accurate, it’s a serious abuse case.
+
+And still, my first reaction was the same one a lot of people had:
+
+> Wait. Let me get this straight. The companies that absorbed the whole internet are now furious that others are absorbing them?
+
+That tension is the story.
+
+## Two things can be true at the same time
+
+1. **Account fraud and terms-of-service evasion are legitimate abuse.**
+2. **Moral outrage sounds thin when your own training stack depended on data capture at internet scale.**
+
+Most discourse collapses into team sports. It shouldn’t.
+
+If you fake accounts and automate extraction at scale, you should get throttled, banned, and litigated if needed.
+
+But if your business model was built on “ask forgiveness later” ingestion dynamics, don’t expect universal sympathy when the same logic is applied one layer up the stack.
+
+## Distillation is not a bug in the market. It’s the market.
+
+Once a model is exposed through an API or chat interface, competitors will try to:
+
+- map behavior,
+- reproduce style,
+- approximate quality,
+- and close the gap faster than raw pretraining alone would allow.
+
+That is not surprising. That is competitive gravity.
+
+The surprise is that some labs still talk like this was unforeseeable.
+
+## The internet-era precedent is ugly—but clear
+
+The first wave of foundation models normalized this stance:
+
+- public content was “available enough” to train on,
+- consent was fuzzy,
+- attribution was optional,
+- and speed beat ethics committees.
+
+Now the second wave is doing the same thing to model outputs.
+
+Nobody likes being downstream of their own precedent.
+
+## What actually matters now (beyond hypocrisy memes)
+
+The useful question isn’t "who’s morally pure?" because the answer is probably "nobody."
+
+The useful question is: **what rules do we want now that everyone understands the extraction game?**
+
+Pragmatically, this means:
+
+- stronger abuse detection at the account and traffic layer,
+- tighter identity and rate controls for high-risk usage patterns,
+- watermarking/fingerprinting research that survives paraphrase,
+- clearer industry norms around synthetic data provenance,
+- and legal frameworks that don’t pretend this is either fully legal or fully impossible.
+
+## My take
+
+Anthropic is not wrong to defend its models.
+
+But the industry should stop performing shocked morality plays about distillation. This is a structural consequence of how frontier AI was built and shipped.
+
+If you train on everything, then expose powerful behavior through public interfaces, copy pressure is inevitable.
+
+You can fight it.
+You should fight abuse.
+
+Just don’t pretend you discovered some brand-new ethical category when the mirror finally turned around.
+
+## References
+
+- https://www.anthropic.com
+- https://www.anthropic.com/news
+- https://platform.openai.com/docs/guides/distillation
+- https://arxiv.org/abs/2305.02301
