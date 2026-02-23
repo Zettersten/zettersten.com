@@ -4,12 +4,13 @@ description: 'A practical operator’s view on AI regulation risk before it beco
 date: 2026-02-16
 tags: ['AI governance', 'compliance', 'enterprise', 'risk']
 category: 'AI Governance'
-coverImage: '/images/blog/the-coming-ai-compliance-crisis.png'
+coverImage: '/images/blog/og/the-coming-ai-compliance-crisis-og.jpg'
+sourceImage: '/images/blog/the-coming-ai-compliance-crisis.png'
 draft: false
 ---
 
 import Callout from '../../components/Callout.astro';
-import SimpleBarChart from '../../components/SimpleBarChart.astro';
+import BarChart from '../../components/BarChart.astro';
 
 Most companies are treating AI compliance like a future problem.
 
@@ -33,7 +34,7 @@ That means auditors, legal teams, security teams, and regulators will evaluate:
 - what controls constrained behavior,
 - what evidence proves responsible operation.
 
-<SimpleBarChart
+<BarChart
   title="Projected enterprise pressure by 2026"
   labels={['Ad-hoc AI', 'Governed AI', 'Regulated AI']}
   values={[30, 58, 82]}

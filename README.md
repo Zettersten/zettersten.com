@@ -42,9 +42,11 @@ npm run validate
 
 ## Blog authoring
 
+See `EDITORIAL.md` for AI-friendly authoring rules, supported components, and OG image pipeline behavior.
+
 Create posts in:
 
-- `src/content/blog/*.md`
+- `src/content/blog/*.mdx`
 
 Required frontmatter:
 
@@ -54,6 +56,33 @@ description: 'Short summary'
 date: 2026-02-20
 tags: ['AI', 'leadership']
 draft: false
+```
+
+### Branded social/OG images for blog posts
+
+This repo includes a Python image pipeline that creates branded 1200×630 share thumbnails for every blog post.
+
+- Source image stays preserved in frontmatter as `sourceImage`
+- `coverImage` is rewritten to the generated branded social image in `/public/images/blog/og/*`
+
+Run manually:
+
+```bash
+npm run og:generate
+```
+
+It also runs automatically:
+
+- before build (`prebuild`), and
+- in the pre-commit hook.
+
+If Python deps are missing, generation is skipped safely (to avoid blocking static GitHub Pages builds).
+
+To enable generation locally:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements-editorial.txt
 ```
 
 ### Embedding tweets/X posts in articles

@@ -68,10 +68,30 @@ const isActive = (href: string) => pathname === href || pathname.startsWith(`${h
     gap: 0.2rem;
   }
   @media (max-width: 840px) {
+    .nav {
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      align-items: start;
+    }
+
+    .logo {
+      order: 1;
+    }
+
     .links {
+      order: 2;
       gap: 0.7rem;
-      font-size: 0.75rem;
-      overflow: auto;
+      font-size: 0.78rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 0.25rem;
+      scrollbar-width: thin;
+    }
+
+    .call {
+      order: 3;
+      font-size: 0.78rem;
+      width: fit-content;
     }
   }
 </style>

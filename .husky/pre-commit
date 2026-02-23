@@ -1,1 +1,2 @@
+./scripts/run_og_generation.sh
 npx lint-staged

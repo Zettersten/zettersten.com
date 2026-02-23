@@ -9,6 +9,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     category: z.string().default('AI'),
     coverImage: z.string().optional(),
+    sourceImage: z.string().optional(),
     draft: z.boolean().default(false),
   }),
 });

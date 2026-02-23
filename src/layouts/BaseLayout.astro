@@ -62,6 +62,8 @@ const schemaGraph = [baseSchema, ...extraSchema];
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,8 +83,11 @@ const schemaGraph = [baseSchema, ...extraSchema];
     />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
     <link rel="mask-icon" href="/favicon.svg" color="#c7632c" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <link
       rel="alternate"
@@ -136,6 +141,7 @@ const schemaGraph = [baseSchema, ...extraSchema];
     letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
   }
 
   h1,
@@ -238,6 +244,36 @@ const schemaGraph = [baseSchema, ...extraSchema];
   }
   .skip-link:focus {
     top: 0.6rem;
+  }
+
+  img,
+  svg,
+  video,
+  canvas,
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre,
+  code,
+  table {
+    max-width: 100%;
+  }
+
+  pre {
+    overflow-x: auto;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  blockquote.twitter-tweet {
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   ::selection {
