@@ -4,10 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "./scripts/run_og_generation.sh",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky",
+    "og:generate": "./scripts/run_og_generation.sh",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
