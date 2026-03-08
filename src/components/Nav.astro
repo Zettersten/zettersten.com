@@ -3,10 +3,10 @@ import { Icon } from 'astro-icon/components';
 
 const pathname = Astro.url.pathname;
 const links = [
-  { href: '/about', label: 'About Me' },
-  { href: '/work', label: 'Portfolio' },
+  { href: '/about', label: 'About' },
+  { href: '/work', label: 'Work' },
   { href: '/projects', label: 'Projects' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/blog', label: 'Writing' },
 ];
 
 const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
@@ -27,7 +27,7 @@ const isActive = (href: string) => pathname === href || pathname.startsWith(`${h
       }
     </div>
     <a class="call" href="/mentions" aria-current={isActive('/mentions') ? 'page' : undefined}
-      >Mentions <Icon name="tabler:arrow-up-right" width="12" height="12" /></a
+      >Press <Icon name="tabler:arrow-up-right" width="12" height="12" /></a
     >
   </nav>
 </header>

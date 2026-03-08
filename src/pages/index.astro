@@ -6,8 +6,8 @@ import { profileHighlights } from '../data/projects';
 ---
 
 <BaseLayout
-  title="Erik Zettersten — AI Developer, Engineer, Strategist & Leader"
-  description="Erik Zettersten builds practical AI systems and leads teams that ship measurable outcomes."
+  title="Erik Zettersten — Product Engineer & Technology Leader"
+  description="Erik Zettersten builds and ships production AI products, developer tools, and platform systems."
   image="/images/erik-home.jpg"
 >
   <Nav />
@@ -16,19 +16,29 @@ import { profileHighlights } from '../data/projects';
     <section class="hero glass">
       <div class="hero-copy">
         <p class="kicker">Erik Zettersten</p>
-        <h1 class="page-title">
-          Building high-stakes systems where speed, trust, and execution all matter.
-        </h1>
+        <h1 class="page-title">I build production AI products people actually use.</h1>
         <p class="page-subtitle">
-          I help teams turn AI ambition into operational outcomes. My work sits at the intersection
-          of strategy, engineering, and leadership execution.
+          Over 15+ years, I’ve shipped across fintech, media, and developer tooling — from hands-on
+          engineering to leading teams responsible for delivery.
         </p>
 
         <div class="cta-row">
           <a class="btn primary" href="/projects">See Projects</a>
+          <a class="btn" href="/work">Selected Work</a>
           <a class="btn" href="/about">About Erik</a>
-          <a class="btn" href="/blog">Read Articles</a>
         </div>
+
+        <ul class="outcomes" aria-label="Selected outcomes">
+          <li>
+            <strong>55+ repositories</strong> spanning AI workflows, frontend systems, and tooling.
+          </li>
+          <li>
+            <strong>Multiple sectors shipped:</strong> fintech, media, and government-adjacent systems.
+          </li>
+          <li>
+            <strong>Public writing + case studies</strong> focused on practical implementation, not hype.
+          </li>
+        </ul>
       </div>
 
       <figure class="hero-portrait">
@@ -45,9 +55,9 @@ import { profileHighlights } from '../data/projects';
         <strong>{profileHighlights.repoCount}+</strong>
         <span>Repositories shipped</span>
       </article>
-      <article class="proof-card glass">
-        <strong>{profileHighlights.followers}+</strong>
-        <span>Followers</span>
+      <article class="proof-card glass proof-card-domain">
+        <strong>{profileHighlights.domains}</strong>
+        <span>Primary operating domains</span>
       </article>
     </section>
   </main>
@@ -92,6 +102,19 @@ import { profileHighlights } from '../data/projects';
     gap: 0.55rem;
   }
 
+  .outcomes {
+    margin: 1rem 0 0;
+    padding-left: 1.1rem;
+    color: #333;
+    display: grid;
+    gap: 0.35rem;
+    line-height: 1.55;
+  }
+
+  .outcomes strong {
+    font-weight: 700;
+  }
+
   .hero-portrait {
     margin: 0;
     min-height: 380px;
@@ -126,6 +149,13 @@ import { profileHighlights } from '../data/projects';
     margin-top: 0.25rem;
     font-size: 0.84rem;
     color: #606060;
+  }
+
+  .proof-card-domain strong {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-family: var(--font-sans);
+    line-height: 1.2;
+    font-weight: 700;
   }
 
   @media (max-width: 980px) {
