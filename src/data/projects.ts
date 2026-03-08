@@ -47,8 +47,8 @@ export const profileHighlights = {
   location: 'Washington, DC',
   role: 'Head of Technology, VeeFriends',
   repoCount: 55,
-  followers: 62,
   yearsExperience: '15+ years',
+  domains: 'Fintech · Media · AI Product',
 };
 
 export const linkedinHighlights = [
