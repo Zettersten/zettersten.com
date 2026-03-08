@@ -51,14 +51,44 @@ const isActive = (href: string) => pathname === href || pathname.startsWith(`${h
   .links {
     display: flex;
     gap: 1.2rem;
-    color: #4d4d4d;
+    color: #444;
     font-size: 0.82rem;
   }
+
+  .links a,
+  .call {
+    position: relative;
+  }
+
+  .links a::after,
+  .call::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1.5px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.18s ease;
+  }
+
+  .links a:hover,
+  .call:hover {
+    color: #1f2f56;
+  }
+
+  .links a:hover::after,
+  .call:hover::after,
+  .links a[aria-current='page']::after,
+  .call[aria-current='page']::after {
+    transform: scaleX(1);
+  }
+
   .links a[aria-current='page'],
   .call[aria-current='page'] {
     color: #1f1f1f;
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
   .call {
     font-size: 0.82rem;
